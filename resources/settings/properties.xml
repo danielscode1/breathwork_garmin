@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!--
+    Persistent settings. These are editable on the watch (Breathe's own menu)
+    and from the phone (Garmin Connect > device > Connect IQ Apps > Breathe > Settings).
+-->
+<properties>
+    <!-- 0 = box breathing (with holds), 1 = even breathing (no holds) -->
+    <property id="mode" type="number">0</property>
+
+    <!-- phase lengths in seconds -->
+    <property id="inhale" type="number">4</property>
+    <property id="holdFull" type="number">4</property>
+    <property id="exhale" type="number">4</property>
+    <property id="holdEmpty" type="number">4</property>
+
+    <!-- session length in minutes, 0 = run until you stop it -->
+    <property id="lengthMin" type="number">5</property>
+
+    <property id="vibeHold" type="boolean">true</property>
+    <property id="strength" type="number">75</property>
+    <property id="tones" type="boolean">false</property>
+</properties>

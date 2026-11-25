@@ -1,0 +1,1570 @@
+[ @file = "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc"; @line = 1; @symbol_importdef<0> = [Toybox,1,7,13]; @symbol_importdef<1> = [Attention,1,14,23]; ]
+import Toybox.Attention;
+[ @file = "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc"; @line = 2; @symbol_importdef<0> = [Toybox,2,7,13]; @symbol_importdef<1> = [Graphics,2,14,22]; ]
+import Toybox.Graphics;
+[ @file = "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc"; @line = 3; @symbol_importdef<0> = [Toybox,3,7,13]; @symbol_importdef<1> = [Lang,3,14,18]; ]
+import Toybox.Lang;
+[ @file = "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc"; @line = 4; @symbol_importdef<0> = [Toybox,4,7,13]; @symbol_importdef<1> = [System,4,14,20]; ]
+import Toybox.System;
+[ @file = "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc"; @line = 5; @symbol_importdef<0> = [Toybox,5,7,13]; @symbol_importdef<1> = [Timer,5,14,19]; ]
+import Toybox.Timer;
+[ @file = "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc"; @line = 6; @symbol_importdef<0> = [Toybox,6,7,13]; @symbol_importdef<1> = [WatchUi,6,14,21]; ]
+import Toybox.WatchUi;
+//! How often the clock is sampled. The pattern itself is driven by real elapsed
+//! time, so this only decides how promptly the buzz lands on a phase boundary
+//! (worst case one tick late) and how smoothly the bar moves.
+[ @file = "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc"; @line = 11; @position = 6; @symbol_constdef = [BREATH_TICK_MS,11,6,20]; ]
+const BREATH_TICK_MS = 100;
+[ @file = "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc"; @line = 13; @symbol_classdef = [BreathView,13,6,16]; @symbol_extends<0> = [WatchUi,13,25,32]; @symbol_extends<1> = [View,13,33,37]; ]
+class BreathView extends WatchUi.View {
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc"; @line = 13; ]
+    <init> {
+    }
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc"; @line = 13; ]
+    static
+    <init> {
+    }
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc"; @line = 15; @position = 15; @symbol_vardef = [mSession,15,15,23]; ]
+    protected
+    var mSession;
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc"; @line = 16; @position = 15; @symbol_vardef = [mTimer,16,15,21]; ]
+    protected
+    var mTimer;
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc"; @line = 17; @position = 15; @symbol_vardef = [mLastMs,17,15,22]; ]
+    protected
+    var mLastMs;
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc"; @line = 18; @position = 15; @symbol_vardef = [mStarted,18,15,23]; ]
+    protected
+    var mStarted;
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc"; @line = 19; @position = 15; @symbol_vardef = [mVibeOff,19,15,23]; ]
+    protected
+    var mVibeOff;
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc"; @line = 21; @position = 15; @symbol_vardef = [mTxtInhale,21,15,25]; ]
+    protected
+    var mTxtInhale;
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc"; @line = 22; @position = 15; @symbol_vardef = [mTxtHold,22,15,23]; ]
+    protected
+    var mTxtHold;
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc"; @line = 23; @position = 15; @symbol_vardef = [mTxtExhale,23,15,25]; ]
+    protected
+    var mTxtExhale;
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc"; @line = 24; @position = 15; @symbol_vardef = [mTxtPaused,24,15,25]; ]
+    protected
+    var mTxtPaused;
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc"; @line = 25; @position = 15; @symbol_vardef = [mTxtDone,25,15,23]; ]
+    protected
+    var mTxtDone;
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc"; @line = 26; @position = 15; @symbol_vardef = [mTxtNoVibe,26,15,25]; ]
+    protected
+    var mTxtNoVibe;
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc"; @line = 28; @symbol_functiondef = [initialize,28,13,23]; ]
+    function initialize() as Void {
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_28_26_41_4_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 29 8 ]
+        symbol [ View %tmp.2 29 8 12 ];
+        %tmp.2 = getv ? :View;
+        symbol [ initialize %tmp.3 29 13 23 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 30 8 ]
+        symbol [ BreathSession %tmp.7 30 23 36 ];
+        %tmp.7 = getv ? :BreathSession;
+        %tmp.4 = newc %tmp.7 ();
+        symbol [ mSession ? 30 8 16 ];
+        putv self :mSession %tmp.4;
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 31 8 ]
+        %tmp.8 = null;
+        symbol [ mTimer ? 31 8 14 ];
+        putv self :mTimer %tmp.8;
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 32 8 ]
+        %tmp.9 = 0;
+        symbol [ mLastMs ? 32 8 15 ];
+        putv self :mLastMs %tmp.9;
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 33 8 ]
+        %tmp.10 = false;
+        symbol [ mStarted ? 33 8 16 ];
+        putv self :mStarted %tmp.10;
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 34 8 ]
+        %tmp.11 = false;
+        symbol [ mVibeOff ? 34 8 16 ];
+        putv self :mVibeOff %tmp.11;
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 35 8 ]
+        symbol [ WatchUi %tmp.12 35 21 28 ];
+        %tmp.12 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.13 35 29 41 ];
+        %tmp.13 = getv function %tmp.12 :loadResource;
+        symbol [ Rez %tmp.15 35 42 45 ];
+        %tmp.15 = getv ? :Rez;
+        symbol [ Strings %tmp.16 35 46 53 ];
+        %tmp.16 = getv %tmp.15 :Strings;
+        symbol [ PhaseInhale %tmp.17 35 54 65 ];
+        %tmp.17 = getv %tmp.16 :PhaseInhale;
+        %tmp.18 = invoke %tmp.12 %tmp.13(%tmp.17);
+        symbol [ mTxtInhale ? 35 8 18 ];
+        putv self :mTxtInhale %tmp.18;
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 36 8 ]
+        symbol [ WatchUi %tmp.19 36 19 26 ];
+        %tmp.19 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.20 36 27 39 ];
+        %tmp.20 = getv function %tmp.19 :loadResource;
+        symbol [ Rez %tmp.22 36 40 43 ];
+        %tmp.22 = getv ? :Rez;
+        symbol [ Strings %tmp.23 36 44 51 ];
+        %tmp.23 = getv %tmp.22 :Strings;
+        symbol [ PhaseHold %tmp.24 36 52 61 ];
+        %tmp.24 = getv %tmp.23 :PhaseHold;
+        %tmp.25 = invoke %tmp.19 %tmp.20(%tmp.24);
+        symbol [ mTxtHold ? 36 8 16 ];
+        putv self :mTxtHold %tmp.25;
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 37 8 ]
+        symbol [ WatchUi %tmp.26 37 21 28 ];
+        %tmp.26 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.27 37 29 41 ];
+        %tmp.27 = getv function %tmp.26 :loadResource;
+        symbol [ Rez %tmp.29 37 42 45 ];
+        %tmp.29 = getv ? :Rez;
+        symbol [ Strings %tmp.30 37 46 53 ];
+        %tmp.30 = getv %tmp.29 :Strings;
+        symbol [ PhaseExhale %tmp.31 37 54 65 ];
+        %tmp.31 = getv %tmp.30 :PhaseExhale;
+        %tmp.32 = invoke %tmp.26 %tmp.27(%tmp.31);
+        symbol [ mTxtExhale ? 37 8 18 ];
+        putv self :mTxtExhale %tmp.32;
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 38 8 ]
+        symbol [ WatchUi %tmp.33 38 21 28 ];
+        %tmp.33 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.34 38 29 41 ];
+        %tmp.34 = getv function %tmp.33 :loadResource;
+        symbol [ Rez %tmp.36 38 42 45 ];
+        %tmp.36 = getv ? :Rez;
+        symbol [ Strings %tmp.37 38 46 53 ];
+        %tmp.37 = getv %tmp.36 :Strings;
+        symbol [ StatePaused %tmp.38 38 54 65 ];
+        %tmp.38 = getv %tmp.37 :StatePaused;
+        %tmp.39 = invoke %tmp.33 %tmp.34(%tmp.38);
+        symbol [ mTxtPaused ? 38 8 18 ];
+        putv self :mTxtPaused %tmp.39;
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 39 8 ]
+        symbol [ WatchUi %tmp.40 39 19 26 ];
+        %tmp.40 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.41 39 27 39 ];
+        %tmp.41 = getv function %tmp.40 :loadResource;
+        symbol [ Rez %tmp.43 39 40 43 ];
+        %tmp.43 = getv ? :Rez;
+        symbol [ Strings %tmp.44 39 44 51 ];
+        %tmp.44 = getv %tmp.43 :Strings;
+        symbol [ StateDone %tmp.45 39 52 61 ];
+        %tmp.45 = getv %tmp.44 :StateDone;
+        %tmp.46 = invoke %tmp.40 %tmp.41(%tmp.45);
+        symbol [ mTxtDone ? 39 8 16 ];
+        putv self :mTxtDone %tmp.46;
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 40 8 ]
+        symbol [ WatchUi %tmp.47 40 21 28 ];
+        %tmp.47 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.48 40 29 41 ];
+        %tmp.48 = getv function %tmp.47 :loadResource;
+        symbol [ Rez %tmp.50 40 42 45 ];
+        %tmp.50 = getv ? :Rez;
+        symbol [ Strings %tmp.51 40 46 53 ];
+        %tmp.51 = getv %tmp.50 :Strings;
+        symbol [ WarnNoVibe %tmp.52 40 54 64 ];
+        %tmp.52 = getv %tmp.51 :WarnNoVibe;
+        %tmp.53 = invoke %tmp.47 %tmp.48(%tmp.52);
+        symbol [ mTxtNoVibe ? 40 8 18 ];
+        putv self :mTxtNoVibe %tmp.53;
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_28_26_41_4_stop:
+    }
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc"; @line = 43; @symbol_functiondef = [onShow,43,13,19]; ]
+    function onShow() {
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_43_22_53_4_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 44 8 ]
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_44_8_50_8_if_stmt:
+        symbol [ mStarted %tmp.2 44 13 21 ];
+        %tmp.2 = getv ? :mStarted;
+        %tmp.3 = not %tmp.2;
+        bf %tmp.3 @_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_44_8_50_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_44_8_50_8_if_true:
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_44_23_50_8_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 45 12 ]
+        %tmp.4 = true;
+        symbol [ mStarted ? 45 12 20 ];
+        putv self :mStarted %tmp.4;
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 46 12 ]
+        symbol [ System %tmp.5 46 24 30 ];
+        %tmp.5 = getm $.Toybox.System;
+        symbol [ getDeviceSettings %tmp.6 46 31 48 ];
+        %tmp.6 = getv function %tmp.5 :getDeviceSettings;
+        %tmp.7 = invoke %tmp.5 %tmp.6();
+        symbol [ vibrateOn %tmp.8 46 51 60 ];
+        %tmp.8 = getv %tmp.7 :vibrateOn;
+        %tmp.9 = not %tmp.8;
+        symbol [ mVibeOff ? 46 12 20 ];
+        putv self :mVibeOff %tmp.9;
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 47 12 ]
+        symbol [ mSession %tmp.11 47 12 20 ];
+        %tmp.11 = getv ? :mSession;
+        symbol [ rebuild %tmp.12 47 21 28 ];
+        %tmp.12 = getv function %tmp.11 :rebuild;
+        invoke %tmp.11 %tmp.12();
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 48 12 ]
+        symbol [ mSession %tmp.14 48 12 20 ];
+        %tmp.14 = getv ? :mSession;
+        symbol [ start %tmp.15 48 21 26 ];
+        %tmp.15 = getv function %tmp.14 :start;
+        invoke %tmp.14 %tmp.15();
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 49 12 ]
+        %tmp.16 = self;
+        symbol [ cuePhase %tmp.17 49 12 20 ];
+        %tmp.17 = getv function %tmp.16 :cuePhase;
+        symbol [ mSession %tmp.19 49 21 29 ];
+        %tmp.19 = getv ? :mSession;
+        symbol [ phaseKind %tmp.20 49 30 39 ];
+        %tmp.20 = getv function %tmp.19 :phaseKind;
+        %tmp.21 = invoke %tmp.19 %tmp.20();
+        invoke %tmp.16 %tmp.17(%tmp.21);
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_44_23_50_8_stop:
+        goto @_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_44_8_50_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_44_8_50_8_if_end:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 51 8 ]
+        symbol [ System %tmp.22 51 18 24 ];
+        %tmp.22 = getm $.Toybox.System;
+        symbol [ getTimer %tmp.23 51 25 33 ];
+        %tmp.23 = getv function %tmp.22 :getTimer;
+        %tmp.24 = invoke %tmp.22 %tmp.23();
+        symbol [ mLastMs ? 51 8 15 ];
+        putv self :mLastMs %tmp.24;
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 52 8 ]
+        %tmp.25 = self;
+        symbol [ startTimer %tmp.26 52 8 18 ];
+        %tmp.26 = getv function %tmp.25 :startTimer;
+        invoke %tmp.25 %tmp.26();
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_43_22_53_4_stop:
+    }
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc"; @line = 55; @symbol_functiondef = [onHide,55,13,19]; ]
+    function onHide() {
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_55_22_57_4_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 56 8 ]
+        %tmp.1 = self;
+        symbol [ stopTimer %tmp.2 56 8 17 ];
+        %tmp.2 = getv function %tmp.1 :stopTimer;
+        invoke %tmp.1 %tmp.2();
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_55_22_57_4_stop:
+    }
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc"; @line = 61; @symbol_functiondef = [startTimer,61,20,30]; ]
+    protected
+    function startTimer() {
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_61_33_66_4_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 62 8 ]
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_62_8_64_8_if_stmt:
+        symbol [ mTimer %tmp.2 62 12 18 ];
+        %tmp.2 = getv ? :mTimer;
+        %tmp.3 = null;
+        %tmp.4 = eq %tmp.2 %tmp.3;
+        bf %tmp.4 @_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_62_8_64_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_62_8_64_8_if_true:
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_62_28_64_8_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 63 12 ]
+        symbol [ Timer %tmp.7 63 25 30 ];
+        %tmp.7 = getm $.Toybox.Timer;
+        symbol [ Timer %tmp.8 63 31 36 ];
+        %tmp.8 = getv function ? %tmp.7 :Timer;
+        %tmp.5 = newc %tmp.8 ();
+        symbol [ mTimer ? 63 12 18 ];
+        putv self :mTimer %tmp.5;
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_62_28_64_8_stop:
+        goto @_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_62_8_64_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_62_8_64_8_if_end:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 65 8 ]
+        symbol [ mTimer %tmp.10 65 8 14 ];
+        %tmp.10 = getv ? :mTimer;
+        symbol [ start %tmp.11 65 15 20 ];
+        %tmp.11 = getv function %tmp.10 :start;
+        %tmp.12 = self;
+        symbol [ method %tmp.13 65 21 27 ];
+        %tmp.13 = getv function %tmp.12 :method;
+        %tmp.15 = const :onTick;
+        symbol [ onTick %tmp.15 65 29 35 const ];
+        %tmp.16 = invoke %tmp.12 %tmp.13(%tmp.15);
+        symbol [ BREATH_TICK_MS %tmp.18 65 38 52 ];
+        %tmp.18 = getv ? :BREATH_TICK_MS;
+        %tmp.19 = true;
+        invoke %tmp.10 %tmp.11(%tmp.16, %tmp.18, %tmp.19);
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_61_33_66_4_stop:
+    }
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc"; @line = 68; @symbol_functiondef = [stopTimer,68,20,29]; ]
+    protected
+    function stopTimer() {
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_68_32_72_4_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 69 8 ]
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_69_8_71_8_if_stmt:
+        symbol [ mTimer %tmp.2 69 12 18 ];
+        %tmp.2 = getv ? :mTimer;
+        %tmp.3 = null;
+        %tmp.4 = ne %tmp.2 %tmp.3;
+        bf %tmp.4 @_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_69_8_71_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_69_8_71_8_if_true:
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_69_28_71_8_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 70 12 ]
+        symbol [ mTimer %tmp.6 70 12 18 ];
+        %tmp.6 = getv ? :mTimer;
+        %tmp.7 = as %tmp.6 { (!Null) };
+        symbol [ stop %tmp.8 70 19 23 ];
+        %tmp.8 = getv function %tmp.7 :stop;
+        invoke %tmp.7 %tmp.8();
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_69_28_71_8_stop:
+        goto @_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_69_8_71_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_69_8_71_8_if_end:
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_68_32_72_4_stop:
+    }
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc"; @line = 74; @symbol_functiondef = [onTick,74,13,19]; ]
+    function onTick() {
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_74_22_96_4_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 75 8 ]
+        [ "_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_74_22_96_4_start" "_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_74_22_96_4_stop" ]
+        %now.1 = local;
+        symbol [ now %now.1 75 12 15 ];
+        symbol [ System %tmp.1 75 18 24 ];
+        %tmp.1 = getm $.Toybox.System;
+        symbol [ getTimer %tmp.2 75 25 33 ];
+        %tmp.2 = getv function %tmp.1 :getTimer;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        lputv %now.1 %tmp.3;
+        symbol [ now %now.1 75 12 15 ];
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 76 8 ]
+        [ "_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_74_22_96_4_start" "_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_74_22_96_4_stop" ]
+        %elapsed.2 = local;
+        symbol [ elapsed %elapsed.2 76 12 19 ];
+        %tmp.4 = lgetv %now.1;
+        symbol [ now %tmp.4 76 22 25 ];
+        symbol [ mLastMs %tmp.6 76 28 35 ];
+        %tmp.6 = getv ? :mLastMs;
+        %tmp.7 = sub %tmp.4 %tmp.6;
+        lputv %elapsed.2 %tmp.7;
+        symbol [ elapsed %elapsed.2 76 12 19 ];
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 77 8 ]
+        %tmp.8 = lgetv %now.1;
+        symbol [ now %tmp.8 77 18 21 ];
+        symbol [ mLastMs ? 77 8 15 ];
+        putv self :mLastMs %tmp.8;
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 79 8 ]
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_79_8_81_8_if_stmt:
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_79_12_79_37_begin:
+        %tmp.9 = lgetv %elapsed.2;
+        symbol [ elapsed %tmp.9 79 12 19 ];
+        %tmp.10 = 0;
+        %tmp.11 = lt %tmp.9 %tmp.10;
+        bt %tmp.11 @_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_79_8_81_8_if_true;
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_79_27_79_37_false:
+        %tmp.12 = lgetv %elapsed.2;
+        symbol [ elapsed %tmp.12 79 27 34 ];
+        %tmp.13 = 5000;
+        %tmp.14 = gt %tmp.12 %tmp.13;
+        push %tmp.14;
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_79_27_79_37_end:
+        %tmp.15 = phi [%tmp.11 @_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_79_12_79_37_begin] [%tmp.14 @_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_79_27_79_37_false] [%tmp.15 @_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_79_27_79_37_end];
+        bf %tmp.15 @_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_79_8_81_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_79_8_81_8_if_true:
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_79_43_81_8_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 80 12 ]
+        symbol [ BREATH_TICK_MS %tmp.17 80 22 36 ];
+        %tmp.17 = getv ? :BREATH_TICK_MS;
+        lputv %elapsed.2 %tmp.17;
+        symbol [ elapsed %elapsed.2 80 12 19 ];
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_79_43_81_8_stop:
+        goto @_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_79_8_81_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_79_8_81_8_if_end:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 83 8 ]
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_83_8_85_8_if_stmt:
+        symbol [ mSession %tmp.19 83 13 21 ];
+        %tmp.19 = getv ? :mSession;
+        symbol [ isRunning %tmp.20 83 22 31 ];
+        %tmp.20 = getv function %tmp.19 :isRunning;
+        %tmp.21 = invoke %tmp.19 %tmp.20();
+        %tmp.22 = not %tmp.21;
+        bf %tmp.22 @_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_83_8_85_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_83_8_85_8_if_true:
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_83_35_85_8_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 84 12 ]
+        ret ?;
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_83_35_85_8_stop:
+        goto @_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_83_8_85_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_83_8_85_8_if_end:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 87 8 ]
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_87_8_94_8_if_stmt:
+        symbol [ mSession %tmp.24 87 12 20 ];
+        %tmp.24 = getv ? :mSession;
+        symbol [ advance %tmp.25 87 21 28 ];
+        %tmp.25 = getv function %tmp.24 :advance;
+        %tmp.26 = lgetv %elapsed.2;
+        symbol [ elapsed %tmp.26 87 29 36 ];
+        %tmp.27 = invoke %tmp.24 %tmp.25(%tmp.26);
+        bf %tmp.27 @_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_87_8_94_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_87_8_94_8_if_true:
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_87_39_94_8_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 88 12 ]
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_88_12_93_12_if_stmt:
+        symbol [ mSession %tmp.29 88 16 24 ];
+        %tmp.29 = getv ? :mSession;
+        symbol [ isDone %tmp.30 88 25 31 ];
+        %tmp.30 = getv function %tmp.29 :isDone;
+        %tmp.31 = invoke %tmp.29 %tmp.30();
+        bf %tmp.31 @_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_88_12_93_12_if_else_false;
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_88_12_93_12_if_true:
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_88_35_91_12_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 89 16 ]
+        %tmp.32 = self;
+        symbol [ stopTimer %tmp.33 89 16 25 ];
+        %tmp.33 = getv function %tmp.32 :stopTimer;
+        invoke %tmp.32 %tmp.33();
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 90 16 ]
+        %tmp.34 = self;
+        symbol [ cueFinish %tmp.35 90 16 25 ];
+        %tmp.35 = getv function %tmp.34 :cueFinish;
+        invoke %tmp.34 %tmp.35();
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_88_35_91_12_stop:
+        goto @_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_88_12_93_12_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_88_12_93_12_if_else_false:
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_91_19_93_12_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 92 16 ]
+        %tmp.36 = self;
+        symbol [ cuePhase %tmp.37 92 16 24 ];
+        %tmp.37 = getv function %tmp.36 :cuePhase;
+        symbol [ mSession %tmp.39 92 25 33 ];
+        %tmp.39 = getv ? :mSession;
+        symbol [ phaseKind %tmp.40 92 34 43 ];
+        %tmp.40 = getv function %tmp.39 :phaseKind;
+        %tmp.41 = invoke %tmp.39 %tmp.40();
+        invoke %tmp.36 %tmp.37(%tmp.41);
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_91_19_93_12_stop:
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_88_12_93_12_if_end:
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_87_39_94_8_stop:
+        goto @_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_87_8_94_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_87_8_94_8_if_end:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 95 8 ]
+        symbol [ WatchUi %tmp.42 95 8 15 ];
+        %tmp.42 = getm $.Toybox.WatchUi;
+        symbol [ requestUpdate %tmp.43 95 16 29 ];
+        %tmp.43 = getv function %tmp.42 :requestUpdate;
+        invoke %tmp.42 %tmp.43();
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_74_22_96_4_stop:
+    }
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc"; @line = 100; @symbol_functiondef = [togglePause,100,13,24]; ]
+    function togglePause() {
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_100_27_113_4_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 101 8 ]
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_101_8_111_8_if_stmt:
+        symbol [ mSession %tmp.2 101 12 20 ];
+        %tmp.2 = getv ? :mSession;
+        symbol [ isDone %tmp.3 101 21 27 ];
+        %tmp.3 = getv function %tmp.2 :isDone;
+        %tmp.4 = invoke %tmp.2 %tmp.3();
+        bf %tmp.4 @_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_101_8_111_8_if_else_false;
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_101_8_111_8_if_true:
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_101_31_108_8_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 103 12 ]
+        symbol [ mSession %tmp.6 103 12 20 ];
+        %tmp.6 = getv ? :mSession;
+        symbol [ rebuild %tmp.7 103 21 28 ];
+        %tmp.7 = getv function %tmp.6 :rebuild;
+        invoke %tmp.6 %tmp.7();
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 104 12 ]
+        symbol [ mSession %tmp.9 104 12 20 ];
+        %tmp.9 = getv ? :mSession;
+        symbol [ start %tmp.10 104 21 26 ];
+        %tmp.10 = getv function %tmp.9 :start;
+        invoke %tmp.9 %tmp.10();
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 105 12 ]
+        symbol [ System %tmp.11 105 22 28 ];
+        %tmp.11 = getm $.Toybox.System;
+        symbol [ getTimer %tmp.12 105 29 37 ];
+        %tmp.12 = getv function %tmp.11 :getTimer;
+        %tmp.13 = invoke %tmp.11 %tmp.12();
+        symbol [ mLastMs ? 105 12 19 ];
+        putv self :mLastMs %tmp.13;
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 106 12 ]
+        %tmp.14 = self;
+        symbol [ startTimer %tmp.15 106 12 22 ];
+        %tmp.15 = getv function %tmp.14 :startTimer;
+        invoke %tmp.14 %tmp.15();
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 107 12 ]
+        %tmp.16 = self;
+        symbol [ cuePhase %tmp.17 107 12 20 ];
+        %tmp.17 = getv function %tmp.16 :cuePhase;
+        symbol [ mSession %tmp.19 107 21 29 ];
+        %tmp.19 = getv ? :mSession;
+        symbol [ phaseKind %tmp.20 107 30 39 ];
+        %tmp.20 = getv function %tmp.19 :phaseKind;
+        %tmp.21 = invoke %tmp.19 %tmp.20();
+        invoke %tmp.16 %tmp.17(%tmp.21);
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_101_31_108_8_stop:
+        goto @_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_101_8_111_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_101_8_111_8_if_else_false:
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_108_15_111_8_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 109 12 ]
+        symbol [ mSession %tmp.23 109 12 20 ];
+        %tmp.23 = getv ? :mSession;
+        symbol [ setRunning %tmp.24 109 21 31 ];
+        %tmp.24 = getv function %tmp.23 :setRunning;
+        symbol [ mSession %tmp.26 109 33 41 ];
+        %tmp.26 = getv ? :mSession;
+        symbol [ isRunning %tmp.27 109 42 51 ];
+        %tmp.27 = getv function %tmp.26 :isRunning;
+        %tmp.28 = invoke %tmp.26 %tmp.27();
+        %tmp.29 = not %tmp.28;
+        invoke %tmp.23 %tmp.24(%tmp.29);
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 110 12 ]
+        symbol [ System %tmp.30 110 22 28 ];
+        %tmp.30 = getm $.Toybox.System;
+        symbol [ getTimer %tmp.31 110 29 37 ];
+        %tmp.31 = getv function %tmp.30 :getTimer;
+        %tmp.32 = invoke %tmp.30 %tmp.31();
+        symbol [ mLastMs ? 110 12 19 ];
+        putv self :mLastMs %tmp.32;
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_108_15_111_8_stop:
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_101_8_111_8_if_end:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 112 8 ]
+        symbol [ WatchUi %tmp.33 112 8 15 ];
+        %tmp.33 = getm $.Toybox.WatchUi;
+        symbol [ requestUpdate %tmp.34 112 16 29 ];
+        %tmp.34 = getv function %tmp.33 :requestUpdate;
+        invoke %tmp.33 %tmp.34();
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_100_27_113_4_stop:
+    }
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc"; @line = 115; @symbol_functiondef = [stopSession,115,13,24]; ]
+    function stopSession() {
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_115_27_118_4_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 116 8 ]
+        symbol [ mSession %tmp.2 116 8 16 ];
+        %tmp.2 = getv ? :mSession;
+        symbol [ stop %tmp.3 116 17 21 ];
+        %tmp.3 = getv function %tmp.2 :stop;
+        invoke %tmp.2 %tmp.3();
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 117 8 ]
+        %tmp.4 = self;
+        symbol [ stopTimer %tmp.5 117 8 17 ];
+        %tmp.5 = getv function %tmp.4 :stopTimer;
+        invoke %tmp.4 %tmp.5();
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_115_27_118_4_stop:
+    }
+    //! The point of the whole app: a distinct buzz the moment a phase starts.
+    //! Inhale is one long pulse, exhale two short ones, a hold a single soft tap.
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc"; @line = 124; @symbol_functiondef = [cuePhase,124,20,28]; @symbol_param<0> = [kind,124,29,33]; ]
+    protected
+    function cuePhase(kind) {
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_124_35_142_4_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 125 8 ]
+        [ "_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_124_35_142_4_start" "_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_124_35_142_4_stop" ]
+        %power.1 = local;
+        symbol [ power %power.1 125 12 17 ];
+        symbol [ Config %tmp.2 125 20 26 ];
+        %tmp.2 = getv ? :Config;
+        symbol [ strength %tmp.3 125 27 35 ];
+        %tmp.3 = getv function %tmp.2 :strength;
+        %tmp.4 = invoke %tmp.2 %tmp.3();
+        lputv %power.1 %tmp.4;
+        symbol [ power %power.1 125 12 17 ];
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 127 8 ]
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_127_8_141_8_if_stmt:
+        %tmp.5 = lgetv %kind;
+        symbol [ kind %tmp.5 127 12 16 ];
+        symbol [ PHASE_INHALE %tmp.7 127 20 32 ];
+        %tmp.7 = getv ? :PHASE_INHALE;
+        %tmp.8 = eq %tmp.5 %tmp.7;
+        bf %tmp.8 @_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_127_8_141_8_if_false;
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_127_8_141_8_if_true:
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_127_34_130_8_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 128 12 ]
+        %tmp.9 = self;
+        symbol [ buzz %tmp.10 128 12 16 ];
+        %tmp.10 = getv function %tmp.9 :buzz;
+        %tmp.11 = newa 1;
+        symbol [ Attention %tmp.14 128 22 31 ];
+        %tmp.14 = getm $.Toybox.Attention;
+        symbol [ VibeProfile %tmp.15 128 32 43 ];
+        %tmp.15 = getv function ? %tmp.14 :VibeProfile;
+        %tmp.16 = lgetv %power.1;
+        symbol [ power %tmp.16 128 44 49 ];
+        %tmp.17 = 450;
+        %tmp.12 = newc %tmp.15 (%tmp.16, %tmp.17);
+        %tmp.18 = dup %tmp.11;
+        %tmp.19 = aputv %tmp.18 0 %tmp.12;
+        invoke %tmp.9 %tmp.10(%tmp.19);
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 129 12 ]
+        %tmp.20 = self;
+        symbol [ beep %tmp.21 129 12 16 ];
+        %tmp.21 = getv function %tmp.20 :beep;
+        invoke %tmp.20 %tmp.21();
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_127_34_130_8_stop:
+        goto @_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_127_8_141_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_127_8_141_8_if_false:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 130 15 ]
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_130_15_141_8_if_stmt:
+        %tmp.22 = lgetv %kind;
+        symbol [ kind %tmp.22 130 19 23 ];
+        symbol [ PHASE_EXHALE %tmp.24 130 27 39 ];
+        %tmp.24 = getv ? :PHASE_EXHALE;
+        %tmp.25 = eq %tmp.22 %tmp.24;
+        bf %tmp.25 @_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_130_15_141_8_if_false;
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_130_15_141_8_if_true:
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_130_41_135_8_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 131 12 ]
+        %tmp.26 = self;
+        symbol [ buzz %tmp.27 131 12 16 ];
+        %tmp.27 = getv function %tmp.26 :buzz;
+        %tmp.28 = newa 3;
+        symbol [ Attention %tmp.31 131 22 31 ];
+        %tmp.31 = getm $.Toybox.Attention;
+        symbol [ VibeProfile %tmp.32 131 32 43 ];
+        %tmp.32 = getv function ? %tmp.31 :VibeProfile;
+        %tmp.33 = lgetv %power.1;
+        symbol [ power %tmp.33 131 44 49 ];
+        %tmp.34 = 160;
+        %tmp.29 = newc %tmp.32 (%tmp.33, %tmp.34);
+        %tmp.35 = dup %tmp.28;
+        %tmp.36 = aputv %tmp.35 0 %tmp.29;
+        symbol [ Attention %tmp.39 132 22 31 ];
+        %tmp.39 = getm $.Toybox.Attention;
+        symbol [ VibeProfile %tmp.40 132 32 43 ];
+        %tmp.40 = getv function ? %tmp.39 :VibeProfile;
+        %tmp.41 = 0;
+        %tmp.42 = 110;
+        %tmp.37 = newc %tmp.40 (%tmp.41, %tmp.42);
+        %tmp.43 = dup %tmp.36;
+        %tmp.44 = aputv %tmp.43 1 %tmp.37;
+        symbol [ Attention %tmp.47 133 22 31 ];
+        %tmp.47 = getm $.Toybox.Attention;
+        symbol [ VibeProfile %tmp.48 133 32 43 ];
+        %tmp.48 = getv function ? %tmp.47 :VibeProfile;
+        %tmp.49 = lgetv %power.1;
+        symbol [ power %tmp.49 133 44 49 ];
+        %tmp.50 = 160;
+        %tmp.45 = newc %tmp.48 (%tmp.49, %tmp.50);
+        %tmp.51 = dup %tmp.44;
+        %tmp.52 = aputv %tmp.51 2 %tmp.45;
+        invoke %tmp.26 %tmp.27(%tmp.52);
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 134 12 ]
+        %tmp.53 = self;
+        symbol [ beep %tmp.54 134 12 16 ];
+        %tmp.54 = getv function %tmp.53 :beep;
+        invoke %tmp.53 %tmp.54();
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_130_41_135_8_stop:
+        goto @_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_130_15_141_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_130_15_141_8_if_false:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 135 15 ]
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_135_15_141_8_if_stmt:
+        symbol [ Config %tmp.56 135 19 25 ];
+        %tmp.56 = getv ? :Config;
+        symbol [ vibeHold %tmp.57 135 26 34 ];
+        %tmp.57 = getv function %tmp.56 :vibeHold;
+        %tmp.58 = invoke %tmp.56 %tmp.57();
+        bf %tmp.58 @_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_135_15_141_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_135_15_141_8_if_true:
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_135_38_141_8_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 136 12 ]
+        [ "_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_135_38_141_8_start" "_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_135_38_141_8_stop" ]
+        %soft.2 = local;
+        symbol [ soft %soft.2 136 16 20 ];
+        %tmp.59 = lgetv %power.1;
+        symbol [ power %tmp.59 136 23 28 ];
+        %tmp.60 = 2;
+        %tmp.61 = div %tmp.59 %tmp.60;
+        lputv %soft.2 %tmp.61;
+        symbol [ soft %soft.2 136 16 20 ];
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 137 12 ]
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_137_12_139_12_if_stmt:
+        %tmp.62 = lgetv %soft.2;
+        symbol [ soft %tmp.62 137 16 20 ];
+        %tmp.63 = 10;
+        %tmp.64 = lt %tmp.62 %tmp.63;
+        bf %tmp.64 @_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_137_12_139_12_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_137_12_139_12_if_true:
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_137_27_139_12_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 138 16 ]
+        %tmp.65 = 10;
+        lputv %soft.2 %tmp.65;
+        symbol [ soft %soft.2 138 16 20 ];
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_137_27_139_12_stop:
+        goto @_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_137_12_139_12_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_137_12_139_12_if_end:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 140 12 ]
+        %tmp.66 = self;
+        symbol [ buzz %tmp.67 140 12 16 ];
+        %tmp.67 = getv function %tmp.66 :buzz;
+        %tmp.68 = newa 1;
+        symbol [ Attention %tmp.71 140 22 31 ];
+        %tmp.71 = getm $.Toybox.Attention;
+        symbol [ VibeProfile %tmp.72 140 32 43 ];
+        %tmp.72 = getv function ? %tmp.71 :VibeProfile;
+        %tmp.73 = lgetv %soft.2;
+        symbol [ soft %tmp.73 140 44 48 ];
+        %tmp.74 = 110;
+        %tmp.69 = newc %tmp.72 (%tmp.73, %tmp.74);
+        %tmp.75 = dup %tmp.68;
+        %tmp.76 = aputv %tmp.75 0 %tmp.69;
+        invoke %tmp.66 %tmp.67(%tmp.76);
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_135_38_141_8_stop:
+        goto @_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_135_15_141_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_135_15_141_8_if_end:
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_130_15_141_8_if_end:
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_127_8_141_8_if_end:
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_124_35_142_4_stop:
+    }
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc"; @line = 144; @symbol_functiondef = [cueFinish,144,20,29]; ]
+    protected
+    function cueFinish() {
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_144_32_153_4_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 145 8 ]
+        [ "_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_144_32_153_4_start" "_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_144_32_153_4_stop" ]
+        %power.1 = local;
+        symbol [ power %power.1 145 12 17 ];
+        symbol [ Config %tmp.2 145 20 26 ];
+        %tmp.2 = getv ? :Config;
+        symbol [ strength %tmp.3 145 27 35 ];
+        %tmp.3 = getv function %tmp.2 :strength;
+        %tmp.4 = invoke %tmp.2 %tmp.3();
+        lputv %power.1 %tmp.4;
+        symbol [ power %power.1 145 12 17 ];
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 146 8 ]
+        %tmp.5 = self;
+        symbol [ buzz %tmp.6 146 8 12 ];
+        %tmp.6 = getv function %tmp.5 :buzz;
+        %tmp.7 = newa 5;
+        symbol [ Attention %tmp.10 146 18 27 ];
+        %tmp.10 = getm $.Toybox.Attention;
+        symbol [ VibeProfile %tmp.11 146 28 39 ];
+        %tmp.11 = getv function ? %tmp.10 :VibeProfile;
+        %tmp.12 = lgetv %power.1;
+        symbol [ power %tmp.12 146 40 45 ];
+        %tmp.13 = 250;
+        %tmp.8 = newc %tmp.11 (%tmp.12, %tmp.13);
+        %tmp.14 = dup %tmp.7;
+        %tmp.15 = aputv %tmp.14 0 %tmp.8;
+        symbol [ Attention %tmp.18 147 18 27 ];
+        %tmp.18 = getm $.Toybox.Attention;
+        symbol [ VibeProfile %tmp.19 147 28 39 ];
+        %tmp.19 = getv function ? %tmp.18 :VibeProfile;
+        %tmp.20 = 0;
+        %tmp.21 = 130;
+        %tmp.16 = newc %tmp.19 (%tmp.20, %tmp.21);
+        %tmp.22 = dup %tmp.15;
+        %tmp.23 = aputv %tmp.22 1 %tmp.16;
+        symbol [ Attention %tmp.26 148 18 27 ];
+        %tmp.26 = getm $.Toybox.Attention;
+        symbol [ VibeProfile %tmp.27 148 28 39 ];
+        %tmp.27 = getv function ? %tmp.26 :VibeProfile;
+        %tmp.28 = lgetv %power.1;
+        symbol [ power %tmp.28 148 40 45 ];
+        %tmp.29 = 250;
+        %tmp.24 = newc %tmp.27 (%tmp.28, %tmp.29);
+        %tmp.30 = dup %tmp.23;
+        %tmp.31 = aputv %tmp.30 2 %tmp.24;
+        symbol [ Attention %tmp.34 149 18 27 ];
+        %tmp.34 = getm $.Toybox.Attention;
+        symbol [ VibeProfile %tmp.35 149 28 39 ];
+        %tmp.35 = getv function ? %tmp.34 :VibeProfile;
+        %tmp.36 = 0;
+        %tmp.37 = 130;
+        %tmp.32 = newc %tmp.35 (%tmp.36, %tmp.37);
+        %tmp.38 = dup %tmp.31;
+        %tmp.39 = aputv %tmp.38 3 %tmp.32;
+        symbol [ Attention %tmp.42 150 18 27 ];
+        %tmp.42 = getm $.Toybox.Attention;
+        symbol [ VibeProfile %tmp.43 150 28 39 ];
+        %tmp.43 = getv function ? %tmp.42 :VibeProfile;
+        %tmp.44 = lgetv %power.1;
+        symbol [ power %tmp.44 150 40 45 ];
+        %tmp.45 = 550;
+        %tmp.40 = newc %tmp.43 (%tmp.44, %tmp.45);
+        %tmp.46 = dup %tmp.39;
+        %tmp.47 = aputv %tmp.46 4 %tmp.40;
+        invoke %tmp.5 %tmp.6(%tmp.47);
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 151 8 ]
+        %tmp.48 = self;
+        symbol [ beep %tmp.49 151 8 12 ];
+        %tmp.49 = getv function %tmp.48 :beep;
+        invoke %tmp.48 %tmp.49();
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 152 8 ]
+        symbol [ WatchUi %tmp.50 152 8 15 ];
+        %tmp.50 = getm $.Toybox.WatchUi;
+        symbol [ requestUpdate %tmp.51 152 16 29 ];
+        %tmp.51 = getv function %tmp.50 :requestUpdate;
+        invoke %tmp.50 %tmp.51();
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_144_32_153_4_stop:
+    }
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc"; @line = 155; @symbol_functiondef = [buzz,155,20,24]; @symbol_param<0> = [profile,155,25,32]; ]
+    protected
+    function buzz(profile) {
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_155_34_164_4_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 156 8 ]
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_156_8_158_8_if_stmt:
+        symbol [ Attention %tmp.1 156 14 23 ];
+        %tmp.1 = getm $.Toybox.Attention;
+        %tmp.3 = const :vibrate;
+        symbol [ vibrate %tmp.3 156 29 36 const ];
+        %tmp.4 = canhazplz %tmp.1 %tmp.3;
+        %tmp.5 = not %tmp.4;
+        bf %tmp.5 @_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_156_8_158_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_156_8_158_8_if_true:
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_156_39_158_8_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 157 12 ]
+        ret ?;
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_156_39_158_8_stop:
+        goto @_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_156_8_158_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_156_8_158_8_if_end:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 160 8 ]
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_160_8_162_8_if_stmt:
+        symbol [ System %tmp.6 160 13 19 ];
+        %tmp.6 = getm $.Toybox.System;
+        symbol [ getDeviceSettings %tmp.7 160 20 37 ];
+        %tmp.7 = getv function %tmp.6 :getDeviceSettings;
+        %tmp.8 = invoke %tmp.6 %tmp.7();
+        symbol [ vibrateOn %tmp.9 160 40 49 ];
+        %tmp.9 = getv %tmp.8 :vibrateOn;
+        %tmp.10 = not %tmp.9;
+        bf %tmp.10 @_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_160_8_162_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_160_8_162_8_if_true:
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_160_51_162_8_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 161 12 ]
+        ret ?;
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_160_51_162_8_stop:
+        goto @_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_160_8_162_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_160_8_162_8_if_end:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 163 8 ]
+        symbol [ Attention %tmp.11 163 8 17 ];
+        %tmp.11 = getm $.Toybox.Attention;
+        symbol [ vibrate %tmp.12 163 18 25 ];
+        %tmp.12 = getv function %tmp.11 :vibrate;
+        %tmp.13 = lgetv %profile;
+        symbol [ profile %tmp.13 163 26 33 ];
+        invoke %tmp.11 %tmp.12(%tmp.13);
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_155_34_164_4_stop:
+    }
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc"; @line = 166; @symbol_functiondef = [beep,166,20,24]; ]
+    protected
+    function beep() {
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_166_27_177_4_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 167 8 ]
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_167_8_169_8_if_stmt:
+        symbol [ Config %tmp.2 167 13 19 ];
+        %tmp.2 = getv ? :Config;
+        symbol [ tones %tmp.3 167 20 25 ];
+        %tmp.3 = getv function %tmp.2 :tones;
+        %tmp.4 = invoke %tmp.2 %tmp.3();
+        %tmp.5 = not %tmp.4;
+        bf %tmp.5 @_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_167_8_169_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_167_8_169_8_if_true:
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_167_29_169_8_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 168 12 ]
+        ret ?;
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_167_29_169_8_stop:
+        goto @_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_167_8_169_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_167_8_169_8_if_end:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 170 8 ]
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_170_8_172_8_if_stmt:
+        symbol [ Attention %tmp.6 170 14 23 ];
+        %tmp.6 = getm $.Toybox.Attention;
+        %tmp.8 = const :playTone;
+        symbol [ playTone %tmp.8 170 29 37 const ];
+        %tmp.9 = canhazplz %tmp.6 %tmp.8;
+        %tmp.10 = not %tmp.9;
+        bf %tmp.10 @_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_170_8_172_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_170_8_172_8_if_true:
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_170_40_172_8_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 171 12 ]
+        ret ?;
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_170_40_172_8_stop:
+        goto @_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_170_8_172_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_170_8_172_8_if_end:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 173 8 ]
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_173_8_175_8_if_stmt:
+        symbol [ System %tmp.11 173 13 19 ];
+        %tmp.11 = getm $.Toybox.System;
+        symbol [ getDeviceSettings %tmp.12 173 20 37 ];
+        %tmp.12 = getv function %tmp.11 :getDeviceSettings;
+        %tmp.13 = invoke %tmp.11 %tmp.12();
+        symbol [ tonesOn %tmp.14 173 40 47 ];
+        %tmp.14 = getv %tmp.13 :tonesOn;
+        %tmp.15 = not %tmp.14;
+        bf %tmp.15 @_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_173_8_175_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_173_8_175_8_if_true:
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_173_49_175_8_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 174 12 ]
+        ret ?;
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_173_49_175_8_stop:
+        goto @_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_173_8_175_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_173_8_175_8_if_end:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 176 8 ]
+        symbol [ Attention %tmp.16 176 8 17 ];
+        %tmp.16 = getm $.Toybox.Attention;
+        symbol [ playTone %tmp.17 176 18 26 ];
+        %tmp.17 = getv function %tmp.16 :playTone;
+        symbol [ Attention %tmp.18 176 27 36 ];
+        %tmp.18 = getm $.Toybox.Attention;
+        symbol [ TONE_LOUD_BEEP %tmp.19 176 37 51 ];
+        %tmp.19 = getv %tmp.18 :TONE_LOUD_BEEP;
+        invoke %tmp.16 %tmp.17(%tmp.19);
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_166_27_177_4_stop:
+    }
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc"; @line = 181; @symbol_functiondef = [onUpdate,181,13,21]; @symbol_param<0> = [dc,181,22,24]; ]
+    function onUpdate(dc) {
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_181_26_207_4_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 182 8 ]
+        [ "_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_181_26_207_4_start" "_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_181_26_207_4_stop" ]
+        %width.1 = local;
+        symbol [ width %width.1 182 12 17 ];
+        %tmp.1 = lgetv %dc;
+        symbol [ dc %tmp.1 182 20 22 ];
+        symbol [ getWidth %tmp.2 182 23 31 ];
+        %tmp.2 = getv function %tmp.1 :getWidth;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        lputv %width.1 %tmp.3;
+        symbol [ width %width.1 182 12 17 ];
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 183 8 ]
+        [ "_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_181_26_207_4_start" "_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_181_26_207_4_stop" ]
+        %height.2 = local;
+        symbol [ height %height.2 183 12 18 ];
+        %tmp.4 = lgetv %dc;
+        symbol [ dc %tmp.4 183 21 23 ];
+        symbol [ getHeight %tmp.5 183 24 33 ];
+        %tmp.5 = getv function %tmp.4 :getHeight;
+        %tmp.6 = invoke %tmp.4 %tmp.5();
+        lputv %height.2 %tmp.6;
+        symbol [ height %height.2 183 12 18 ];
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 184 8 ]
+        [ "_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_181_26_207_4_start" "_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_181_26_207_4_stop" ]
+        %side.3 = local;
+        symbol [ side %side.3 184 12 16 ];
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_184_19_184_46_begin:
+        %tmp.7 = lgetv %width.1;
+        symbol [ width %tmp.7 184 20 25 ];
+        %tmp.8 = lgetv %height.2;
+        symbol [ height %tmp.8 184 28 34 ];
+        %tmp.9 = lt %tmp.7 %tmp.8;
+        bf %tmp.9 @_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_184_19_184_46_else_false;
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_184_19_184_46_true:
+        %tmp.10 = lgetv %width.1;
+        symbol [ width %tmp.10 184 38 43 ];
+        push %tmp.10;
+        goto @_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_184_19_184_46_end;
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_184_19_184_46_else_false:
+        %tmp.11 = lgetv %height.2;
+        symbol [ height %tmp.11 184 46 52 ];
+        push %tmp.11;
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_184_19_184_46_end:
+        %tmp.12 = phi [%tmp.9 @_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_184_19_184_46_begin] [%tmp.10 @_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_184_19_184_46_true] [%tmp.11 @_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_184_19_184_46_else_false] [%tmp.12 @_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_184_19_184_46_end];
+        lputv %side.3 %tmp.12;
+        symbol [ side %side.3 184 12 16 ];
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 185 8 ]
+        [ "_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_181_26_207_4_start" "_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_181_26_207_4_stop" ]
+        %cx.4 = local;
+        symbol [ cx %cx.4 185 12 14 ];
+        %tmp.13 = lgetv %side.3;
+        symbol [ side %tmp.13 185 17 21 ];
+        %tmp.14 = 2;
+        %tmp.15 = div %tmp.13 %tmp.14;
+        lputv %cx.4 %tmp.15;
+        symbol [ cx %cx.4 185 12 14 ];
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 186 8 ]
+        [ "_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_181_26_207_4_start" "_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_181_26_207_4_stop" ]
+        %cy.5 = local;
+        symbol [ cy %cy.5 186 12 14 ];
+        %tmp.16 = lgetv %side.3;
+        symbol [ side %tmp.16 186 17 21 ];
+        %tmp.17 = 2;
+        %tmp.18 = div %tmp.16 %tmp.17;
+        lputv %cy.5 %tmp.18;
+        symbol [ cy %cy.5 186 12 14 ];
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 189 8 ]
+        [ "_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_181_26_207_4_start" "_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_181_26_207_4_stop" ]
+        %tx.6 = local;
+        symbol [ tx %tx.6 189 12 14 ];
+        %tmp.19 = lgetv %cx.4;
+        symbol [ cx %tmp.19 189 17 19 ];
+        %tmp.20 = lgetv %side.3;
+        symbol [ side %tmp.20 189 22 26 ];
+        %tmp.21 = 4;
+        %tmp.22 = mul %tmp.20 %tmp.21;
+        %tmp.23 = 100;
+        %tmp.24 = div %tmp.22 %tmp.23;
+        %tmp.25 = sub %tmp.19 %tmp.24;
+        lputv %tx.6 %tmp.25;
+        symbol [ tx %tx.6 189 12 14 ];
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 190 8 ]
+        [ "_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_181_26_207_4_start" "_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_181_26_207_4_stop" ]
+        %centre.7 = local;
+        symbol [ centre %centre.7 190 12 18 ];
+        symbol [ Graphics %tmp.26 190 21 29 ];
+        %tmp.26 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.27 190 30 49 ];
+        %tmp.27 = getv %tmp.26 :TEXT_JUSTIFY_CENTER;
+        symbol [ Graphics %tmp.28 190 52 60 ];
+        %tmp.28 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_VCENTER %tmp.29 190 61 81 ];
+        %tmp.29 = getv %tmp.28 :TEXT_JUSTIFY_VCENTER;
+        %tmp.30 = bitor %tmp.27 %tmp.29;
+        lputv %centre.7 %tmp.30;
+        symbol [ centre %centre.7 190 12 18 ];
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 192 8 ]
+        %tmp.31 = lgetv %dc;
+        symbol [ dc %tmp.31 192 8 10 ];
+        symbol [ setColor %tmp.32 192 11 19 ];
+        %tmp.32 = getv function %tmp.31 :setColor;
+        symbol [ Graphics %tmp.33 192 20 28 ];
+        %tmp.33 = getm $.Toybox.Graphics;
+        symbol [ COLOR_WHITE %tmp.34 192 29 40 ];
+        %tmp.34 = getv %tmp.33 :COLOR_WHITE;
+        symbol [ Graphics %tmp.35 192 42 50 ];
+        %tmp.35 = getm $.Toybox.Graphics;
+        symbol [ COLOR_BLACK %tmp.36 192 51 62 ];
+        %tmp.36 = getv %tmp.35 :COLOR_BLACK;
+        invoke %tmp.31 %tmp.32(%tmp.34, %tmp.36);
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 193 8 ]
+        %tmp.37 = lgetv %dc;
+        symbol [ dc %tmp.37 193 8 10 ];
+        symbol [ clear %tmp.38 193 11 16 ];
+        %tmp.38 = getv function %tmp.37 :clear;
+        invoke %tmp.37 %tmp.38();
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 195 8 ]
+        %tmp.39 = self;
+        symbol [ drawLevelBar %tmp.40 195 8 20 ];
+        %tmp.40 = getv function %tmp.39 :drawLevelBar;
+        %tmp.41 = lgetv %dc;
+        symbol [ dc %tmp.41 195 21 23 ];
+        %tmp.42 = lgetv %side.3;
+        symbol [ side %tmp.42 195 25 29 ];
+        %tmp.43 = lgetv %cy.5;
+        symbol [ cy %tmp.43 195 31 33 ];
+        invoke %tmp.39 %tmp.40(%tmp.41, %tmp.42, %tmp.43);
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 197 8 ]
+        [ "_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_181_26_207_4_start" "_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_181_26_207_4_stop" ]
+        %done.8 = local;
+        symbol [ done %done.8 197 12 16 ];
+        symbol [ mSession %tmp.45 197 19 27 ];
+        %tmp.45 = getv ? :mSession;
+        symbol [ isDone %tmp.46 197 28 34 ];
+        %tmp.46 = getv function %tmp.45 :isDone;
+        %tmp.47 = invoke %tmp.45 %tmp.46();
+        lputv %done.8 %tmp.47;
+        symbol [ done %done.8 197 12 16 ];
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 198 8 ]
+        [ "_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_181_26_207_4_start" "_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_181_26_207_4_stop" ]
+        %big.9 = local;
+        symbol [ big %big.9 198 12 15 ];
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_198_18_198_89_begin:
+        %tmp.48 = lgetv %done.8;
+        symbol [ done %tmp.48 198 18 22 ];
+        bf %tmp.48 @_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_198_18_198_89_else_false;
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_198_18_198_89_true:
+        symbol [ mSession %tmp.50 198 25 33 ];
+        %tmp.50 = getv ? :mSession;
+        symbol [ cycles %tmp.51 198 34 40 ];
+        %tmp.51 = getv function %tmp.50 :cycles;
+        %tmp.52 = invoke %tmp.50 %tmp.51();
+        symbol [ toString %tmp.53 198 43 51 ];
+        %tmp.53 = getv function %tmp.52 :toString;
+        %tmp.54 = invoke %tmp.52 %tmp.53();
+        push %tmp.54;
+        goto @_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_198_18_198_89_end;
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_198_18_198_89_else_false:
+        symbol [ mSession %tmp.56 198 56 64 ];
+        %tmp.56 = getv ? :mSession;
+        symbol [ remainingSec %tmp.57 198 65 77 ];
+        %tmp.57 = getv function %tmp.56 :remainingSec;
+        %tmp.58 = invoke %tmp.56 %tmp.57();
+        symbol [ toString %tmp.59 198 80 88 ];
+        %tmp.59 = getv function %tmp.58 :toString;
+        %tmp.60 = invoke %tmp.58 %tmp.59();
+        push %tmp.60;
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_198_18_198_89_end:
+        %tmp.61 = phi [%tmp.48 @_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_198_18_198_89_begin] [%tmp.54 @_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_198_18_198_89_true] [%tmp.60 @_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_198_18_198_89_else_false] [%tmp.61 @_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_198_18_198_89_end];
+        lputv %big.9 %tmp.61;
+        symbol [ big %big.9 198 12 15 ];
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 199 8 ]
+        %tmp.62 = lgetv %dc;
+        symbol [ dc %tmp.62 199 8 10 ];
+        symbol [ drawText %tmp.63 199 11 19 ];
+        %tmp.63 = getv function %tmp.62 :drawText;
+        %tmp.64 = lgetv %tx.6;
+        symbol [ tx %tmp.64 199 20 22 ];
+        %tmp.65 = lgetv %cy.5;
+        symbol [ cy %tmp.65 199 24 26 ];
+        %tmp.66 = lgetv %side.3;
+        symbol [ side %tmp.66 199 29 33 ];
+        %tmp.67 = 3;
+        %tmp.68 = mul %tmp.66 %tmp.67;
+        %tmp.69 = 100;
+        %tmp.70 = div %tmp.68 %tmp.69;
+        %tmp.71 = sub %tmp.65 %tmp.70;
+        symbol [ Graphics %tmp.72 199 45 53 ];
+        %tmp.72 = getm $.Toybox.Graphics;
+        symbol [ FONT_NUMBER_MEDIUM %tmp.73 199 54 72 ];
+        %tmp.73 = getv %tmp.72 :FONT_NUMBER_MEDIUM;
+        %tmp.74 = lgetv %big.9;
+        symbol [ big %tmp.74 199 74 77 ];
+        %tmp.75 = lgetv %centre.7;
+        symbol [ centre %tmp.75 199 79 85 ];
+        invoke %tmp.62 %tmp.63(%tmp.64, %tmp.71, %tmp.73, %tmp.74, %tmp.75);
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 201 8 ]
+        %tmp.76 = lgetv %dc;
+        symbol [ dc %tmp.76 201 8 10 ];
+        symbol [ drawText %tmp.77 201 11 19 ];
+        %tmp.77 = getv function %tmp.76 :drawText;
+        %tmp.78 = lgetv %tx.6;
+        symbol [ tx %tmp.78 201 20 22 ];
+        %tmp.79 = lgetv %cy.5;
+        symbol [ cy %tmp.79 201 24 26 ];
+        %tmp.80 = lgetv %side.3;
+        symbol [ side %tmp.80 201 29 33 ];
+        %tmp.81 = 22;
+        %tmp.82 = mul %tmp.80 %tmp.81;
+        %tmp.83 = 100;
+        %tmp.84 = div %tmp.82 %tmp.83;
+        %tmp.85 = add %tmp.79 %tmp.84;
+        symbol [ Graphics %tmp.86 201 46 54 ];
+        %tmp.86 = getm $.Toybox.Graphics;
+        symbol [ FONT_SMALL %tmp.87 201 55 65 ];
+        %tmp.87 = getv %tmp.86 :FONT_SMALL;
+        %tmp.88 = self;
+        symbol [ stateLabel %tmp.89 201 67 77 ];
+        %tmp.89 = getv function %tmp.88 :stateLabel;
+        %tmp.90 = invoke %tmp.88 %tmp.89();
+        %tmp.91 = lgetv %centre.7;
+        symbol [ centre %tmp.91 201 81 87 ];
+        invoke %tmp.76 %tmp.77(%tmp.78, %tmp.85, %tmp.87, %tmp.90, %tmp.91);
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 203 8 ]
+        [ "_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_181_26_207_4_start" "_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_181_26_207_4_stop" ]
+        %footer.10 = local;
+        symbol [ footer %footer.10 203 12 18 ];
+        %tmp.92 = self;
+        symbol [ footerText %tmp.93 203 21 31 ];
+        %tmp.93 = getv function %tmp.92 :footerText;
+        %tmp.94 = invoke %tmp.92 %tmp.93();
+        lputv %footer.10 %tmp.94;
+        symbol [ footer %footer.10 203 12 18 ];
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 204 8 ]
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_204_8_206_8_if_stmt:
+        %tmp.95 = lgetv %footer.10;
+        symbol [ footer %tmp.95 204 12 18 ];
+        %tmp.96 = null;
+        %tmp.97 = ne %tmp.95 %tmp.96;
+        bf %tmp.97 @_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_204_8_206_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_204_8_206_8_if_true:
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_204_28_206_8_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 205 12 ]
+        %tmp.98 = lgetv %dc;
+        symbol [ dc %tmp.98 205 12 14 ];
+        symbol [ drawText %tmp.99 205 15 23 ];
+        %tmp.99 = getv function %tmp.98 :drawText;
+        %tmp.100 = lgetv %tx.6;
+        symbol [ tx %tmp.100 205 24 26 ];
+        %tmp.101 = lgetv %cy.5;
+        symbol [ cy %tmp.101 205 28 30 ];
+        %tmp.102 = lgetv %side.3;
+        symbol [ side %tmp.102 205 33 37 ];
+        %tmp.103 = 38;
+        %tmp.104 = mul %tmp.102 %tmp.103;
+        %tmp.105 = 100;
+        %tmp.106 = div %tmp.104 %tmp.105;
+        %tmp.107 = add %tmp.101 %tmp.106;
+        symbol [ Graphics %tmp.108 205 50 58 ];
+        %tmp.108 = getm $.Toybox.Graphics;
+        symbol [ FONT_TINY %tmp.109 205 59 68 ];
+        %tmp.109 = getv %tmp.108 :FONT_TINY;
+        %tmp.110 = lgetv %footer.10;
+        symbol [ footer %tmp.110 205 70 76 ];
+        %tmp.111 = as %tmp.110 { (!Null) };
+        %tmp.112 = lgetv %centre.7;
+        symbol [ centre %tmp.112 205 78 84 ];
+        invoke %tmp.98 %tmp.99(%tmp.100, %tmp.107, %tmp.109, %tmp.111, %tmp.112);
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_204_28_206_8_stop:
+        goto @_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_204_8_206_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_204_8_206_8_if_end:
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_181_26_207_4_stop:
+    }
+    //! A column on the left edge that fills as you breathe in and empties as you
+    //! breathe out, so the phase is readable from the corner of your eye.
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc"; @line = 211; @symbol_functiondef = [drawLevelBar,211,20,32]; @symbol_param<0> = [dc,211,33,35]; @symbol_param<1> = [side,211,37,41]; @symbol_param<2> = [cy,211,43,45]; ]
+    protected
+    function drawLevelBar(dc, side, cy) {
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_211_47_227_4_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 212 8 ]
+        [ "_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_211_47_227_4_start" "_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_211_47_227_4_stop" ]
+        %barX.1 = local;
+        symbol [ barX %barX.1 212 12 16 ];
+        %tmp.1 = lgetv %side;
+        symbol [ side %tmp.1 212 19 23 ];
+        %tmp.2 = 4;
+        %tmp.3 = mul %tmp.1 %tmp.2;
+        %tmp.4 = 100;
+        %tmp.5 = div %tmp.3 %tmp.4;
+        lputv %barX.1 %tmp.5;
+        symbol [ barX %barX.1 212 12 16 ];
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 213 8 ]
+        [ "_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_211_47_227_4_start" "_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_211_47_227_4_stop" ]
+        %barW.2 = local;
+        symbol [ barW %barW.2 213 12 16 ];
+        %tmp.6 = lgetv %side;
+        symbol [ side %tmp.6 213 19 23 ];
+        %tmp.7 = 6;
+        %tmp.8 = mul %tmp.6 %tmp.7;
+        %tmp.9 = 100;
+        %tmp.10 = div %tmp.8 %tmp.9;
+        lputv %barW.2 %tmp.10;
+        symbol [ barW %barW.2 213 12 16 ];
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 214 8 ]
+        [ "_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_211_47_227_4_start" "_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_211_47_227_4_stop" ]
+        %barH.3 = local;
+        symbol [ barH %barH.3 214 12 16 ];
+        %tmp.11 = lgetv %side;
+        symbol [ side %tmp.11 214 19 23 ];
+        %tmp.12 = 58;
+        %tmp.13 = mul %tmp.11 %tmp.12;
+        %tmp.14 = 100;
+        %tmp.15 = div %tmp.13 %tmp.14;
+        lputv %barH.3 %tmp.15;
+        symbol [ barH %barH.3 214 12 16 ];
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 215 8 ]
+        [ "_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_211_47_227_4_start" "_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_211_47_227_4_stop" ]
+        %barY.4 = local;
+        symbol [ barY %barY.4 215 12 16 ];
+        %tmp.16 = lgetv %cy;
+        symbol [ cy %tmp.16 215 19 21 ];
+        %tmp.17 = lgetv %barH.3;
+        symbol [ barH %tmp.17 215 24 28 ];
+        %tmp.18 = 2;
+        %tmp.19 = div %tmp.17 %tmp.18;
+        %tmp.20 = sub %tmp.16 %tmp.19;
+        lputv %barY.4 %tmp.20;
+        symbol [ barY %barY.4 215 12 16 ];
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 217 8 ]
+        %tmp.21 = lgetv %dc;
+        symbol [ dc %tmp.21 217 8 10 ];
+        symbol [ setPenWidth %tmp.22 217 11 22 ];
+        %tmp.22 = getv function %tmp.21 :setPenWidth;
+        %tmp.23 = 1;
+        invoke %tmp.21 %tmp.22(%tmp.23);
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 218 8 ]
+        %tmp.24 = lgetv %dc;
+        symbol [ dc %tmp.24 218 8 10 ];
+        symbol [ drawRectangle %tmp.25 218 11 24 ];
+        %tmp.25 = getv function %tmp.24 :drawRectangle;
+        %tmp.26 = lgetv %barX.1;
+        symbol [ barX %tmp.26 218 25 29 ];
+        %tmp.27 = lgetv %barY.4;
+        symbol [ barY %tmp.27 218 31 35 ];
+        %tmp.28 = lgetv %barW.2;
+        symbol [ barW %tmp.28 218 37 41 ];
+        %tmp.29 = lgetv %barH.3;
+        symbol [ barH %tmp.29 218 43 47 ];
+        invoke %tmp.24 %tmp.25(%tmp.26, %tmp.27, %tmp.28, %tmp.29);
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 220 8 ]
+        [ "_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_211_47_227_4_start" "_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_211_47_227_4_stop" ]
+        %filled.5 = local;
+        symbol [ filled %filled.5 220 12 18 ];
+        %tmp.30 = lgetv %barH.3;
+        symbol [ barH %tmp.30 220 22 26 ];
+        symbol [ mSession %tmp.32 220 29 37 ];
+        %tmp.32 = getv ? :mSession;
+        symbol [ level %tmp.33 220 38 43 ];
+        %tmp.33 = getv function %tmp.32 :level;
+        %tmp.34 = invoke %tmp.32 %tmp.33();
+        %tmp.35 = mul %tmp.30 %tmp.34;
+        symbol [ toNumber %tmp.36 220 47 55 ];
+        %tmp.36 = getv function %tmp.35 :toNumber;
+        %tmp.37 = invoke %tmp.35 %tmp.36();
+        lputv %filled.5 %tmp.37;
+        symbol [ filled %filled.5 220 12 18 ];
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 221 8 ]
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_221_8_226_8_if_stmt:
+        %tmp.38 = lgetv %filled.5;
+        symbol [ filled %tmp.38 221 12 18 ];
+        %tmp.39 = 0;
+        %tmp.40 = gt %tmp.38 %tmp.39;
+        bf %tmp.40 @_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_221_8_226_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_221_8_226_8_if_true:
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_221_24_226_8_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 222 12 ]
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_222_12_224_12_if_stmt:
+        %tmp.41 = lgetv %filled.5;
+        symbol [ filled %tmp.41 222 16 22 ];
+        %tmp.42 = lgetv %barH.3;
+        symbol [ barH %tmp.42 222 25 29 ];
+        %tmp.43 = gt %tmp.41 %tmp.42;
+        bf %tmp.43 @_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_222_12_224_12_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_222_12_224_12_if_true:
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_222_31_224_12_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 223 16 ]
+        %tmp.44 = lgetv %barH.3;
+        symbol [ barH %tmp.44 223 25 29 ];
+        lputv %filled.5 %tmp.44;
+        symbol [ filled %filled.5 223 16 22 ];
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_222_31_224_12_stop:
+        goto @_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_222_12_224_12_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_222_12_224_12_if_end:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 225 12 ]
+        %tmp.45 = lgetv %dc;
+        symbol [ dc %tmp.45 225 12 14 ];
+        symbol [ fillRectangle %tmp.46 225 15 28 ];
+        %tmp.46 = getv function %tmp.45 :fillRectangle;
+        %tmp.47 = lgetv %barX.1;
+        symbol [ barX %tmp.47 225 29 33 ];
+        %tmp.48 = lgetv %barY.4;
+        symbol [ barY %tmp.48 225 35 39 ];
+        %tmp.49 = lgetv %barH.3;
+        symbol [ barH %tmp.49 225 42 46 ];
+        %tmp.50 = add %tmp.48 %tmp.49;
+        %tmp.51 = lgetv %filled.5;
+        symbol [ filled %tmp.51 225 49 55 ];
+        %tmp.52 = sub %tmp.50 %tmp.51;
+        %tmp.53 = lgetv %barW.2;
+        symbol [ barW %tmp.53 225 57 61 ];
+        %tmp.54 = lgetv %filled.5;
+        symbol [ filled %tmp.54 225 63 69 ];
+        invoke %tmp.45 %tmp.46(%tmp.47, %tmp.52, %tmp.53, %tmp.54);
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_221_24_226_8_stop:
+        goto @_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_221_8_226_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_221_8_226_8_if_end:
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_211_47_227_4_stop:
+    }
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc"; @line = 229; @symbol_functiondef = [stateLabel,229,20,30]; ]
+    protected
+    function stateLabel() {
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_229_33_244_4_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 230 8 ]
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_230_8_232_8_if_stmt:
+        symbol [ mSession %tmp.2 230 12 20 ];
+        %tmp.2 = getv ? :mSession;
+        symbol [ isDone %tmp.3 230 21 27 ];
+        %tmp.3 = getv function %tmp.2 :isDone;
+        %tmp.4 = invoke %tmp.2 %tmp.3();
+        bf %tmp.4 @_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_230_8_232_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_230_8_232_8_if_true:
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_230_31_232_8_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 231 12 ]
+        symbol [ mTxtDone %tmp.6 231 19 27 ];
+        %tmp.6 = getv ? :mTxtDone;
+        ret %tmp.6;
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_230_31_232_8_stop:
+        goto @_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_230_8_232_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_230_8_232_8_if_end:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 233 8 ]
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_233_8_235_8_if_stmt:
+        symbol [ mSession %tmp.8 233 13 21 ];
+        %tmp.8 = getv ? :mSession;
+        symbol [ isRunning %tmp.9 233 22 31 ];
+        %tmp.9 = getv function %tmp.8 :isRunning;
+        %tmp.10 = invoke %tmp.8 %tmp.9();
+        %tmp.11 = not %tmp.10;
+        bf %tmp.11 @_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_233_8_235_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_233_8_235_8_if_true:
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_233_35_235_8_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 234 12 ]
+        symbol [ mTxtPaused %tmp.13 234 19 29 ];
+        %tmp.13 = getv ? :mTxtPaused;
+        ret %tmp.13;
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_233_35_235_8_stop:
+        goto @_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_233_8_235_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_233_8_235_8_if_end:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 236 8 ]
+        [ "_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_229_33_244_4_start" "_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_229_33_244_4_stop" ]
+        %kind.1 = local;
+        symbol [ kind %kind.1 236 12 16 ];
+        symbol [ mSession %tmp.15 236 19 27 ];
+        %tmp.15 = getv ? :mSession;
+        symbol [ phaseKind %tmp.16 236 28 37 ];
+        %tmp.16 = getv function %tmp.15 :phaseKind;
+        %tmp.17 = invoke %tmp.15 %tmp.16();
+        lputv %kind.1 %tmp.17;
+        symbol [ kind %kind.1 236 12 16 ];
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 237 8 ]
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_237_8_239_8_if_stmt:
+        %tmp.18 = lgetv %kind.1;
+        symbol [ kind %tmp.18 237 12 16 ];
+        symbol [ PHASE_INHALE %tmp.20 237 20 32 ];
+        %tmp.20 = getv ? :PHASE_INHALE;
+        %tmp.21 = eq %tmp.18 %tmp.20;
+        bf %tmp.21 @_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_237_8_239_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_237_8_239_8_if_true:
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_237_34_239_8_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 238 12 ]
+        symbol [ mTxtInhale %tmp.23 238 19 29 ];
+        %tmp.23 = getv ? :mTxtInhale;
+        ret %tmp.23;
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_237_34_239_8_stop:
+        goto @_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_237_8_239_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_237_8_239_8_if_end:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 240 8 ]
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_240_8_242_8_if_stmt:
+        %tmp.24 = lgetv %kind.1;
+        symbol [ kind %tmp.24 240 12 16 ];
+        symbol [ PHASE_EXHALE %tmp.26 240 20 32 ];
+        %tmp.26 = getv ? :PHASE_EXHALE;
+        %tmp.27 = eq %tmp.24 %tmp.26;
+        bf %tmp.27 @_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_240_8_242_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_240_8_242_8_if_true:
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_240_34_242_8_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 241 12 ]
+        symbol [ mTxtExhale %tmp.29 241 19 29 ];
+        %tmp.29 = getv ? :mTxtExhale;
+        ret %tmp.29;
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_240_34_242_8_stop:
+        goto @_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_240_8_242_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_240_8_242_8_if_end:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 243 8 ]
+        symbol [ mTxtHold %tmp.31 243 15 23 ];
+        %tmp.31 = getv ? :mTxtHold;
+        ret %tmp.31;
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_229_33_244_4_stop:
+    }
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc"; @line = 246; @symbol_functiondef = [footerText,246,20,30]; ]
+    protected
+    function footerText() {
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_246_33_255_4_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 247 8 ]
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_247_8_249_8_if_stmt:
+        symbol [ mVibeOff %tmp.2 247 12 20 ];
+        %tmp.2 = getv ? :mVibeOff;
+        bf %tmp.2 @_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_247_8_249_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_247_8_249_8_if_true:
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_247_22_249_8_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 248 12 ]
+        symbol [ mTxtNoVibe %tmp.4 248 19 29 ];
+        %tmp.4 = getv ? :mTxtNoVibe;
+        ret %tmp.4;
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_247_22_249_8_stop:
+        goto @_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_247_8_249_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_247_8_249_8_if_end:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 250 8 ]
+        [ "_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_246_33_255_4_start" "_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_246_33_255_4_stop" ]
+        %left.1 = local;
+        symbol [ left %left.1 250 12 16 ];
+        symbol [ mSession %tmp.6 250 19 27 ];
+        %tmp.6 = getv ? :mSession;
+        symbol [ sessionRemainingSec %tmp.7 250 28 47 ];
+        %tmp.7 = getv function %tmp.6 :sessionRemainingSec;
+        %tmp.8 = invoke %tmp.6 %tmp.7();
+        lputv %left.1 %tmp.8;
+        symbol [ left %left.1 250 12 16 ];
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 251 8 ]
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_251_8_253_8_if_stmt:
+        %tmp.9 = lgetv %left.1;
+        symbol [ left %tmp.9 251 12 16 ];
+        %tmp.10 = null;
+        %tmp.11 = eq %tmp.9 %tmp.10;
+        bf %tmp.11 @_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_251_8_253_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_251_8_253_8_if_true:
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_251_26_253_8_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 252 12 ]
+        %tmp.12 = null;
+        ret %tmp.12;
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_251_26_253_8_stop:
+        goto @_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_251_8_253_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_251_8_253_8_if_end:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 254 8 ]
+        symbol [ Fmt %tmp.14 254 15 18 ];
+        %tmp.14 = getv ? :Fmt;
+        symbol [ clock %tmp.15 254 19 24 ];
+        %tmp.15 = getv function %tmp.14 :clock;
+        %tmp.16 = lgetv %left.1;
+        symbol [ left %tmp.16 254 25 29 ];
+        %tmp.17 = invoke %tmp.14 %tmp.15(%tmp.16);
+        ret %tmp.17;
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_246_33_255_4_stop:
+    }
+}
+[ @file = "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc"; @line = 258; @symbol_classdef = [BreathDelegate,258,6,20]; @symbol_extends<0> = [WatchUi,258,29,36]; @symbol_extends<1> = [BehaviorDelegate,258,37,53]; ]
+class BreathDelegate extends WatchUi.BehaviorDelegate {
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc"; @line = 258; ]
+    <init> {
+    }
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc"; @line = 258; ]
+    static
+    <init> {
+    }
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc"; @line = 260; @position = 15; @symbol_vardef = [mView,260,15,20]; ]
+    protected
+    var mView;
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc"; @line = 262; @symbol_functiondef = [initialize,262,13,23]; @symbol_param<0> = [view,262,24,28]; ]
+    function initialize(view) as Void {
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_262_30_265_4_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 263 8 ]
+        symbol [ BehaviorDelegate %tmp.2 263 8 24 ];
+        %tmp.2 = getv ? :BehaviorDelegate;
+        symbol [ initialize %tmp.3 263 25 35 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 264 8 ]
+        %tmp.4 = lgetv %view;
+        symbol [ view %tmp.4 264 16 20 ];
+        symbol [ mView ? 264 8 13 ];
+        putv self :mView %tmp.4;
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_262_30_265_4_stop:
+    }
+    //! GPS button: pause / resume, or restart a finished session.
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc"; @line = 268; @symbol_functiondef = [onSelect,268,13,21]; ]
+    function onSelect() {
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_268_24_271_4_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 269 8 ]
+        symbol [ mView %tmp.2 269 8 13 ];
+        %tmp.2 = getv ? :mView;
+        symbol [ togglePause %tmp.3 269 14 25 ];
+        %tmp.3 = getv function %tmp.2 :togglePause;
+        invoke %tmp.2 %tmp.3();
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 270 8 ]
+        %tmp.4 = true;
+        ret %tmp.4;
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_268_24_271_4_stop:
+    }
+    //! BACK button: end the session and return to the start screen.
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc"; @line = 274; @symbol_functiondef = [onBack,274,13,19]; ]
+    function onBack() {
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_274_22_278_4_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 275 8 ]
+        symbol [ mView %tmp.2 275 8 13 ];
+        %tmp.2 = getv ? :mView;
+        symbol [ stopSession %tmp.3 275 14 25 ];
+        %tmp.3 = getv function %tmp.2 :stopSession;
+        invoke %tmp.2 %tmp.3();
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 276 8 ]
+        symbol [ WatchUi %tmp.4 276 8 15 ];
+        %tmp.4 = getm $.Toybox.WatchUi;
+        symbol [ popView %tmp.5 276 16 23 ];
+        %tmp.5 = getv function %tmp.4 :popView;
+        symbol [ WatchUi %tmp.6 276 24 31 ];
+        %tmp.6 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_IMMEDIATE %tmp.7 276 32 47 ];
+        %tmp.7 = getv %tmp.6 :SLIDE_IMMEDIATE;
+        invoke %tmp.4 %tmp.5(%tmp.7);
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 277 8 ]
+        %tmp.8 = true;
+        ret %tmp.8;
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_274_22_278_4_stop:
+    }
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc"; @line = 280; @symbol_functiondef = [onMenu,280,13,19]; ]
+    function onMenu() {
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_280_22_282_4_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 281 8 ]
+        %tmp.1 = true;
+        ret %tmp.1;
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_280_22_282_4_stop:
+    }
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc"; @line = 284; @symbol_functiondef = [onNextPage,284,13,23]; ]
+    function onNextPage() {
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_284_26_286_4_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 285 8 ]
+        %tmp.1 = true;
+        ret %tmp.1;
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_284_26_286_4_stop:
+    }
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc"; @line = 288; @symbol_functiondef = [onPreviousPage,288,13,27]; ]
+    function onPreviousPage() {
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_288_30_290_4_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" 289 8 ]
+        %tmp.1 = true;
+        ret %tmp.1;
+_Users_daniel_Downloads_projects_Breathe_source_BreathView_mc_288_30_290_4_stop:
+    }
+}
+[ @file = "/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc"; @line = 1; ]
+<init> {
+}

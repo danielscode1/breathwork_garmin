@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<strings>
+    <string id="AppName">Breathe</string>
+
+    <!-- Menu -->
+    <string id="MenuStart">Start</string>
+    <string id="MenuMode">Pattern</string>
+    <string id="MenuInhale">Inhale</string>
+    <string id="MenuHoldFull">Hold (full)</string>
+    <string id="MenuExhale">Exhale</string>
+    <string id="MenuHoldEmpty">Hold (empty)</string>
+    <string id="MenuLength">Session</string>
+    <string id="MenuVibeHold">Buzz on hold</string>
+    <string id="MenuStrength">Buzz strength</string>
+    <string id="MenuTones">Beep too</string>
+
+    <!-- Values -->
+    <string id="ModeBox">Box</string>
+    <string id="ModeEven">Even</string>
+    <string id="Unlimited">Open ended</string>
+    <string id="UnitSec">s</string>
+    <string id="UnitMin">min</string>
+
+    <!-- Start screen hints (Instinct 2 button names) -->
+    <string id="HintStart">GPS = start</string>
+    <string id="HintSetup">DOWN = setup</string>
+
+    <!-- Session screen -->
+    <string id="PhaseInhale">INHALE</string>
+    <string id="PhaseHold">HOLD</string>
+    <string id="PhaseExhale">EXHALE</string>
+    <string id="StatePaused">PAUSED</string>
+    <string id="StateDone">DONE</string>
+    <string id="WarnNoVibe">BUZZ OFF</string>
+</strings>

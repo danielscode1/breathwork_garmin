@@ -1,0 +1,306 @@
+[ @file = "/Users/daniel/Downloads/projects/Breathe/source/Fmt.mc"; @line = 1; @symbol_importdef<0> = [Toybox,1,7,13]; @symbol_importdef<1> = [Lang,1,14,18]; ]
+import Toybox.Lang;
+[ @file = "/Users/daniel/Downloads/projects/Breathe/source/Fmt.mc"; @line = 2; @symbol_importdef<0> = [Toybox,2,7,13]; @symbol_importdef<1> = [WatchUi,2,14,21]; ]
+import Toybox.WatchUi;
+//! Small text helpers shared by the home screen and the menus.
+[ @file = "/Users/daniel/Downloads/projects/Breathe/source/Fmt.mc"; @line = 5; @symbol_moduledef = [Fmt,5,7,10]; ]
+module Fmt {
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/Fmt.mc"; @line = 5; ]
+    <init> {
+    }
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/Fmt.mc"; @line = 7; @symbol_functiondef = [pattern,7,13,20]; ]
+    function pattern() {
+_Users_daniel_Downloads_projects_Breathe_source_Fmt_mc_7_23_13_4_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/Fmt.mc" 8 8 ]
+_Users_daniel_Downloads_projects_Breathe_source_Fmt_mc_8_8_10_8_if_stmt:
+        symbol [ Config %tmp.2 8 12 18 ];
+        %tmp.2 = getv ? :Config;
+        symbol [ mode %tmp.3 8 19 23 ];
+        %tmp.3 = getv function %tmp.2 :mode;
+        %tmp.4 = invoke %tmp.2 %tmp.3();
+        symbol [ Config %tmp.6 8 29 35 ];
+        %tmp.6 = getv ? :Config;
+        symbol [ MODE_EVEN %tmp.7 8 36 45 ];
+        %tmp.7 = getv %tmp.6 :MODE_EVEN;
+        %tmp.8 = eq %tmp.4 %tmp.7;
+        bf %tmp.8 @_Users_daniel_Downloads_projects_Breathe_source_Fmt_mc_8_8_10_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_Fmt_mc_8_8_10_8_if_true:
+_Users_daniel_Downloads_projects_Breathe_source_Fmt_mc_8_47_10_8_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/Fmt.mc" 9 12 ]
+        symbol [ Config %tmp.10 9 19 25 ];
+        %tmp.10 = getv ? :Config;
+        symbol [ inhale %tmp.11 9 26 32 ];
+        %tmp.11 = getv function %tmp.10 :inhale;
+        %tmp.12 = invoke %tmp.10 %tmp.11();
+        symbol [ toString %tmp.13 9 35 43 ];
+        %tmp.13 = getv function %tmp.12 :toString;
+        %tmp.14 = invoke %tmp.12 %tmp.13();
+        %tmp.15 = ":";
+        %tmp.16 = add %tmp.14 %tmp.15;
+        symbol [ Config %tmp.18 9 54 60 ];
+        %tmp.18 = getv ? :Config;
+        symbol [ exhale %tmp.19 9 61 67 ];
+        %tmp.19 = getv function %tmp.18 :exhale;
+        %tmp.20 = invoke %tmp.18 %tmp.19();
+        symbol [ toString %tmp.21 9 70 78 ];
+        %tmp.21 = getv function %tmp.20 :toString;
+        %tmp.22 = invoke %tmp.20 %tmp.21();
+        %tmp.23 = add %tmp.16 %tmp.22;
+        ret %tmp.23;
+_Users_daniel_Downloads_projects_Breathe_source_Fmt_mc_8_47_10_8_stop:
+        goto @_Users_daniel_Downloads_projects_Breathe_source_Fmt_mc_8_8_10_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_Fmt_mc_8_8_10_8_if_end:
+[ "/Users/daniel/Downloads/projects/Breathe/source/Fmt.mc" 11 8 ]
+        symbol [ Config %tmp.25 11 15 21 ];
+        %tmp.25 = getv ? :Config;
+        symbol [ inhale %tmp.26 11 22 28 ];
+        %tmp.26 = getv function %tmp.25 :inhale;
+        %tmp.27 = invoke %tmp.25 %tmp.26();
+        symbol [ toString %tmp.28 11 31 39 ];
+        %tmp.28 = getv function %tmp.27 :toString;
+        %tmp.29 = invoke %tmp.27 %tmp.28();
+        %tmp.30 = "-";
+        %tmp.31 = add %tmp.29 %tmp.30;
+        symbol [ Config %tmp.33 11 50 56 ];
+        %tmp.33 = getv ? :Config;
+        symbol [ holdFull %tmp.34 11 57 65 ];
+        %tmp.34 = getv function %tmp.33 :holdFull;
+        %tmp.35 = invoke %tmp.33 %tmp.34();
+        symbol [ toString %tmp.36 11 68 76 ];
+        %tmp.36 = getv function %tmp.35 :toString;
+        %tmp.37 = invoke %tmp.35 %tmp.36();
+        %tmp.38 = add %tmp.31 %tmp.37;
+        %tmp.39 = "-";
+        %tmp.40 = add %tmp.38 %tmp.39;
+        symbol [ Config %tmp.42 12 15 21 ];
+        %tmp.42 = getv ? :Config;
+        symbol [ exhale %tmp.43 12 22 28 ];
+        %tmp.43 = getv function %tmp.42 :exhale;
+        %tmp.44 = invoke %tmp.42 %tmp.43();
+        symbol [ toString %tmp.45 12 31 39 ];
+        %tmp.45 = getv function %tmp.44 :toString;
+        %tmp.46 = invoke %tmp.44 %tmp.45();
+        %tmp.47 = add %tmp.40 %tmp.46;
+        %tmp.48 = "-";
+        %tmp.49 = add %tmp.47 %tmp.48;
+        symbol [ Config %tmp.51 12 50 56 ];
+        %tmp.51 = getv ? :Config;
+        symbol [ holdEmpty %tmp.52 12 57 66 ];
+        %tmp.52 = getv function %tmp.51 :holdEmpty;
+        %tmp.53 = invoke %tmp.51 %tmp.52();
+        symbol [ toString %tmp.54 12 69 77 ];
+        %tmp.54 = getv function %tmp.53 :toString;
+        %tmp.55 = invoke %tmp.53 %tmp.54();
+        %tmp.56 = add %tmp.49 %tmp.55;
+        ret %tmp.56;
+_Users_daniel_Downloads_projects_Breathe_source_Fmt_mc_7_23_13_4_stop:
+    }
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/Fmt.mc"; @line = 15; @symbol_functiondef = [modeName,15,13,21]; ]
+    function modeName() {
+_Users_daniel_Downloads_projects_Breathe_source_Fmt_mc_15_24_20_4_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/Fmt.mc" 16 8 ]
+_Users_daniel_Downloads_projects_Breathe_source_Fmt_mc_16_8_18_8_if_stmt:
+        symbol [ Config %tmp.2 16 12 18 ];
+        %tmp.2 = getv ? :Config;
+        symbol [ mode %tmp.3 16 19 23 ];
+        %tmp.3 = getv function %tmp.2 :mode;
+        %tmp.4 = invoke %tmp.2 %tmp.3();
+        symbol [ Config %tmp.6 16 29 35 ];
+        %tmp.6 = getv ? :Config;
+        symbol [ MODE_EVEN %tmp.7 16 36 45 ];
+        %tmp.7 = getv %tmp.6 :MODE_EVEN;
+        %tmp.8 = eq %tmp.4 %tmp.7;
+        bf %tmp.8 @_Users_daniel_Downloads_projects_Breathe_source_Fmt_mc_16_8_18_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_Fmt_mc_16_8_18_8_if_true:
+_Users_daniel_Downloads_projects_Breathe_source_Fmt_mc_16_47_18_8_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/Fmt.mc" 17 12 ]
+        symbol [ WatchUi %tmp.9 17 19 26 ];
+        %tmp.9 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.10 17 27 39 ];
+        %tmp.10 = getv function %tmp.9 :loadResource;
+        symbol [ Rez %tmp.12 17 40 43 ];
+        %tmp.12 = getv ? :Rez;
+        symbol [ Strings %tmp.13 17 44 51 ];
+        %tmp.13 = getv %tmp.12 :Strings;
+        symbol [ ModeEven %tmp.14 17 52 60 ];
+        %tmp.14 = getv %tmp.13 :ModeEven;
+        %tmp.15 = invoke %tmp.9 %tmp.10(%tmp.14);
+        ret %tmp.15;
+_Users_daniel_Downloads_projects_Breathe_source_Fmt_mc_16_47_18_8_stop:
+        goto @_Users_daniel_Downloads_projects_Breathe_source_Fmt_mc_16_8_18_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_Fmt_mc_16_8_18_8_if_end:
+[ "/Users/daniel/Downloads/projects/Breathe/source/Fmt.mc" 19 8 ]
+        symbol [ WatchUi %tmp.16 19 15 22 ];
+        %tmp.16 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.17 19 23 35 ];
+        %tmp.17 = getv function %tmp.16 :loadResource;
+        symbol [ Rez %tmp.19 19 36 39 ];
+        %tmp.19 = getv ? :Rez;
+        symbol [ Strings %tmp.20 19 40 47 ];
+        %tmp.20 = getv %tmp.19 :Strings;
+        symbol [ ModeBox %tmp.21 19 48 55 ];
+        %tmp.21 = getv %tmp.20 :ModeBox;
+        %tmp.22 = invoke %tmp.16 %tmp.17(%tmp.21);
+        ret %tmp.22;
+_Users_daniel_Downloads_projects_Breathe_source_Fmt_mc_15_24_20_4_stop:
+    }
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/Fmt.mc"; @line = 22; @symbol_functiondef = [seconds,22,13,20]; @symbol_param<0> = [value,22,21,26]; ]
+    function seconds(value) {
+_Users_daniel_Downloads_projects_Breathe_source_Fmt_mc_22_28_24_4_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/Fmt.mc" 23 8 ]
+        %tmp.1 = lgetv %value;
+        symbol [ value %tmp.1 23 15 20 ];
+        symbol [ toString %tmp.2 23 21 29 ];
+        %tmp.2 = getv function %tmp.1 :toString;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        %tmp.4 = " ";
+        %tmp.5 = add %tmp.3 %tmp.4;
+        symbol [ WatchUi %tmp.6 23 40 47 ];
+        %tmp.6 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.7 23 48 60 ];
+        %tmp.7 = getv function %tmp.6 :loadResource;
+        symbol [ Rez %tmp.9 23 61 64 ];
+        %tmp.9 = getv ? :Rez;
+        symbol [ Strings %tmp.10 23 65 72 ];
+        %tmp.10 = getv %tmp.9 :Strings;
+        symbol [ UnitSec %tmp.11 23 73 80 ];
+        %tmp.11 = getv %tmp.10 :UnitSec;
+        %tmp.12 = invoke %tmp.6 %tmp.7(%tmp.11);
+        %tmp.13 = add %tmp.5 %tmp.12;
+        ret %tmp.13;
+_Users_daniel_Downloads_projects_Breathe_source_Fmt_mc_22_28_24_4_stop:
+    }
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/Fmt.mc"; @line = 26; @symbol_functiondef = [minutes,26,13,20]; @symbol_param<0> = [value,26,21,26]; ]
+    function minutes(value) {
+_Users_daniel_Downloads_projects_Breathe_source_Fmt_mc_26_28_31_4_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/Fmt.mc" 27 8 ]
+_Users_daniel_Downloads_projects_Breathe_source_Fmt_mc_27_8_29_8_if_stmt:
+        %tmp.1 = lgetv %value;
+        symbol [ value %tmp.1 27 12 17 ];
+        %tmp.2 = 0;
+        %tmp.3 = lte %tmp.1 %tmp.2;
+        bf %tmp.3 @_Users_daniel_Downloads_projects_Breathe_source_Fmt_mc_27_8_29_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_Fmt_mc_27_8_29_8_if_true:
+_Users_daniel_Downloads_projects_Breathe_source_Fmt_mc_27_24_29_8_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/Fmt.mc" 28 12 ]
+        symbol [ WatchUi %tmp.4 28 19 26 ];
+        %tmp.4 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.5 28 27 39 ];
+        %tmp.5 = getv function %tmp.4 :loadResource;
+        symbol [ Rez %tmp.7 28 40 43 ];
+        %tmp.7 = getv ? :Rez;
+        symbol [ Strings %tmp.8 28 44 51 ];
+        %tmp.8 = getv %tmp.7 :Strings;
+        symbol [ Unlimited %tmp.9 28 52 61 ];
+        %tmp.9 = getv %tmp.8 :Unlimited;
+        %tmp.10 = invoke %tmp.4 %tmp.5(%tmp.9);
+        ret %tmp.10;
+_Users_daniel_Downloads_projects_Breathe_source_Fmt_mc_27_24_29_8_stop:
+        goto @_Users_daniel_Downloads_projects_Breathe_source_Fmt_mc_27_8_29_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_Fmt_mc_27_8_29_8_if_end:
+[ "/Users/daniel/Downloads/projects/Breathe/source/Fmt.mc" 30 8 ]
+        %tmp.11 = lgetv %value;
+        symbol [ value %tmp.11 30 15 20 ];
+        symbol [ toString %tmp.12 30 21 29 ];
+        %tmp.12 = getv function %tmp.11 :toString;
+        %tmp.13 = invoke %tmp.11 %tmp.12();
+        %tmp.14 = " ";
+        %tmp.15 = add %tmp.13 %tmp.14;
+        symbol [ WatchUi %tmp.16 30 40 47 ];
+        %tmp.16 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.17 30 48 60 ];
+        %tmp.17 = getv function %tmp.16 :loadResource;
+        symbol [ Rez %tmp.19 30 61 64 ];
+        %tmp.19 = getv ? :Rez;
+        symbol [ Strings %tmp.20 30 65 72 ];
+        %tmp.20 = getv %tmp.19 :Strings;
+        symbol [ UnitMin %tmp.21 30 73 80 ];
+        %tmp.21 = getv %tmp.20 :UnitMin;
+        %tmp.22 = invoke %tmp.16 %tmp.17(%tmp.21);
+        %tmp.23 = add %tmp.15 %tmp.22;
+        ret %tmp.23;
+_Users_daniel_Downloads_projects_Breathe_source_Fmt_mc_26_28_31_4_stop:
+    }
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/Fmt.mc"; @line = 33; @symbol_functiondef = [percent,33,13,20]; @symbol_param<0> = [value,33,21,26]; ]
+    function percent(value) {
+_Users_daniel_Downloads_projects_Breathe_source_Fmt_mc_33_28_35_4_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/Fmt.mc" 34 8 ]
+        %tmp.1 = lgetv %value;
+        symbol [ value %tmp.1 34 15 20 ];
+        symbol [ toString %tmp.2 34 21 29 ];
+        %tmp.2 = getv function %tmp.1 :toString;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        %tmp.4 = "%";
+        %tmp.5 = add %tmp.3 %tmp.4;
+        ret %tmp.5;
+_Users_daniel_Downloads_projects_Breathe_source_Fmt_mc_33_28_35_4_stop:
+    }
+    //! Seconds as m:ss.
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/Fmt.mc"; @line = 38; @symbol_functiondef = [clock,38,13,18]; @symbol_param<0> = [totalSeconds,38,19,31]; ]
+    function clock(totalSeconds) {
+_Users_daniel_Downloads_projects_Breathe_source_Fmt_mc_38_33_42_4_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/Fmt.mc" 39 8 ]
+        [ "_Users_daniel_Downloads_projects_Breathe_source_Fmt_mc_38_33_42_4_start" "_Users_daniel_Downloads_projects_Breathe_source_Fmt_mc_38_33_42_4_stop" ]
+        %minutesPart.1 = local;
+        symbol [ minutesPart %minutesPart.1 39 12 23 ];
+        %tmp.1 = lgetv %totalSeconds;
+        symbol [ totalSeconds %tmp.1 39 26 38 ];
+        %tmp.2 = 60;
+        %tmp.3 = div %tmp.1 %tmp.2;
+        lputv %minutesPart.1 %tmp.3;
+        symbol [ minutesPart %minutesPart.1 39 12 23 ];
+[ "/Users/daniel/Downloads/projects/Breathe/source/Fmt.mc" 40 8 ]
+        [ "_Users_daniel_Downloads_projects_Breathe_source_Fmt_mc_38_33_42_4_start" "_Users_daniel_Downloads_projects_Breathe_source_Fmt_mc_38_33_42_4_stop" ]
+        %secondsPart.2 = local;
+        symbol [ secondsPart %secondsPart.2 40 12 23 ];
+        %tmp.4 = lgetv %totalSeconds;
+        symbol [ totalSeconds %tmp.4 40 26 38 ];
+        %tmp.5 = 60;
+        %tmp.6 = mod %tmp.4 %tmp.5;
+        lputv %secondsPart.2 %tmp.6;
+        symbol [ secondsPart %secondsPart.2 40 12 23 ];
+[ "/Users/daniel/Downloads/projects/Breathe/source/Fmt.mc" 41 8 ]
+        %tmp.7 = lgetv %minutesPart.1;
+        symbol [ minutesPart %tmp.7 41 15 26 ];
+        symbol [ toString %tmp.8 41 27 35 ];
+        %tmp.8 = getv function %tmp.7 :toString;
+        %tmp.9 = invoke %tmp.7 %tmp.8();
+        %tmp.10 = ":";
+        %tmp.11 = add %tmp.9 %tmp.10;
+        %tmp.12 = lgetv %secondsPart.2;
+        symbol [ secondsPart %tmp.12 41 46 57 ];
+        symbol [ format %tmp.13 41 58 64 ];
+        %tmp.13 = getv function %tmp.12 :format;
+        %tmp.14 = "%02d";
+        %tmp.15 = invoke %tmp.12 %tmp.13(%tmp.14);
+        %tmp.16 = add %tmp.11 %tmp.15;
+        ret %tmp.16;
+_Users_daniel_Downloads_projects_Breathe_source_Fmt_mc_38_33_42_4_stop:
+    }
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/Fmt.mc"; @line = 44; @symbol_functiondef = [summary,44,13,20]; ]
+    function summary() {
+_Users_daniel_Downloads_projects_Breathe_source_Fmt_mc_44_23_46_4_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/Fmt.mc" 45 8 ]
+        %tmp.1 = self;
+        symbol [ modeName %tmp.2 45 15 23 ];
+        %tmp.2 = getv function %tmp.1 :modeName;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        %tmp.4 = "  ";
+        %tmp.5 = add %tmp.3 %tmp.4;
+        %tmp.6 = self;
+        symbol [ minutes %tmp.7 45 35 42 ];
+        %tmp.7 = getv function %tmp.6 :minutes;
+        symbol [ Config %tmp.9 45 43 49 ];
+        %tmp.9 = getv ? :Config;
+        symbol [ lengthMin %tmp.10 45 50 59 ];
+        %tmp.10 = getv function %tmp.9 :lengthMin;
+        %tmp.11 = invoke %tmp.9 %tmp.10();
+        %tmp.12 = invoke %tmp.6 %tmp.7(%tmp.11);
+        %tmp.13 = add %tmp.5 %tmp.12;
+        ret %tmp.13;
+_Users_daniel_Downloads_projects_Breathe_source_Fmt_mc_44_23_46_4_stop:
+    }
+}
+[ @file = "/Users/daniel/Downloads/projects/Breathe/source/Fmt.mc"; @line = 1; ]
+<init> {
+}

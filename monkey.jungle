@@ -1,0 +1,5 @@
+project.manifest = manifest.xml
+
+# "source" and "resources" are picked up by default; listed here for clarity.
+base.sourcePath = source
+base.resourcePath = resources

@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!--
+    Breathe - guided breathwork for Garmin Instinct 2.
+    If you only have the Instinct 2 device config installed in the SDK Manager,
+    you can delete the instinct2s / instinct2x product lines below.
+-->
+<iq:manifest xmlns:iq="http://www.garmin.com/xml/connectiq" version="3">
+    <iq:application
+        id="270aa008ec6441b1a52727726c33ddbe"
+        type="watch-app"
+        name="@Strings.AppName"
+        entry="BreatheApp"
+        launcherIcon="@Drawables.LauncherIcon"
+        minApiLevel="3.3.0">
+
+        <iq:products>
+            <iq:product id="instinct2"/>
+            <iq:product id="instinct2s"/>
+            <iq:product id="instinct2x"/>
+        </iq:products>
+
+        <!-- Vibration and tones need no permission. -->
+        <iq:permissions/>
+
+        <iq:languages>
+            <iq:language>eng</iq:language>
+        </iq:languages>
+
+        <iq:barrels/>
+    </iq:application>
+</iq:manifest>

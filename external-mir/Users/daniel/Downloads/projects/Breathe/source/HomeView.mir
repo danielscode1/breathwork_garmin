@@ -1,0 +1,382 @@
+[ @file = "/Users/daniel/Downloads/projects/Breathe/source/HomeView.mc"; @line = 1; @symbol_importdef<0> = [Toybox,1,7,13]; @symbol_importdef<1> = [Graphics,1,14,22]; ]
+import Toybox.Graphics;
+[ @file = "/Users/daniel/Downloads/projects/Breathe/source/HomeView.mc"; @line = 2; @symbol_importdef<0> = [Toybox,2,7,13]; @symbol_importdef<1> = [Lang,2,14,18]; ]
+import Toybox.Lang;
+[ @file = "/Users/daniel/Downloads/projects/Breathe/source/HomeView.mc"; @line = 3; @symbol_importdef<0> = [Toybox,3,7,13]; @symbol_importdef<1> = [System,3,14,20]; ]
+import Toybox.System;
+[ @file = "/Users/daniel/Downloads/projects/Breathe/source/HomeView.mc"; @line = 4; @symbol_importdef<0> = [Toybox,4,7,13]; @symbol_importdef<1> = [WatchUi,4,14,21]; ]
+import Toybox.WatchUi;
+//! Start screen: shows the pattern that is about to run, and how to get going.
+//! Everything is drawn in the lower part of the screen, because the Instinct's
+//! round sub-window sits over the top right of the drawing surface.
+[ @file = "/Users/daniel/Downloads/projects/Breathe/source/HomeView.mc"; @line = 9; @symbol_classdef = [HomeView,9,6,14]; @symbol_extends<0> = [WatchUi,9,23,30]; @symbol_extends<1> = [View,9,31,35]; ]
+class HomeView extends WatchUi.View {
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/HomeView.mc"; @line = 9; ]
+    <init> {
+    }
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/HomeView.mc"; @line = 9; ]
+    static
+    <init> {
+    }
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/HomeView.mc"; @line = 11; @symbol_functiondef = [initialize,11,13,23]; ]
+    function initialize() as Void {
+_Users_daniel_Downloads_projects_Breathe_source_HomeView_mc_11_26_13_4_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/HomeView.mc" 12 8 ]
+        symbol [ View %tmp.2 12 8 12 ];
+        %tmp.2 = getv ? :View;
+        symbol [ initialize %tmp.3 12 13 23 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+_Users_daniel_Downloads_projects_Breathe_source_HomeView_mc_11_26_13_4_stop:
+    }
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/HomeView.mc"; @line = 15; @symbol_functiondef = [onUpdate,15,13,21]; @symbol_param<0> = [dc,15,22,24]; ]
+    function onUpdate(dc) {
+_Users_daniel_Downloads_projects_Breathe_source_HomeView_mc_15_26_35_4_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/HomeView.mc" 16 8 ]
+        [ "_Users_daniel_Downloads_projects_Breathe_source_HomeView_mc_15_26_35_4_start" "_Users_daniel_Downloads_projects_Breathe_source_HomeView_mc_15_26_35_4_stop" ]
+        %width.1 = local;
+        symbol [ width %width.1 16 12 17 ];
+        %tmp.1 = lgetv %dc;
+        symbol [ dc %tmp.1 16 20 22 ];
+        symbol [ getWidth %tmp.2 16 23 31 ];
+        %tmp.2 = getv function %tmp.1 :getWidth;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        lputv %width.1 %tmp.3;
+        symbol [ width %width.1 16 12 17 ];
+[ "/Users/daniel/Downloads/projects/Breathe/source/HomeView.mc" 17 8 ]
+        [ "_Users_daniel_Downloads_projects_Breathe_source_HomeView_mc_15_26_35_4_start" "_Users_daniel_Downloads_projects_Breathe_source_HomeView_mc_15_26_35_4_stop" ]
+        %height.2 = local;
+        symbol [ height %height.2 17 12 18 ];
+        %tmp.4 = lgetv %dc;
+        symbol [ dc %tmp.4 17 21 23 ];
+        symbol [ getHeight %tmp.5 17 24 33 ];
+        %tmp.5 = getv function %tmp.4 :getHeight;
+        %tmp.6 = invoke %tmp.4 %tmp.5();
+        lputv %height.2 %tmp.6;
+        symbol [ height %height.2 17 12 18 ];
+[ "/Users/daniel/Downloads/projects/Breathe/source/HomeView.mc" 20 8 ]
+        [ "_Users_daniel_Downloads_projects_Breathe_source_HomeView_mc_15_26_35_4_start" "_Users_daniel_Downloads_projects_Breathe_source_HomeView_mc_15_26_35_4_stop" ]
+        %side.3 = local;
+        symbol [ side %side.3 20 12 16 ];
+_Users_daniel_Downloads_projects_Breathe_source_HomeView_mc_20_19_20_46_begin:
+        %tmp.7 = lgetv %width.1;
+        symbol [ width %tmp.7 20 20 25 ];
+        %tmp.8 = lgetv %height.2;
+        symbol [ height %tmp.8 20 28 34 ];
+        %tmp.9 = lt %tmp.7 %tmp.8;
+        bf %tmp.9 @_Users_daniel_Downloads_projects_Breathe_source_HomeView_mc_20_19_20_46_else_false;
+_Users_daniel_Downloads_projects_Breathe_source_HomeView_mc_20_19_20_46_true:
+        %tmp.10 = lgetv %width.1;
+        symbol [ width %tmp.10 20 38 43 ];
+        push %tmp.10;
+        goto @_Users_daniel_Downloads_projects_Breathe_source_HomeView_mc_20_19_20_46_end;
+_Users_daniel_Downloads_projects_Breathe_source_HomeView_mc_20_19_20_46_else_false:
+        %tmp.11 = lgetv %height.2;
+        symbol [ height %tmp.11 20 46 52 ];
+        push %tmp.11;
+_Users_daniel_Downloads_projects_Breathe_source_HomeView_mc_20_19_20_46_end:
+        %tmp.12 = phi [%tmp.9 @_Users_daniel_Downloads_projects_Breathe_source_HomeView_mc_20_19_20_46_begin] [%tmp.10 @_Users_daniel_Downloads_projects_Breathe_source_HomeView_mc_20_19_20_46_true] [%tmp.11 @_Users_daniel_Downloads_projects_Breathe_source_HomeView_mc_20_19_20_46_else_false] [%tmp.12 @_Users_daniel_Downloads_projects_Breathe_source_HomeView_mc_20_19_20_46_end];
+        lputv %side.3 %tmp.12;
+        symbol [ side %side.3 20 12 16 ];
+[ "/Users/daniel/Downloads/projects/Breathe/source/HomeView.mc" 21 8 ]
+        [ "_Users_daniel_Downloads_projects_Breathe_source_HomeView_mc_15_26_35_4_start" "_Users_daniel_Downloads_projects_Breathe_source_HomeView_mc_15_26_35_4_stop" ]
+        %cx.4 = local;
+        symbol [ cx %cx.4 21 12 14 ];
+        %tmp.13 = lgetv %side.3;
+        symbol [ side %tmp.13 21 17 21 ];
+        %tmp.14 = 2;
+        %tmp.15 = div %tmp.13 %tmp.14;
+        lputv %cx.4 %tmp.15;
+        symbol [ cx %cx.4 21 12 14 ];
+[ "/Users/daniel/Downloads/projects/Breathe/source/HomeView.mc" 22 8 ]
+        [ "_Users_daniel_Downloads_projects_Breathe_source_HomeView_mc_15_26_35_4_start" "_Users_daniel_Downloads_projects_Breathe_source_HomeView_mc_15_26_35_4_stop" ]
+        %cy.5 = local;
+        symbol [ cy %cy.5 22 12 14 ];
+        %tmp.16 = lgetv %side.3;
+        symbol [ side %tmp.16 22 17 21 ];
+        %tmp.17 = 2;
+        %tmp.18 = div %tmp.16 %tmp.17;
+        lputv %cy.5 %tmp.18;
+        symbol [ cy %cy.5 22 12 14 ];
+[ "/Users/daniel/Downloads/projects/Breathe/source/HomeView.mc" 23 8 ]
+        [ "_Users_daniel_Downloads_projects_Breathe_source_HomeView_mc_15_26_35_4_start" "_Users_daniel_Downloads_projects_Breathe_source_HomeView_mc_15_26_35_4_stop" ]
+        %centre.6 = local;
+        symbol [ centre %centre.6 23 12 18 ];
+        symbol [ Graphics %tmp.19 23 21 29 ];
+        %tmp.19 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.20 23 30 49 ];
+        %tmp.20 = getv %tmp.19 :TEXT_JUSTIFY_CENTER;
+        symbol [ Graphics %tmp.21 23 52 60 ];
+        %tmp.21 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_VCENTER %tmp.22 23 61 81 ];
+        %tmp.22 = getv %tmp.21 :TEXT_JUSTIFY_VCENTER;
+        %tmp.23 = bitor %tmp.20 %tmp.22;
+        lputv %centre.6 %tmp.23;
+        symbol [ centre %centre.6 23 12 18 ];
+[ "/Users/daniel/Downloads/projects/Breathe/source/HomeView.mc" 25 8 ]
+        %tmp.24 = lgetv %dc;
+        symbol [ dc %tmp.24 25 8 10 ];
+        symbol [ setColor %tmp.25 25 11 19 ];
+        %tmp.25 = getv function %tmp.24 :setColor;
+        symbol [ Graphics %tmp.26 25 20 28 ];
+        %tmp.26 = getm $.Toybox.Graphics;
+        symbol [ COLOR_WHITE %tmp.27 25 29 40 ];
+        %tmp.27 = getv %tmp.26 :COLOR_WHITE;
+        symbol [ Graphics %tmp.28 25 42 50 ];
+        %tmp.28 = getm $.Toybox.Graphics;
+        symbol [ COLOR_BLACK %tmp.29 25 51 62 ];
+        %tmp.29 = getv %tmp.28 :COLOR_BLACK;
+        invoke %tmp.24 %tmp.25(%tmp.27, %tmp.29);
+[ "/Users/daniel/Downloads/projects/Breathe/source/HomeView.mc" 26 8 ]
+        %tmp.30 = lgetv %dc;
+        symbol [ dc %tmp.30 26 8 10 ];
+        symbol [ clear %tmp.31 26 11 16 ];
+        %tmp.31 = getv function %tmp.30 :clear;
+        invoke %tmp.30 %tmp.31();
+[ "/Users/daniel/Downloads/projects/Breathe/source/HomeView.mc" 28 8 ]
+        %tmp.32 = lgetv %dc;
+        symbol [ dc %tmp.32 28 8 10 ];
+        symbol [ drawText %tmp.33 28 11 19 ];
+        %tmp.33 = getv function %tmp.32 :drawText;
+        %tmp.34 = lgetv %cx.4;
+        symbol [ cx %tmp.34 28 20 22 ];
+        %tmp.35 = lgetv %cy.5;
+        symbol [ cy %tmp.35 28 24 26 ];
+        symbol [ Graphics %tmp.36 28 28 36 ];
+        %tmp.36 = getm $.Toybox.Graphics;
+        symbol [ FONT_MEDIUM %tmp.37 28 37 48 ];
+        %tmp.37 = getv %tmp.36 :FONT_MEDIUM;
+        symbol [ Fmt %tmp.39 28 50 53 ];
+        %tmp.39 = getv ? :Fmt;
+        symbol [ pattern %tmp.40 28 54 61 ];
+        %tmp.40 = getv function %tmp.39 :pattern;
+        %tmp.41 = invoke %tmp.39 %tmp.40();
+        %tmp.42 = lgetv %centre.6;
+        symbol [ centre %tmp.42 28 65 71 ];
+        invoke %tmp.32 %tmp.33(%tmp.34, %tmp.35, %tmp.37, %tmp.41, %tmp.42);
+[ "/Users/daniel/Downloads/projects/Breathe/source/HomeView.mc" 29 8 ]
+        %tmp.43 = lgetv %dc;
+        symbol [ dc %tmp.43 29 8 10 ];
+        symbol [ drawText %tmp.44 29 11 19 ];
+        %tmp.44 = getv function %tmp.43 :drawText;
+        %tmp.45 = lgetv %cx.4;
+        symbol [ cx %tmp.45 29 20 22 ];
+        %tmp.46 = lgetv %cy.5;
+        symbol [ cy %tmp.46 29 24 26 ];
+        %tmp.47 = lgetv %side.3;
+        symbol [ side %tmp.47 29 29 33 ];
+        %tmp.48 = 16;
+        %tmp.49 = mul %tmp.47 %tmp.48;
+        %tmp.50 = 100;
+        %tmp.51 = div %tmp.49 %tmp.50;
+        %tmp.52 = add %tmp.46 %tmp.51;
+        symbol [ Graphics %tmp.53 29 46 54 ];
+        %tmp.53 = getm $.Toybox.Graphics;
+        symbol [ FONT_TINY %tmp.54 29 55 64 ];
+        %tmp.54 = getv %tmp.53 :FONT_TINY;
+        symbol [ Fmt %tmp.56 29 66 69 ];
+        %tmp.56 = getv ? :Fmt;
+        symbol [ summary %tmp.57 29 70 77 ];
+        %tmp.57 = getv function %tmp.56 :summary;
+        %tmp.58 = invoke %tmp.56 %tmp.57();
+        %tmp.59 = lgetv %centre.6;
+        symbol [ centre %tmp.59 29 81 87 ];
+        invoke %tmp.43 %tmp.44(%tmp.45, %tmp.52, %tmp.54, %tmp.58, %tmp.59);
+[ "/Users/daniel/Downloads/projects/Breathe/source/HomeView.mc" 31 8 ]
+        %tmp.60 = lgetv %dc;
+        symbol [ dc %tmp.60 31 8 10 ];
+        symbol [ drawText %tmp.61 31 11 19 ];
+        %tmp.61 = getv function %tmp.60 :drawText;
+        %tmp.62 = lgetv %cx.4;
+        symbol [ cx %tmp.62 31 20 22 ];
+        %tmp.63 = lgetv %cy.5;
+        symbol [ cy %tmp.63 31 24 26 ];
+        %tmp.64 = lgetv %side.3;
+        symbol [ side %tmp.64 31 29 33 ];
+        %tmp.65 = 30;
+        %tmp.66 = mul %tmp.64 %tmp.65;
+        %tmp.67 = 100;
+        %tmp.68 = div %tmp.66 %tmp.67;
+        %tmp.69 = add %tmp.63 %tmp.68;
+        symbol [ Graphics %tmp.70 31 46 54 ];
+        %tmp.70 = getm $.Toybox.Graphics;
+        symbol [ FONT_TINY %tmp.71 31 55 64 ];
+        %tmp.71 = getv %tmp.70 :FONT_TINY;
+        symbol [ WatchUi %tmp.72 32 20 27 ];
+        %tmp.72 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.73 32 28 40 ];
+        %tmp.73 = getv function %tmp.72 :loadResource;
+        symbol [ Rez %tmp.75 32 41 44 ];
+        %tmp.75 = getv ? :Rez;
+        symbol [ Strings %tmp.76 32 45 52 ];
+        %tmp.76 = getv %tmp.75 :Strings;
+        symbol [ HintStart %tmp.77 32 53 62 ];
+        %tmp.77 = getv %tmp.76 :HintStart;
+        %tmp.78 = invoke %tmp.72 %tmp.73(%tmp.77);
+        %tmp.79 = lgetv %centre.6;
+        symbol [ centre %tmp.79 32 65 71 ];
+        invoke %tmp.60 %tmp.61(%tmp.62, %tmp.69, %tmp.71, %tmp.78, %tmp.79);
+[ "/Users/daniel/Downloads/projects/Breathe/source/HomeView.mc" 33 8 ]
+        %tmp.80 = lgetv %dc;
+        symbol [ dc %tmp.80 33 8 10 ];
+        symbol [ drawText %tmp.81 33 11 19 ];
+        %tmp.81 = getv function %tmp.80 :drawText;
+        %tmp.82 = lgetv %cx.4;
+        symbol [ cx %tmp.82 33 20 22 ];
+        %tmp.83 = lgetv %cy.5;
+        symbol [ cy %tmp.83 33 24 26 ];
+        %tmp.84 = lgetv %side.3;
+        symbol [ side %tmp.84 33 29 33 ];
+        %tmp.85 = 42;
+        %tmp.86 = mul %tmp.84 %tmp.85;
+        %tmp.87 = 100;
+        %tmp.88 = div %tmp.86 %tmp.87;
+        %tmp.89 = add %tmp.83 %tmp.88;
+        symbol [ Graphics %tmp.90 33 46 54 ];
+        %tmp.90 = getm $.Toybox.Graphics;
+        symbol [ FONT_TINY %tmp.91 33 55 64 ];
+        %tmp.91 = getv %tmp.90 :FONT_TINY;
+        symbol [ WatchUi %tmp.92 34 20 27 ];
+        %tmp.92 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.93 34 28 40 ];
+        %tmp.93 = getv function %tmp.92 :loadResource;
+        symbol [ Rez %tmp.95 34 41 44 ];
+        %tmp.95 = getv ? :Rez;
+        symbol [ Strings %tmp.96 34 45 52 ];
+        %tmp.96 = getv %tmp.95 :Strings;
+        symbol [ HintSetup %tmp.97 34 53 62 ];
+        %tmp.97 = getv %tmp.96 :HintSetup;
+        %tmp.98 = invoke %tmp.92 %tmp.93(%tmp.97);
+        %tmp.99 = lgetv %centre.6;
+        symbol [ centre %tmp.99 34 65 71 ];
+        invoke %tmp.80 %tmp.81(%tmp.82, %tmp.89, %tmp.91, %tmp.98, %tmp.99);
+_Users_daniel_Downloads_projects_Breathe_source_HomeView_mc_15_26_35_4_stop:
+    }
+}
+[ @file = "/Users/daniel/Downloads/projects/Breathe/source/HomeView.mc"; @line = 38; @symbol_classdef = [HomeDelegate,38,6,18]; @symbol_extends<0> = [WatchUi,38,27,34]; @symbol_extends<1> = [BehaviorDelegate,38,35,51]; ]
+class HomeDelegate extends WatchUi.BehaviorDelegate {
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/HomeView.mc"; @line = 38; ]
+    <init> {
+    }
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/HomeView.mc"; @line = 38; ]
+    static
+    <init> {
+    }
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/HomeView.mc"; @line = 40; @symbol_functiondef = [initialize,40,13,23]; ]
+    function initialize() as Void {
+_Users_daniel_Downloads_projects_Breathe_source_HomeView_mc_40_26_42_4_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/HomeView.mc" 41 8 ]
+        symbol [ BehaviorDelegate %tmp.2 41 8 24 ];
+        %tmp.2 = getv ? :BehaviorDelegate;
+        symbol [ initialize %tmp.3 41 25 35 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+_Users_daniel_Downloads_projects_Breathe_source_HomeView_mc_40_26_42_4_stop:
+    }
+    //! GPS button: straight into a session.
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/HomeView.mc"; @line = 45; @symbol_functiondef = [onSelect,45,13,21]; ]
+    function onSelect() {
+_Users_daniel_Downloads_projects_Breathe_source_HomeView_mc_45_24_49_4_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/HomeView.mc" 46 8 ]
+        [ "_Users_daniel_Downloads_projects_Breathe_source_HomeView_mc_45_24_49_4_start" "_Users_daniel_Downloads_projects_Breathe_source_HomeView_mc_45_24_49_4_stop" ]
+        %view.1 = local;
+        symbol [ view %view.1 46 12 16 ];
+        symbol [ BreathView %tmp.4 46 23 33 ];
+        %tmp.4 = getv ? :BreathView;
+        %tmp.1 = newc %tmp.4 ();
+        lputv %view.1 %tmp.1;
+        symbol [ view %view.1 46 12 16 ];
+[ "/Users/daniel/Downloads/projects/Breathe/source/HomeView.mc" 47 8 ]
+        symbol [ WatchUi %tmp.5 47 8 15 ];
+        %tmp.5 = getm $.Toybox.WatchUi;
+        symbol [ pushView %tmp.6 47 16 24 ];
+        %tmp.6 = getv function %tmp.5 :pushView;
+        %tmp.7 = lgetv %view.1;
+        symbol [ view %tmp.7 47 25 29 ];
+        symbol [ BreathDelegate %tmp.11 47 35 49 ];
+        %tmp.11 = getv ? :BreathDelegate;
+        %tmp.12 = lgetv %view.1;
+        symbol [ view %tmp.12 47 50 54 ];
+        %tmp.8 = newc %tmp.11 (%tmp.12);
+        symbol [ WatchUi %tmp.13 47 57 64 ];
+        %tmp.13 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_IMMEDIATE %tmp.14 47 65 80 ];
+        %tmp.14 = getv %tmp.13 :SLIDE_IMMEDIATE;
+        invoke %tmp.5 %tmp.6(%tmp.7, %tmp.8, %tmp.14);
+[ "/Users/daniel/Downloads/projects/Breathe/source/HomeView.mc" 48 8 ]
+        %tmp.15 = true;
+        ret %tmp.15;
+_Users_daniel_Downloads_projects_Breathe_source_HomeView_mc_45_24_49_4_stop:
+    }
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/HomeView.mc"; @line = 51; @symbol_functiondef = [onNextPage,51,13,23]; ]
+    function onNextPage() {
+_Users_daniel_Downloads_projects_Breathe_source_HomeView_mc_51_26_53_4_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/HomeView.mc" 52 8 ]
+        %tmp.1 = self;
+        symbol [ openSettings %tmp.2 52 15 27 ];
+        %tmp.2 = getv function %tmp.1 :openSettings;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        ret %tmp.3;
+_Users_daniel_Downloads_projects_Breathe_source_HomeView_mc_51_26_53_4_stop:
+    }
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/HomeView.mc"; @line = 55; @symbol_functiondef = [onPreviousPage,55,13,27]; ]
+    function onPreviousPage() {
+_Users_daniel_Downloads_projects_Breathe_source_HomeView_mc_55_30_57_4_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/HomeView.mc" 56 8 ]
+        %tmp.1 = self;
+        symbol [ openSettings %tmp.2 56 15 27 ];
+        %tmp.2 = getv function %tmp.1 :openSettings;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        ret %tmp.3;
+_Users_daniel_Downloads_projects_Breathe_source_HomeView_mc_55_30_57_4_stop:
+    }
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/HomeView.mc"; @line = 59; @symbol_functiondef = [onMenu,59,13,19]; ]
+    function onMenu() {
+_Users_daniel_Downloads_projects_Breathe_source_HomeView_mc_59_22_61_4_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/HomeView.mc" 60 8 ]
+        %tmp.1 = self;
+        symbol [ openSettings %tmp.2 60 15 27 ];
+        %tmp.2 = getv function %tmp.1 :openSettings;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        ret %tmp.3;
+_Users_daniel_Downloads_projects_Breathe_source_HomeView_mc_59_22_61_4_stop:
+    }
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/HomeView.mc"; @line = 63; @symbol_functiondef = [openSettings,63,20,32]; ]
+    protected
+    function openSettings() {
+_Users_daniel_Downloads_projects_Breathe_source_HomeView_mc_63_35_67_4_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/HomeView.mc" 64 8 ]
+        [ "_Users_daniel_Downloads_projects_Breathe_source_HomeView_mc_63_35_67_4_start" "_Users_daniel_Downloads_projects_Breathe_source_HomeView_mc_63_35_67_4_stop" ]
+        %menu.1 = local;
+        symbol [ menu %menu.1 64 12 16 ];
+        symbol [ SettingsMenu %tmp.4 64 23 35 ];
+        %tmp.4 = getv ? :SettingsMenu;
+        %tmp.1 = newc %tmp.4 ();
+        lputv %menu.1 %tmp.1;
+        symbol [ menu %menu.1 64 12 16 ];
+[ "/Users/daniel/Downloads/projects/Breathe/source/HomeView.mc" 65 8 ]
+        symbol [ WatchUi %tmp.5 65 8 15 ];
+        %tmp.5 = getm $.Toybox.WatchUi;
+        symbol [ pushView %tmp.6 65 16 24 ];
+        %tmp.6 = getv function %tmp.5 :pushView;
+        %tmp.7 = lgetv %menu.1;
+        symbol [ menu %tmp.7 65 25 29 ];
+        symbol [ SettingsDelegate %tmp.11 65 35 51 ];
+        %tmp.11 = getv ? :SettingsDelegate;
+        %tmp.12 = lgetv %menu.1;
+        symbol [ menu %tmp.12 65 52 56 ];
+        %tmp.8 = newc %tmp.11 (%tmp.12);
+        symbol [ WatchUi %tmp.13 65 59 66 ];
+        %tmp.13 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_IMMEDIATE %tmp.14 65 67 82 ];
+        %tmp.14 = getv %tmp.13 :SLIDE_IMMEDIATE;
+        invoke %tmp.5 %tmp.6(%tmp.7, %tmp.8, %tmp.14);
+[ "/Users/daniel/Downloads/projects/Breathe/source/HomeView.mc" 66 8 ]
+        %tmp.15 = true;
+        ret %tmp.15;
+_Users_daniel_Downloads_projects_Breathe_source_HomeView_mc_63_35_67_4_stop:
+    }
+}
+[ @file = "/Users/daniel/Downloads/projects/Breathe/source/HomeView.mc"; @line = 1; ]
+<init> {
+}

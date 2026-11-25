@@ -1,0 +1,1165 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<debugInfo>
+    <manifest filename="/Users/daniel/Downloads/projects/Breathe/manifest.xml"/>
+    <pcToLineNum>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="1" lineNum="6" parent="globals/SettingsMenu" pc="268435460" symbol="&lt;init&gt;"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/HomeView.mc" id="2" lineNum="9" parent="globals/HomeView" pc="268435479" symbol="&lt;init&gt;"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="3" lineNum="160" parent="globals/ValueDelegate" pc="268435498" symbol="&lt;init&gt;"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/gen/006-B3888-00/source/Rez.mcgen" id="4" lineNum="7" parent="globals/Rez" pc="268435517" symbol="&lt;init&gt;"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreatheApp.mc" id="5" lineNum="5" parent="globals/BreatheApp" pc="268435541" symbol="&lt;init&gt;"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="6" lineNum="258" parent="globals/BreathDelegate" pc="268435560" symbol="&lt;init&gt;"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/HomeView.mc" id="7" lineNum="38" parent="globals/HomeDelegate" pc="268435579" symbol="&lt;init&gt;"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="8" lineNum="13" parent="globals/BreathView" pc="268435598" symbol="&lt;init&gt;"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="9" lineNum="149" parent="globals/ValueMenu" pc="268435617" symbol="&lt;init&gt;"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="10" lineNum="61" parent="globals/SettingsDelegate" pc="268435636" symbol="&lt;init&gt;"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="11" lineNum="174" parent="globals/BreathSession" pc="268435655" symbol="remainingSec"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="11" lineNum="175" parent="globals/BreathSession" pc="268435659" symbol="remainingSec"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="11" lineNum="176" parent="globals/BreathSession" pc="268435687" symbol="remainingSec"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="11" lineNum="177" parent="globals/BreathSession" pc="268435698" symbol="remainingSec"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="11" lineNum="179" parent="globals/BreathSession" pc="268435708" symbol="remainingSec"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="12" lineNum="138" parent="globals/BreathSession" pc="268435723" symbol="cycles"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="12" lineNum="139" parent="globals/BreathSession" pc="268435725" symbol="cycles"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="13" lineNum="99" parent="globals/BreathSession" pc="268435734" symbol="advance"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="13" lineNum="100" parent="globals/BreathSession" pc="268435738" symbol="advance"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="13" lineNum="101" parent="globals/BreathSession" pc="268435761" symbol="advance"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="13" lineNum="104" parent="globals/BreathSession" pc="268435767" symbol="advance"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="13" lineNum="105" parent="globals/BreathSession" pc="268435783" symbol="advance"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="13" lineNum="107" parent="globals/BreathSession" pc="268435799" symbol="advance"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="13" lineNum="108" parent="globals/BreathSession" pc="268435818" symbol="advance"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="13" lineNum="109" parent="globals/BreathSession" pc="268435832" symbol="advance"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="13" lineNum="112" parent="globals/BreathSession" pc="268435838" symbol="advance"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="13" lineNum="113" parent="globals/BreathSession" pc="268435854" symbol="advance"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="13" lineNum="114" parent="globals/BreathSession" pc="268435873" symbol="advance"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="13" lineNum="115" parent="globals/BreathSession" pc="268435902" symbol="advance"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="13" lineNum="116" parent="globals/BreathSession" pc="268435915" symbol="advance"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="13" lineNum="118" parent="globals/BreathSession" pc="268435934" symbol="advance"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="13" lineNum="119" parent="globals/BreathSession" pc="268435971" symbol="advance"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="13" lineNum="120" parent="globals/BreathSession" pc="268435981" symbol="advance"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="13" lineNum="123" parent="globals/BreathSession" pc="268435997" symbol="advance"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="14" lineNum="78" parent="globals/BreathSession" pc="268436000" symbol="setRunning"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="14" lineNum="79" parent="globals/BreathSession" pc="268436002" symbol="setRunning"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="14" lineNum="80" parent="globals/BreathSession" pc="268436014" symbol="setRunning"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="15" lineNum="88" parent="globals/BreathSession" pc="268436028" symbol="isRunning"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="15" lineNum="89" parent="globals/BreathSession" pc="268436030" symbol="isRunning"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="16" lineNum="143" parent="globals/BreathSession" pc="268436039" symbol="phaseProgress"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="16" lineNum="144" parent="globals/BreathSession" pc="268436043" symbol="phaseProgress"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="16" lineNum="145" parent="globals/BreathSession" pc="268436062" symbol="phaseProgress"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="16" lineNum="146" parent="globals/BreathSession" pc="268436073" symbol="phaseProgress"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="16" lineNum="148" parent="globals/BreathSession" pc="268436082" symbol="phaseProgress"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="16" lineNum="149" parent="globals/BreathSession" pc="268436104" symbol="phaseProgress"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="16" lineNum="150" parent="globals/BreathSession" pc="268436115" symbol="phaseProgress"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="16" lineNum="152" parent="globals/BreathSession" pc="268436124" symbol="phaseProgress"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="16" lineNum="153" parent="globals/BreathSession" pc="268436135" symbol="phaseProgress"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="16" lineNum="155" parent="globals/BreathSession" pc="268436144" symbol="phaseProgress"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="17" lineNum="183" parent="globals/BreathSession" pc="268436147" symbol="sessionRemainingSec"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="17" lineNum="184" parent="globals/BreathSession" pc="268436151" symbol="sessionRemainingSec"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="17" lineNum="185" parent="globals/BreathSession" pc="268436168" symbol="sessionRemainingSec"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="17" lineNum="187" parent="globals/BreathSession" pc="268436173" symbol="sessionRemainingSec"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="17" lineNum="188" parent="globals/BreathSession" pc="268436192" symbol="sessionRemainingSec"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="17" lineNum="189" parent="globals/BreathSession" pc="268436203" symbol="sessionRemainingSec"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="17" lineNum="191" parent="globals/BreathSession" pc="268436213" symbol="sessionRemainingSec"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="18" lineNum="32" parent="globals/BreathSession" pc="268436222" symbol="rebuild"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="18" lineNum="33" parent="globals/BreathSession" pc="268436226" symbol="rebuild"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="18" lineNum="34" parent="globals/BreathSession" pc="268436234" symbol="rebuild"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="18" lineNum="35" parent="globals/BreathSession" pc="268436242" symbol="rebuild"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="18" lineNum="37" parent="globals/BreathSession" pc="268436265" symbol="rebuild"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="18" lineNum="38" parent="globals/BreathSession" pc="268436301" symbol="rebuild"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="18" lineNum="39" parent="globals/BreathSession" pc="268436306" symbol="rebuild"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="18" lineNum="41" parent="globals/BreathSession" pc="268436345" symbol="rebuild"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="18" lineNum="42" parent="globals/BreathSession" pc="268436381" symbol="rebuild"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="18" lineNum="43" parent="globals/BreathSession" pc="268436386" symbol="rebuild"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="18" lineNum="46" parent="globals/BreathSession" pc="268436425" symbol="rebuild"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="18" lineNum="47" parent="globals/BreathSession" pc="268436445" symbol="rebuild"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="18" lineNum="48" parent="globals/BreathSession" pc="268436479" symbol="rebuild"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="18" lineNum="51" parent="globals/BreathSession" pc="268436516" symbol="rebuild"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="18" lineNum="52" parent="globals/BreathSession" pc="268436526" symbol="rebuild"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="18" lineNum="53" parent="globals/BreathSession" pc="268436536" symbol="rebuild"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="18" lineNum="54" parent="globals/BreathSession" pc="268436571" symbol="rebuild"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="19" lineNum="159" parent="globals/BreathSession" pc="268436584" symbol="level"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="19" lineNum="160" parent="globals/BreathSession" pc="268436588" symbol="level"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="19" lineNum="161" parent="globals/BreathSession" pc="268436607" symbol="level"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="19" lineNum="162" parent="globals/BreathSession" pc="268436618" symbol="level"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="19" lineNum="164" parent="globals/BreathSession" pc="268436633" symbol="level"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="19" lineNum="165" parent="globals/BreathSession" pc="268436644" symbol="level"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="19" lineNum="167" parent="globals/BreathSession" pc="268436653" symbol="level"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="19" lineNum="168" parent="globals/BreathSession" pc="268436664" symbol="level"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="19" lineNum="170" parent="globals/BreathSession" pc="268436685" symbol="level"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="20" lineNum="73" parent="globals/BreathSession" pc="268436691" symbol="start"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="20" lineNum="74" parent="globals/BreathSession" pc="268436693" symbol="start"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="20" lineNum="75" parent="globals/BreathSession" pc="268436705" symbol="start"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="21" lineNum="134" parent="globals/BreathSession" pc="268436716" symbol="phaseIndex"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="21" lineNum="135" parent="globals/BreathSession" pc="268436718" symbol="phaseIndex"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="22" lineNum="92" parent="globals/BreathSession" pc="268436727" symbol="isDone"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="22" lineNum="93" parent="globals/BreathSession" pc="268436729" symbol="isDone"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="23" lineNum="84" parent="globals/BreathSession" pc="268436738" symbol="stop"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="23" lineNum="85" parent="globals/BreathSession" pc="268436740" symbol="stop"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="24" lineNum="126" parent="globals/BreathSession" pc="268436751" symbol="phaseKind"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="24" lineNum="127" parent="globals/BreathSession" pc="268436753" symbol="phaseKind"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="25" lineNum="64" parent="globals/BreathSession" pc="268436771" symbol="reset"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="25" lineNum="65" parent="globals/BreathSession" pc="268436773" symbol="reset"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="25" lineNum="66" parent="globals/BreathSession" pc="268436786" symbol="reset"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="25" lineNum="67" parent="globals/BreathSession" pc="268436799" symbol="reset"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="25" lineNum="68" parent="globals/BreathSession" pc="268436812" symbol="reset"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="25" lineNum="69" parent="globals/BreathSession" pc="268436825" symbol="reset"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="25" lineNum="70" parent="globals/BreathSession" pc="268436835" symbol="reset"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="26" lineNum="26" parent="globals/BreathSession" pc="268436846" symbol="initialize"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="26" lineNum="27" parent="globals/BreathSession" pc="268436848" symbol="initialize"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="27" lineNum="57" parent="globals/BreathSession" pc="268436861" symbol="append"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="27" lineNum="58" parent="globals/BreathSession" pc="268436863" symbol="append"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="27" lineNum="59" parent="globals/BreathSession" pc="268436874" symbol="append"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="27" lineNum="60" parent="globals/BreathSession" pc="268436888" symbol="append"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="28" lineNum="130" parent="globals/BreathSession" pc="268436912" symbol="phaseCount"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" id="28" lineNum="131" parent="globals/BreathSession" pc="268436914" symbol="phaseCount"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="29" lineNum="34" parent="globals/SettingsMenu" pc="268436932" symbol="addToggle"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="29" lineNum="35" parent="globals/SettingsMenu" pc="268436936" symbol="addToggle"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="29" lineNum="37" parent="globals/SettingsMenu" pc="268436996" symbol="addToggle"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="29" lineNum="38" parent="globals/SettingsMenu" pc="268437018" symbol="addToggle"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="30" lineNum="42" parent="globals/SettingsMenu" pc="268437033" symbol="refresh"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="30" lineNum="43" parent="globals/SettingsMenu" pc="268437035" symbol="refresh"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="30" lineNum="44" parent="globals/SettingsMenu" pc="268437067" symbol="refresh"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="30" lineNum="45" parent="globals/SettingsMenu" pc="268437099" symbol="refresh"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="30" lineNum="46" parent="globals/SettingsMenu" pc="268437146" symbol="refresh"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="30" lineNum="47" parent="globals/SettingsMenu" pc="268437193" symbol="refresh"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="30" lineNum="48" parent="globals/SettingsMenu" pc="268437240" symbol="refresh"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="30" lineNum="49" parent="globals/SettingsMenu" pc="268437287" symbol="refresh"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="30" lineNum="50" parent="globals/SettingsMenu" pc="268437334" symbol="refresh"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="31" lineNum="10" parent="globals/SettingsMenu" pc="268437382" symbol="initialize"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="31" lineNum="11" parent="globals/SettingsMenu" pc="268437384" symbol="initialize"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="31" lineNum="12" parent="globals/SettingsMenu" pc="268437455" symbol="initialize"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="31" lineNum="14" parent="globals/SettingsMenu" pc="268437469" symbol="initialize"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="31" lineNum="15" parent="globals/SettingsMenu" pc="268437510" symbol="initialize"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="31" lineNum="16" parent="globals/SettingsMenu" pc="268437551" symbol="initialize"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="31" lineNum="17" parent="globals/SettingsMenu" pc="268437592" symbol="initialize"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="31" lineNum="18" parent="globals/SettingsMenu" pc="268437633" symbol="initialize"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="31" lineNum="19" parent="globals/SettingsMenu" pc="268437674" symbol="initialize"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="31" lineNum="20" parent="globals/SettingsMenu" pc="268437715" symbol="initialize"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="31" lineNum="21" parent="globals/SettingsMenu" pc="268437756" symbol="initialize"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="31" lineNum="22" parent="globals/SettingsMenu" pc="268437812" symbol="initialize"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="31" lineNum="23" parent="globals/SettingsMenu" pc="268437853" symbol="initialize"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="31" lineNum="25" parent="globals/SettingsMenu" pc="268437909" symbol="initialize"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="32" lineNum="28" parent="globals/SettingsMenu" pc="268437922" symbol="addRow"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="32" lineNum="29" parent="globals/SettingsMenu" pc="268437926" symbol="addRow"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="32" lineNum="30" parent="globals/SettingsMenu" pc="268437984" symbol="addRow"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="32" lineNum="31" parent="globals/SettingsMenu" pc="268438006" symbol="addRow"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="33" lineNum="53" parent="globals/SettingsMenu" pc="268438021" symbol="setSub"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="33" lineNum="54" parent="globals/SettingsMenu" pc="268438025" symbol="setSub"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="33" lineNum="55" parent="globals/SettingsMenu" pc="268438046" symbol="setSub"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="33" lineNum="56" parent="globals/SettingsMenu" pc="268438064" symbol="setSub"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/HomeView.mc" id="34" lineNum="11" parent="globals/HomeView" pc="268438082" symbol="initialize"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/HomeView.mc" id="34" lineNum="12" parent="globals/HomeView" pc="268438084" symbol="initialize"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/HomeView.mc" id="35" lineNum="15" parent="globals/HomeView" pc="268438103" symbol="onUpdate"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/HomeView.mc" id="35" lineNum="16" parent="globals/HomeView" pc="268438107" symbol="onUpdate"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/HomeView.mc" id="35" lineNum="17" parent="globals/HomeView" pc="268438120" symbol="onUpdate"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/HomeView.mc" id="35" lineNum="20" parent="globals/HomeView" pc="268438133" symbol="onUpdate"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/HomeView.mc" id="35" lineNum="21" parent="globals/HomeView" pc="268438150" symbol="onUpdate"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/HomeView.mc" id="35" lineNum="22" parent="globals/HomeView" pc="268438160" symbol="onUpdate"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/HomeView.mc" id="35" lineNum="23" parent="globals/HomeView" pc="268438170" symbol="onUpdate"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/HomeView.mc" id="35" lineNum="25" parent="globals/HomeView" pc="268438177" symbol="onUpdate"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/HomeView.mc" id="35" lineNum="26" parent="globals/HomeView" pc="268438199" symbol="onUpdate"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/HomeView.mc" id="35" lineNum="28" parent="globals/HomeView" pc="268438211" symbol="onUpdate"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/HomeView.mc" id="35" lineNum="29" parent="globals/HomeView" pc="268438249" symbol="onUpdate"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/HomeView.mc" id="35" lineNum="31" parent="globals/HomeView" pc="268438302" symbol="onUpdate"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/HomeView.mc" id="35" lineNum="33" parent="globals/HomeView" pc="268438379" symbol="onUpdate"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/Config.mc" id="36" lineNum="89" parent="globals/Config" pc="268438457" symbol="exhale"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/Config.mc" id="36" lineNum="90" parent="globals/Config" pc="268438467" symbol="exhale"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/Config.mc" id="37" lineNum="107" parent="globals/Config" pc="268438510" symbol="strength"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/Config.mc" id="37" lineNum="108" parent="globals/Config" pc="268438520" symbol="strength"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/Config.mc" id="38" lineNum="24" parent="globals/Config" pc="268438563" symbol="readNumber"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/Config.mc" id="38" lineNum="25" parent="globals/Config" pc="268438575" symbol="readNumber"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/Config.mc" id="38" lineNum="27" parent="globals/Config" pc="268438578" symbol="readNumber"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/Config.mc" id="38" lineNum="28" parent="globals/Config" pc="268438603" symbol="readNumber"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/Config.mc" id="38" lineNum="29" parent="globals/Config" pc="268438607" symbol="readNumber"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/Config.mc" id="38" lineNum="31" parent="globals/Config" pc="268438622" symbol="readNumber"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/Config.mc" id="38" lineNum="32" parent="globals/Config" pc="268438628" symbol="readNumber"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/Config.mc" id="38" lineNum="34" parent="globals/Config" pc="268438634" symbol="readNumber"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/Config.mc" id="38" lineNum="35" parent="globals/Config" pc="268438645" symbol="readNumber"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/Config.mc" id="38" lineNum="36" parent="globals/Config" pc="268438658" symbol="readNumber"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/Config.mc" id="38" lineNum="37" parent="globals/Config" pc="268438665" symbol="readNumber"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/Config.mc" id="38" lineNum="40" parent="globals/Config" pc="268438674" symbol="readNumber"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/Config.mc" id="39" lineNum="77" parent="globals/Config" pc="268438677" symbol="mode"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/Config.mc" id="39" lineNum="78" parent="globals/Config" pc="268438687" symbol="mode"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/Config.mc" id="40" lineNum="85" parent="globals/Config" pc="268438730" symbol="holdFull"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/Config.mc" id="40" lineNum="86" parent="globals/Config" pc="268438740" symbol="holdFull"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/Config.mc" id="41" lineNum="111" parent="globals/Config" pc="268438783" symbol="tones"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/Config.mc" id="41" lineNum="112" parent="globals/Config" pc="268438793" symbol="tones"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/Config.mc" id="42" lineNum="67" parent="globals/Config" pc="268438812" symbol="clamp"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/Config.mc" id="42" lineNum="68" parent="globals/Config" pc="268438822" symbol="clamp"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/Config.mc" id="42" lineNum="69" parent="globals/Config" pc="268438830" symbol="clamp"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/Config.mc" id="42" lineNum="71" parent="globals/Config" pc="268438836" symbol="clamp"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/Config.mc" id="42" lineNum="72" parent="globals/Config" pc="268438844" symbol="clamp"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/Config.mc" id="42" lineNum="74" parent="globals/Config" pc="268438850" symbol="clamp"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/Config.mc" id="43" lineNum="59" parent="globals/Config" pc="268438853" symbol="set"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/Config.mc" id="43" lineNum="61" parent="globals/Config" pc="268438865" symbol="set"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/Config.mc" id="43" lineNum="62" parent="globals/Config" pc="268438891" symbol="set"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/Config.mc" id="44" lineNum="102" parent="globals/Config" pc="268438908" symbol="vibeHold"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/Config.mc" id="44" lineNum="103" parent="globals/Config" pc="268438918" symbol="vibeHold"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/Config.mc" id="45" lineNum="98" parent="globals/Config" pc="268438937" symbol="lengthMin"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/Config.mc" id="45" lineNum="99" parent="globals/Config" pc="268438947" symbol="lengthMin"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/Config.mc" id="46" lineNum="43" parent="globals/Config" pc="268438990" symbol="readBoolean"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/Config.mc" id="46" lineNum="44" parent="globals/Config" pc="268439002" symbol="readBoolean"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/Config.mc" id="46" lineNum="46" parent="globals/Config" pc="268439005" symbol="readBoolean"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/Config.mc" id="46" lineNum="47" parent="globals/Config" pc="268439030" symbol="readBoolean"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/Config.mc" id="46" lineNum="48" parent="globals/Config" pc="268439034" symbol="readBoolean"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/Config.mc" id="46" lineNum="50" parent="globals/Config" pc="268439049" symbol="readBoolean"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/Config.mc" id="46" lineNum="51" parent="globals/Config" pc="268439057" symbol="readBoolean"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/Config.mc" id="46" lineNum="53" parent="globals/Config" pc="268439063" symbol="readBoolean"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/Config.mc" id="46" lineNum="54" parent="globals/Config" pc="268439071" symbol="readBoolean"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/Config.mc" id="46" lineNum="56" parent="globals/Config" pc="268439077" symbol="readBoolean"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/Config.mc" id="47" lineNum="93" parent="globals/Config" pc="268439080" symbol="holdEmpty"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/Config.mc" id="47" lineNum="94" parent="globals/Config" pc="268439090" symbol="holdEmpty"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/Config.mc" id="48" lineNum="81" parent="globals/Config" pc="268439133" symbol="inhale"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/Config.mc" id="48" lineNum="82" parent="globals/Config" pc="268439143" symbol="inhale"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="49" lineNum="166" parent="globals/ValueDelegate" pc="268439186" symbol="initialize"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="49" lineNum="167" parent="globals/ValueDelegate" pc="268439188" symbol="initialize"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="49" lineNum="168" parent="globals/ValueDelegate" pc="268439206" symbol="initialize"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="49" lineNum="169" parent="globals/ValueDelegate" pc="268439216" symbol="initialize"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="49" lineNum="170" parent="globals/ValueDelegate" pc="268439226" symbol="initialize"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="50" lineNum="173" parent="globals/ValueDelegate" pc="268439237" symbol="onSelect"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="50" lineNum="174" parent="globals/ValueDelegate" pc="268439241" symbol="onSelect"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="50" lineNum="175" parent="globals/ValueDelegate" pc="268439254" symbol="onSelect"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="50" lineNum="176" parent="globals/ValueDelegate" pc="268439306" symbol="onSelect"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="50" lineNum="177" parent="globals/ValueDelegate" pc="268439341" symbol="onSelect"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="50" lineNum="178" parent="globals/ValueDelegate" pc="268439354" symbol="onSelect"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="50" lineNum="181" parent="globals/ValueDelegate" pc="268439378" symbol="onSelect"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreatheApp.mc" id="51" lineNum="11" parent="globals/BreatheApp" pc="268439400" symbol="onStart"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreatheApp.mc" id="52" lineNum="22" parent="globals/BreatheApp" pc="268439403" symbol="onSettingsChanged"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreatheApp.mc" id="52" lineNum="23" parent="globals/BreatheApp" pc="268439405" symbol="onSettingsChanged"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreatheApp.mc" id="53" lineNum="17" parent="globals/BreatheApp" pc="268439422" symbol="getInitialView"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreatheApp.mc" id="53" lineNum="18" parent="globals/BreatheApp" pc="268439424" symbol="getInitialView"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreatheApp.mc" id="54" lineNum="7" parent="globals/BreatheApp" pc="268439491" symbol="initialize"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreatheApp.mc" id="54" lineNum="8" parent="globals/BreatheApp" pc="268439493" symbol="initialize"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreatheApp.mc" id="55" lineNum="14" parent="globals/BreatheApp" pc="268439512" symbol="onStop"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="56" lineNum="274" parent="globals/BreathDelegate" pc="268439515" symbol="onBack"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="56" lineNum="275" parent="globals/BreathDelegate" pc="268439517" symbol="onBack"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="56" lineNum="276" parent="globals/BreathDelegate" pc="268439535" symbol="onBack"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="56" lineNum="277" parent="globals/BreathDelegate" pc="268439556" symbol="onBack"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="57" lineNum="280" parent="globals/BreathDelegate" pc="268439559" symbol="onMenu"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="57" lineNum="281" parent="globals/BreathDelegate" pc="268439561" symbol="onMenu"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="58" lineNum="288" parent="globals/BreathDelegate" pc="268439564" symbol="onPreviousPage"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="58" lineNum="289" parent="globals/BreathDelegate" pc="268439566" symbol="onPreviousPage"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="59" lineNum="262" parent="globals/BreathDelegate" pc="268439569" symbol="initialize"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="59" lineNum="263" parent="globals/BreathDelegate" pc="268439571" symbol="initialize"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="59" lineNum="264" parent="globals/BreathDelegate" pc="268439589" symbol="initialize"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="60" lineNum="268" parent="globals/BreathDelegate" pc="268439600" symbol="onSelect"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="60" lineNum="269" parent="globals/BreathDelegate" pc="268439602" symbol="onSelect"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="60" lineNum="270" parent="globals/BreathDelegate" pc="268439620" symbol="onSelect"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="61" lineNum="284" parent="globals/BreathDelegate" pc="268439623" symbol="onNextPage"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="61" lineNum="285" parent="globals/BreathDelegate" pc="268439625" symbol="onNextPage"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/Fmt.mc" id="62" lineNum="44" parent="globals/Fmt" pc="268439628" symbol="summary"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/Fmt.mc" id="62" lineNum="45" parent="globals/Fmt" pc="268439638" symbol="summary"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/Fmt.mc" id="63" lineNum="15" parent="globals/Fmt" pc="268439683" symbol="modeName"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/Fmt.mc" id="63" lineNum="16" parent="globals/Fmt" pc="268439693" symbol="modeName"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/Fmt.mc" id="63" lineNum="17" parent="globals/Fmt" pc="268439717" symbol="modeName"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/Fmt.mc" id="63" lineNum="19" parent="globals/Fmt" pc="268439760" symbol="modeName"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/Fmt.mc" id="64" lineNum="22" parent="globals/Fmt" pc="268439800" symbol="seconds"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/Fmt.mc" id="64" lineNum="23" parent="globals/Fmt" pc="268439810" symbol="seconds"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/Fmt.mc" id="65" lineNum="26" parent="globals/Fmt" pc="268439868" symbol="minutes"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/Fmt.mc" id="65" lineNum="27" parent="globals/Fmt" pc="268439878" symbol="minutes"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/Fmt.mc" id="65" lineNum="28" parent="globals/Fmt" pc="268439889" symbol="minutes"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/Fmt.mc" id="65" lineNum="30" parent="globals/Fmt" pc="268439932" symbol="minutes"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/Fmt.mc" id="66" lineNum="7" parent="globals/Fmt" pc="268439990" symbol="pattern"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/Fmt.mc" id="66" lineNum="8" parent="globals/Fmt" pc="268440000" symbol="pattern"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/Fmt.mc" id="66" lineNum="9" parent="globals/Fmt" pc="268440024" symbol="pattern"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/Fmt.mc" id="66" lineNum="11" parent="globals/Fmt" pc="268440083" symbol="pattern"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/Fmt.mc" id="67" lineNum="38" parent="globals/Fmt" pc="268440201" symbol="clock"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/Fmt.mc" id="67" lineNum="39" parent="globals/Fmt" pc="268440213" symbol="clock"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/Fmt.mc" id="67" lineNum="40" parent="globals/Fmt" pc="268440223" symbol="clock"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/Fmt.mc" id="67" lineNum="41" parent="globals/Fmt" pc="268440233" symbol="clock"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/Fmt.mc" id="68" lineNum="33" parent="globals/Fmt" pc="268440268" symbol="percent"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/Fmt.mc" id="68" lineNum="34" parent="globals/Fmt" pc="268440278" symbol="percent"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/HomeView.mc" id="69" lineNum="55" parent="globals/HomeDelegate" pc="268440296" symbol="onPreviousPage"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/HomeView.mc" id="69" lineNum="56" parent="globals/HomeDelegate" pc="268440298" symbol="onPreviousPage"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/HomeView.mc" id="70" lineNum="59" parent="globals/HomeDelegate" pc="268440310" symbol="onMenu"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/HomeView.mc" id="70" lineNum="60" parent="globals/HomeDelegate" pc="268440312" symbol="onMenu"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/HomeView.mc" id="71" lineNum="40" parent="globals/HomeDelegate" pc="268440324" symbol="initialize"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/HomeView.mc" id="71" lineNum="41" parent="globals/HomeDelegate" pc="268440326" symbol="initialize"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/HomeView.mc" id="72" lineNum="63" parent="globals/HomeDelegate" pc="268440345" symbol="openSettings"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/HomeView.mc" id="72" lineNum="64" parent="globals/HomeDelegate" pc="268440349" symbol="openSettings"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/HomeView.mc" id="72" lineNum="65" parent="globals/HomeDelegate" pc="268440373" symbol="openSettings"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/HomeView.mc" id="72" lineNum="66" parent="globals/HomeDelegate" pc="268440420" symbol="openSettings"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/HomeView.mc" id="73" lineNum="45" parent="globals/HomeDelegate" pc="268440423" symbol="onSelect"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/HomeView.mc" id="73" lineNum="46" parent="globals/HomeDelegate" pc="268440427" symbol="onSelect"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/HomeView.mc" id="73" lineNum="47" parent="globals/HomeDelegate" pc="268440451" symbol="onSelect"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/HomeView.mc" id="73" lineNum="48" parent="globals/HomeDelegate" pc="268440498" symbol="onSelect"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/HomeView.mc" id="74" lineNum="51" parent="globals/HomeDelegate" pc="268440501" symbol="onNextPage"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/HomeView.mc" id="74" lineNum="52" parent="globals/HomeDelegate" pc="268440503" symbol="onNextPage"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="75" lineNum="166" parent="globals/BreathView" pc="268440515" symbol="beep"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="75" lineNum="167" parent="globals/BreathView" pc="268440517" symbol="beep"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="75" lineNum="168" parent="globals/BreathView" pc="268440536" symbol="beep"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="75" lineNum="170" parent="globals/BreathView" pc="268440540" symbol="beep"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="75" lineNum="171" parent="globals/BreathView" pc="268440556" symbol="beep"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="75" lineNum="173" parent="globals/BreathView" pc="268440560" symbol="beep"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="75" lineNum="174" parent="globals/BreathView" pc="268440585" symbol="beep"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="75" lineNum="176" parent="globals/BreathView" pc="268440589" symbol="beep"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="76" lineNum="144" parent="globals/BreathView" pc="268440611" symbol="cueFinish"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="76" lineNum="145" parent="globals/BreathView" pc="268440615" symbol="cueFinish"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="76" lineNum="146" parent="globals/BreathView" pc="268440632" symbol="cueFinish"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="76" lineNum="151" parent="globals/BreathView" pc="268440861" symbol="cueFinish"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="76" lineNum="152" parent="globals/BreathView" pc="268440873" symbol="cueFinish"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="77" lineNum="74" parent="globals/BreathView" pc="268440890" symbol="onTick"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="77" lineNum="75" parent="globals/BreathView" pc="268440894" symbol="onTick"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="77" lineNum="76" parent="globals/BreathView" pc="268440911" symbol="onTick"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="77" lineNum="77" parent="globals/BreathView" pc="268440924" symbol="onTick"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="77" lineNum="79" parent="globals/BreathView" pc="268440934" symbol="onTick"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="77" lineNum="80" parent="globals/BreathView" pc="268440956" symbol="onTick"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="77" lineNum="83" parent="globals/BreathView" pc="268440966" symbol="onTick"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="77" lineNum="84" parent="globals/BreathView" pc="268440987" symbol="onTick"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="77" lineNum="87" parent="globals/BreathView" pc="268440991" symbol="onTick"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="77" lineNum="88" parent="globals/BreathView" pc="268441013" symbol="onTick"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="77" lineNum="89" parent="globals/BreathView" pc="268441033" symbol="onTick"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="77" lineNum="90" parent="globals/BreathView" pc="268441045" symbol="onTick"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="77" lineNum="92" parent="globals/BreathView" pc="268441060" symbol="onTick"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="77" lineNum="95" parent="globals/BreathView" pc="268441092" symbol="onTick"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="78" lineNum="246" parent="globals/BreathView" pc="268441109" symbol="footerText"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="78" lineNum="247" parent="globals/BreathView" pc="268441113" symbol="footerText"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="78" lineNum="248" parent="globals/BreathView" pc="268441124" symbol="footerText"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="78" lineNum="250" parent="globals/BreathView" pc="268441136" symbol="footerText"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="78" lineNum="251" parent="globals/BreathView" pc="268441155" symbol="footerText"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="78" lineNum="252" parent="globals/BreathView" pc="268441161" symbol="footerText"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="78" lineNum="254" parent="globals/BreathView" pc="268441166" symbol="footerText"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="79" lineNum="115" parent="globals/BreathView" pc="268441184" symbol="stopSession"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="79" lineNum="116" parent="globals/BreathView" pc="268441186" symbol="stopSession"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="79" lineNum="117" parent="globals/BreathView" pc="268441204" symbol="stopSession"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="80" lineNum="61" parent="globals/BreathView" pc="268441217" symbol="startTimer"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="80" lineNum="62" parent="globals/BreathView" pc="268441219" symbol="startTimer"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="80" lineNum="63" parent="globals/BreathView" pc="268441231" symbol="startTimer"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="80" lineNum="65" parent="globals/BreathView" pc="268441268" symbol="startTimer"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="81" lineNum="55" parent="globals/BreathView" pc="268441310" symbol="onHide"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="81" lineNum="56" parent="globals/BreathView" pc="268441312" symbol="onHide"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="82" lineNum="43" parent="globals/BreathView" pc="268441325" symbol="onShow"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="82" lineNum="44" parent="globals/BreathView" pc="268441327" symbol="onShow"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="82" lineNum="45" parent="globals/BreathView" pc="268441339" symbol="onShow"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="82" lineNum="46" parent="globals/BreathView" pc="268441349" symbol="onShow"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="82" lineNum="47" parent="globals/BreathView" pc="268441379" symbol="onShow"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="82" lineNum="48" parent="globals/BreathView" pc="268441397" symbol="onShow"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="82" lineNum="49" parent="globals/BreathView" pc="268441415" symbol="onShow"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="82" lineNum="51" parent="globals/BreathView" pc="268441447" symbol="onShow"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="82" lineNum="52" parent="globals/BreathView" pc="268441470" symbol="onShow"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="83" lineNum="100" parent="globals/BreathView" pc="268441483" symbol="togglePause"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="83" lineNum="101" parent="globals/BreathView" pc="268441485" symbol="togglePause"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="83" lineNum="103" parent="globals/BreathView" pc="268441505" symbol="togglePause"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="83" lineNum="104" parent="globals/BreathView" pc="268441523" symbol="togglePause"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="83" lineNum="105" parent="globals/BreathView" pc="268441541" symbol="togglePause"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="83" lineNum="106" parent="globals/BreathView" pc="268441564" symbol="togglePause"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="83" lineNum="107" parent="globals/BreathView" pc="268441576" symbol="togglePause"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="83" lineNum="109" parent="globals/BreathView" pc="268441608" symbol="togglePause"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="83" lineNum="110" parent="globals/BreathView" pc="268441644" symbol="togglePause"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="83" lineNum="112" parent="globals/BreathView" pc="268441667" symbol="togglePause"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="84" lineNum="68" parent="globals/BreathView" pc="268441684" symbol="stopTimer"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="84" lineNum="69" parent="globals/BreathView" pc="268441686" symbol="stopTimer"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="84" lineNum="70" parent="globals/BreathView" pc="268441699" symbol="stopTimer"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="85" lineNum="124" parent="globals/BreathView" pc="268441721" symbol="cuePhase"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="85" lineNum="125" parent="globals/BreathView" pc="268441725" symbol="cuePhase"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="85" lineNum="127" parent="globals/BreathView" pc="268441742" symbol="cuePhase"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="85" lineNum="128" parent="globals/BreathView" pc="268441753" symbol="cuePhase"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="85" lineNum="129" parent="globals/BreathView" pc="268441812" symbol="cuePhase"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="85" lineNum="130" parent="globals/BreathView" pc="268441827" symbol="cuePhase"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="85" lineNum="131" parent="globals/BreathView" pc="268441838" symbol="cuePhase"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="85" lineNum="134" parent="globals/BreathView" pc="268441982" symbol="cuePhase"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="85" lineNum="135" parent="globals/BreathView" pc="268441997" symbol="cuePhase"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="85" lineNum="136" parent="globals/BreathView" pc="268442015" symbol="cuePhase"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="85" lineNum="137" parent="globals/BreathView" pc="268442025" symbol="cuePhase"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="85" lineNum="138" parent="globals/BreathView" pc="268442036" symbol="cuePhase"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="85" lineNum="140" parent="globals/BreathView" pc="268442046" symbol="cuePhase"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="86" lineNum="211" parent="globals/BreathView" pc="268442109" symbol="drawLevelBar"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="86" lineNum="212" parent="globals/BreathView" pc="268442113" symbol="drawLevelBar"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="86" lineNum="213" parent="globals/BreathView" pc="268442129" symbol="drawLevelBar"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="86" lineNum="214" parent="globals/BreathView" pc="268442145" symbol="drawLevelBar"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="86" lineNum="215" parent="globals/BreathView" pc="268442161" symbol="drawLevelBar"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="86" lineNum="217" parent="globals/BreathView" pc="268442174" symbol="drawLevelBar"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="86" lineNum="218" parent="globals/BreathView" pc="268442191" symbol="drawLevelBar"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="86" lineNum="220" parent="globals/BreathView" pc="268442211" symbol="drawLevelBar"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="86" lineNum="221" parent="globals/BreathView" pc="268442242" symbol="drawLevelBar"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="86" lineNum="222" parent="globals/BreathView" pc="268442253" symbol="drawLevelBar"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="86" lineNum="223" parent="globals/BreathView" pc="268442261" symbol="drawLevelBar"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="86" lineNum="225" parent="globals/BreathView" pc="268442268" symbol="drawLevelBar"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="87" lineNum="229" parent="globals/BreathView" pc="268442298" symbol="stateLabel"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="87" lineNum="230" parent="globals/BreathView" pc="268442302" symbol="stateLabel"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="87" lineNum="231" parent="globals/BreathView" pc="268442322" symbol="stateLabel"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="87" lineNum="233" parent="globals/BreathView" pc="268442334" symbol="stateLabel"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="87" lineNum="234" parent="globals/BreathView" pc="268442355" symbol="stateLabel"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="87" lineNum="236" parent="globals/BreathView" pc="268442367" symbol="stateLabel"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="87" lineNum="237" parent="globals/BreathView" pc="268442386" symbol="stateLabel"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="87" lineNum="238" parent="globals/BreathView" pc="268442397" symbol="stateLabel"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="87" lineNum="240" parent="globals/BreathView" pc="268442409" symbol="stateLabel"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="87" lineNum="241" parent="globals/BreathView" pc="268442420" symbol="stateLabel"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="87" lineNum="243" parent="globals/BreathView" pc="268442432" symbol="stateLabel"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="88" lineNum="28" parent="globals/BreathView" pc="268442441" symbol="initialize"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="88" lineNum="29" parent="globals/BreathView" pc="268442443" symbol="initialize"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="88" lineNum="30" parent="globals/BreathView" pc="268442461" symbol="initialize"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="88" lineNum="31" parent="globals/BreathView" pc="268442491" symbol="initialize"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="88" lineNum="32" parent="globals/BreathView" pc="268442500" symbol="initialize"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="88" lineNum="33" parent="globals/BreathView" pc="268442513" symbol="initialize"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="88" lineNum="34" parent="globals/BreathView" pc="268442523" symbol="initialize"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="88" lineNum="35" parent="globals/BreathView" pc="268442533" symbol="initialize"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="88" lineNum="36" parent="globals/BreathView" pc="268442580" symbol="initialize"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="88" lineNum="37" parent="globals/BreathView" pc="268442627" symbol="initialize"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="88" lineNum="38" parent="globals/BreathView" pc="268442674" symbol="initialize"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="88" lineNum="39" parent="globals/BreathView" pc="268442721" symbol="initialize"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="88" lineNum="40" parent="globals/BreathView" pc="268442768" symbol="initialize"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="89" lineNum="155" parent="globals/BreathView" pc="268442816" symbol="buzz"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="89" lineNum="156" parent="globals/BreathView" pc="268442818" symbol="buzz"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="89" lineNum="157" parent="globals/BreathView" pc="268442834" symbol="buzz"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="89" lineNum="160" parent="globals/BreathView" pc="268442838" symbol="buzz"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="89" lineNum="161" parent="globals/BreathView" pc="268442863" symbol="buzz"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="89" lineNum="163" parent="globals/BreathView" pc="268442867" symbol="buzz"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="90" lineNum="181" parent="globals/BreathView" pc="268442886" symbol="onUpdate"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="90" lineNum="182" parent="globals/BreathView" pc="268442890" symbol="onUpdate"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="90" lineNum="183" parent="globals/BreathView" pc="268442903" symbol="onUpdate"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="90" lineNum="184" parent="globals/BreathView" pc="268442916" symbol="onUpdate"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="90" lineNum="185" parent="globals/BreathView" pc="268442933" symbol="onUpdate"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="90" lineNum="186" parent="globals/BreathView" pc="268442943" symbol="onUpdate"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="90" lineNum="189" parent="globals/BreathView" pc="268442953" symbol="onUpdate"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="90" lineNum="190" parent="globals/BreathView" pc="268442972" symbol="onUpdate"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="90" lineNum="192" parent="globals/BreathView" pc="268442979" symbol="onUpdate"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="90" lineNum="193" parent="globals/BreathView" pc="268443001" symbol="onUpdate"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="90" lineNum="195" parent="globals/BreathView" pc="268443013" symbol="onUpdate"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="90" lineNum="197" parent="globals/BreathView" pc="268443031" symbol="onUpdate"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="90" lineNum="198" parent="globals/BreathView" pc="268443050" symbol="onUpdate"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="90" lineNum="199" parent="globals/BreathView" pc="268443112" symbol="onUpdate"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="90" lineNum="201" parent="globals/BreathView" pc="268443152" symbol="onUpdate"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="90" lineNum="203" parent="globals/BreathView" pc="268443201" symbol="onUpdate"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="90" lineNum="204" parent="globals/BreathView" pc="268443214" symbol="onUpdate"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/BreathView.mc" id="90" lineNum="205" parent="globals/BreathView" pc="268443221" symbol="onUpdate"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="91" lineNum="151" parent="globals/ValueMenu" pc="268443265" symbol="initialize"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="91" lineNum="152" parent="globals/ValueMenu" pc="268443269" symbol="initialize"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="91" lineNum="153" parent="globals/ValueMenu" pc="268443303" symbol="initialize"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="91" lineNum="154" parent="globals/ValueMenu" pc="268443327" symbol="initialize"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="91" lineNum="155" parent="globals/ValueMenu" pc="268443353" symbol="initialize"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="92" lineNum="128" parent="globals/SettingsDelegate" pc="268443420" symbol="pushSeconds"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="92" lineNum="129" parent="globals/SettingsDelegate" pc="268443424" symbol="pushSeconds"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="92" lineNum="130" parent="globals/SettingsDelegate" pc="268443432" symbol="pushSeconds"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="92" lineNum="131" parent="globals/SettingsDelegate" pc="268443440" symbol="pushSeconds"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="92" lineNum="132" parent="globals/SettingsDelegate" pc="268443455" symbol="pushSeconds"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="92" lineNum="133" parent="globals/SettingsDelegate" pc="268443469" symbol="pushSeconds"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="92" lineNum="135" parent="globals/SettingsDelegate" pc="268443511" symbol="pushSeconds"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="92" lineNum="136" parent="globals/SettingsDelegate" pc="268443528" symbol="pushSeconds"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="92" lineNum="137" parent="globals/SettingsDelegate" pc="268443560" symbol="pushSeconds"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="92" lineNum="138" parent="globals/SettingsDelegate" pc="268443577" symbol="pushSeconds"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="92" lineNum="139" parent="globals/SettingsDelegate" pc="268443609" symbol="pushSeconds"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="93" lineNum="65" parent="globals/SettingsDelegate" pc="268443632" symbol="initialize"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="93" lineNum="66" parent="globals/SettingsDelegate" pc="268443634" symbol="initialize"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="93" lineNum="67" parent="globals/SettingsDelegate" pc="268443652" symbol="initialize"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="94" lineNum="142" parent="globals/SettingsDelegate" pc="268443663" symbol="push"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="94" lineNum="143" parent="globals/SettingsDelegate" pc="268443667" symbol="push"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="94" lineNum="144" parent="globals/SettingsDelegate" pc="268443714" symbol="push"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="95" lineNum="70" parent="globals/SettingsDelegate" pc="268443772" symbol="onSelect"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="95" lineNum="71" parent="globals/SettingsDelegate" pc="268443776" symbol="onSelect"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="95" lineNum="73" parent="globals/SettingsDelegate" pc="268443789" symbol="onSelect"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="95" lineNum="74" parent="globals/SettingsDelegate" pc="268443800" symbol="onSelect"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="95" lineNum="75" parent="globals/SettingsDelegate" pc="268443824" symbol="onSelect"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="95" lineNum="76" parent="globals/SettingsDelegate" pc="268443871" symbol="onSelect"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="95" lineNum="79" parent="globals/SettingsDelegate" pc="268443875" symbol="onSelect"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="95" lineNum="81" parent="globals/SettingsDelegate" pc="268443893" symbol="onSelect"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="95" lineNum="82" parent="globals/SettingsDelegate" pc="268443904" symbol="onSelect"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="95" lineNum="83" parent="globals/SettingsDelegate" pc="268443939" symbol="onSelect"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="95" lineNum="84" parent="globals/SettingsDelegate" pc="268443950" symbol="onSelect"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="95" lineNum="86" parent="globals/SettingsDelegate" pc="268443985" symbol="onSelect"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="95" lineNum="89" parent="globals/SettingsDelegate" pc="268443989" symbol="onSelect"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="95" lineNum="90" parent="globals/SettingsDelegate" pc="268444000" symbol="onSelect"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="95" lineNum="92" parent="globals/SettingsDelegate" pc="268444102" symbol="onSelect"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="95" lineNum="95" parent="globals/SettingsDelegate" pc="268444195" symbol="onSelect"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="95" lineNum="96" parent="globals/SettingsDelegate" pc="268444206" symbol="onSelect"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="95" lineNum="98" parent="globals/SettingsDelegate" pc="268444270" symbol="onSelect"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="95" lineNum="99" parent="globals/SettingsDelegate" pc="268444281" symbol="onSelect"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="95" lineNum="101" parent="globals/SettingsDelegate" pc="268444345" symbol="onSelect"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="95" lineNum="102" parent="globals/SettingsDelegate" pc="268444356" symbol="onSelect"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="95" lineNum="104" parent="globals/SettingsDelegate" pc="268444420" symbol="onSelect"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="95" lineNum="105" parent="globals/SettingsDelegate" pc="268444431" symbol="onSelect"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="95" lineNum="107" parent="globals/SettingsDelegate" pc="268444495" symbol="onSelect"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="95" lineNum="108" parent="globals/SettingsDelegate" pc="268444506" symbol="onSelect"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="95" lineNum="109" parent="globals/SettingsDelegate" pc="268444670" symbol="onSelect"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="95" lineNum="110" parent="globals/SettingsDelegate" pc="268444678" symbol="onSelect"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="95" lineNum="111" parent="globals/SettingsDelegate" pc="268444702" symbol="onSelect"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="95" lineNum="113" parent="globals/SettingsDelegate" pc="268444747" symbol="onSelect"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="95" lineNum="116" parent="globals/SettingsDelegate" pc="268444810" symbol="onSelect"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="95" lineNum="117" parent="globals/SettingsDelegate" pc="268444821" symbol="onSelect"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="95" lineNum="118" parent="globals/SettingsDelegate" pc="268444829" symbol="onSelect"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="95" lineNum="119" parent="globals/SettingsDelegate" pc="268444837" symbol="onSelect"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="95" lineNum="120" parent="globals/SettingsDelegate" pc="268444855" symbol="onSelect"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="95" lineNum="121" parent="globals/SettingsDelegate" pc="268444869" symbol="onSelect"/>
+        <entry filename="/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" id="95" lineNum="123" parent="globals/SettingsDelegate" pc="268444911" symbol="onSelect"/>
+    </pcToLineNum>
+    <symbolTable>
+        <entry id="8388639" module="true" symbol="Graphics"/>
+        <entry field="true" id="80" symbol="mTxtPaused"/>
+        <entry id="2" module="true" symbol="globals/Config"/>
+        <entry id="13" object="true" symbol="HomeDelegate"/>
+        <entry id="8389344" method="true" symbol="seconds"/>
+        <entry field="true" id="76" symbol="mTxtExhale"/>
+        <entry id="33" method="true" symbol="phaseIndex"/>
+        <entry id="22" method="true" symbol="isRunning"/>
+        <entry id="8388632" method="true" symbol="&lt;init&gt;"/>
+        <entry id="19" method="true" symbol="advance"/>
+        <entry field="true" id="114" symbol="Unlimited"/>
+        <entry field="true" id="77" symbol="mTxtHold"/>
+        <entry id="35" method="true" symbol="phaseProgress"/>
+        <entry id="18" object="true" symbol="ValueMenu"/>
+        <entry id="8389683" method="true" symbol="onSettingsChanged"/>
+        <entry field="true" id="79" symbol="mTxtNoVibe"/>
+        <entry id="37" method="true" symbol="remainingSec"/>
+        <entry id="46" method="true" symbol="exhale"/>
+        <entry id="45" method="true" symbol="clamp"/>
+        <entry field="true" id="96" symbol="MenuHoldEmpty"/>
+        <entry field="true" id="8389135" symbol="mKey"/>
+        <entry field="true" id="110" symbol="StateDone"/>
+        <entry id="16" object="true" symbol="SettingsMenu"/>
+        <entry field="true" id="95" symbol="MenuExhale"/>
+        <entry field="true" id="111" symbol="StatePaused"/>
+        <entry id="44" method="true" symbol="setSub"/>
+        <entry id="3" module="true" symbol="globals/Fmt"/>
+        <entry field="true" id="103" symbol="MenuTones"/>
+        <entry id="10" object="true" symbol="BreatheApp"/>
+        <entry id="8392675" method="true" symbol="append"/>
+        <entry id="54" method="true" symbol="strength"/>
+        <entry field="true" id="71" symbol="mLastMs"/>
+        <entry field="true" id="8388611" module="true" symbol="Toybox"/>
+        <entry field="true" id="101" symbol="MenuStart"/>
+        <entry field="true" id="59" symbol="mView"/>
+        <entry id="8392382" method="true" symbol="reset"/>
+        <entry id="34" method="true" symbol="phaseKind"/>
+        <entry id="61" method="true" symbol="modeName"/>
+        <entry id="62" method="true" symbol="percent"/>
+        <entry id="90" method="true" symbol="pushSeconds"/>
+        <entry id="20" method="true" symbol="cycles"/>
+        <entry field="true" id="92" symbol="AppName"/>
+        <entry id="85" method="true" symbol="stopSession"/>
+        <entry id="6" module="true" symbol="globals/Rez/Strings"/>
+        <entry id="48" method="true" symbol="holdFull"/>
+        <entry id="7" object="true" symbol="BreathDelegate"/>
+        <entry id="8389080" method="true" symbol="onMenu"/>
+        <entry id="39" method="true" symbol="setRunning"/>
+        <entry id="8388648" module="true" symbol="WatchUi"/>
+        <entry id="8389081" method="true" symbol="onBack"/>
+        <entry field="true" id="99" symbol="MenuLength"/>
+        <entry id="4" module="true" symbol="globals/Rez"/>
+        <entry id="63" method="true" symbol="summary"/>
+        <entry field="true" id="108" symbol="PhaseHold"/>
+        <entry field="true" id="58" symbol="mValues"/>
+        <entry id="8389124" method="true" symbol="onUpdate"/>
+        <entry field="true" id="29" symbol="mPhaseMs"/>
+        <entry field="true" id="72" symbol="mSession"/>
+        <entry id="50" method="true" symbol="lengthMin"/>
+        <entry id="21" method="true" symbol="isDone"/>
+        <entry id="40" method="true" symbol="addRow"/>
+        <entry id="11" module="true" symbol="Config"/>
+        <entry id="8388771" module="true" object="true" symbol="Drawables"/>
+        <entry field="true" id="105" symbol="ModeBox"/>
+        <entry id="65" method="true" symbol="beep"/>
+        <entry id="8389079" method="true" symbol="onPreviousPage"/>
+        <entry id="8" object="true" symbol="BreathSession"/>
+        <entry field="true" id="57" symbol="mParent"/>
+        <entry field="true" id="106" symbol="ModeEven"/>
+        <entry field="true" id="102" symbol="MenuStrength"/>
+        <entry id="64" method="true" symbol="openSettings"/>
+        <entry id="52" method="true" symbol="readNumber"/>
+        <entry id="17" object="true" symbol="ValueDelegate"/>
+        <entry field="true" id="88" symbol="mMenu"/>
+        <entry id="67" method="true" symbol="cueFinish"/>
+        <entry id="47" method="true" symbol="holdEmpty"/>
+        <entry field="true" id="26" symbol="mDurations"/>
+        <entry field="true" id="75" symbol="mTxtDone"/>
+        <entry id="12" module="true" symbol="Fmt"/>
+        <entry id="53" method="true" symbol="set"/>
+        <entry id="8388987" method="true" symbol="vibrate"/>
+        <entry field="true" id="115" symbol="WarnNoVibe"/>
+        <entry field="true" id="8390041" method="true" symbol="mode"/>
+        <entry id="32" method="true" symbol="phaseCount"/>
+        <entry field="true" id="97" symbol="MenuHoldFull"/>
+        <entry field="true" id="109" symbol="PhaseInhale"/>
+        <entry field="true" id="31" symbol="mTotalMs"/>
+        <entry field="true" id="25" symbol="mDone"/>
+        <entry id="5" module="true" symbol="globals/Rez/Drawables"/>
+        <entry field="true" id="93" symbol="HintSetup"/>
+        <entry field="true" id="112" symbol="UnitMin"/>
+        <entry id="8388699" method="true" symbol="stop"/>
+        <entry id="38" method="true" symbol="sessionRemainingSec"/>
+        <entry field="true" id="81" symbol="mVibeOff"/>
+        <entry id="14" object="true" symbol="HomeView"/>
+        <entry field="true" id="42" symbol="mRows"/>
+        <entry id="8388985" method="true" symbol="playTone"/>
+        <entry field="true" id="78" symbol="mTxtInhale"/>
+        <entry id="69" method="true" symbol="drawLevelBar"/>
+        <entry id="8388644" module="true" symbol="System"/>
+        <entry id="8389619" method="true" symbol="onSelect"/>
+        <entry id="8388769" module="true" object="true" symbol="Rez"/>
+        <entry field="true" id="113" symbol="UnitSec"/>
+        <entry field="true" id="24" symbol="mCycles"/>
+        <entry id="15" object="true" symbol="SettingsDelegate"/>
+        <entry id="8390401" method="true" symbol="setSubLabel"/>
+        <entry id="8388640" module="true" symbol="Lang"/>
+        <entry id="49" method="true" symbol="inhale"/>
+        <entry id="56" method="true" symbol="vibeHold"/>
+        <entry field="true" id="91" symbol="LauncherIcon"/>
+        <entry id="8388610" symbol="statics"/>
+        <entry id="8389123" method="true" symbol="onShow"/>
+        <entry id="9" object="true" symbol="BreathView"/>
+        <entry field="true" id="98" symbol="MenuInhale"/>
+        <entry id="8388775" method="true" symbol="toNumber"/>
+        <entry field="true" id="28" symbol="mLimitMs"/>
+        <entry id="83" method="true" symbol="startTimer"/>
+        <entry field="true" id="100" symbol="MenuMode"/>
+        <entry id="86" method="true" symbol="stopTimer"/>
+        <entry id="51" method="true" symbol="readBoolean"/>
+        <entry id="84" method="true" symbol="stateLabel"/>
+        <entry id="8389350" module="true" symbol="globals"/>
+        <entry id="8388770" module="true" object="true" symbol="Strings"/>
+        <entry id="82" method="true" symbol="onTick"/>
+        <entry id="8388702" method="true" symbol="initialize"/>
+        <entry id="8389279" method="true" symbol="onStart"/>
+        <entry id="43" method="true" symbol="refresh"/>
+        <entry id="23" method="true" symbol="level"/>
+        <entry field="true" id="94" symbol="HintStart"/>
+        <entry id="66" method="true" symbol="buzz"/>
+        <entry id="68" method="true" symbol="cuePhase"/>
+        <entry field="true" id="8388889" symbol="mIndex"/>
+        <entry id="8389280" method="true" symbol="getInitialView"/>
+        <entry id="8389281" method="true" symbol="onStop"/>
+        <entry field="true" id="27" symbol="mKinds"/>
+        <entry field="true" id="30" symbol="mRunning"/>
+        <entry field="true" id="73" symbol="mStarted"/>
+        <entry id="55" method="true" symbol="tones"/>
+        <entry id="41" method="true" symbol="addToggle"/>
+        <entry id="8388646" module="true" object="true" symbol="Timer"/>
+        <entry id="8388636" module="true" symbol="Attention"/>
+        <entry id="8388698" method="true" symbol="start"/>
+        <entry id="8389643" method="true" symbol="pattern"/>
+        <entry id="8389343" method="true" symbol="minutes"/>
+        <entry field="true" id="104" symbol="MenuVibeHold"/>
+        <entry id="89" method="true" symbol="push"/>
+        <entry field="true" id="74" symbol="mTimer"/>
+        <entry id="8389125" method="true" symbol="onHide"/>
+        <entry field="true" id="107" symbol="PhaseExhale"/>
+        <entry id="87" method="true" symbol="togglePause"/>
+        <entry id="70" method="true" symbol="footerText"/>
+        <entry id="8389078" method="true" symbol="onNextPage"/>
+        <entry id="8388635" module="true" symbol="Application"/>
+        <entry field="true" id="8389642" symbol="title"/>
+        <entry id="60" method="true" symbol="clock"/>
+        <entry id="36" method="true" symbol="rebuild"/>
+    </symbolTable>
+    <localVars>
+        <entry endPc="268435722" name="left" stackId="1" startPc="268435659"/>
+        <entry arg="true" endPc="268435999" name="elapsedMs" stackId="1" startPc="268435734"/>
+        <entry endPc="268435999" name="duration" stackId="2" startPc="268435738"/>
+        <entry arg="true" endPc="268436027" name="running" stackId="1" startPc="268436000"/>
+        <entry endPc="268436146" name="duration" stackId="1" startPc="268436043"/>
+        <entry endPc="268436146" name="p" stackId="2" startPc="268436043"/>
+        <entry endPc="268436221" name="left" stackId="1" startPc="268436151"/>
+        <entry endPc="268436582" name="kinds" stackId="1" startPc="268436226"/>
+        <entry endPc="268436582" name="durations" stackId="2" startPc="268436226"/>
+        <entry endPc="268436582" name="boxed" stackId="3" startPc="268436226"/>
+        <entry endPc="268436690" name="kind" stackId="1" startPc="268436588"/>
+        <entry arg="true" endPc="268436911" name="kinds" stackId="1" startPc="268436861"/>
+        <entry arg="true" endPc="268436911" name="durations" stackId="2" startPc="268436861"/>
+        <entry arg="true" endPc="268436911" name="kind" stackId="3" startPc="268436861"/>
+        <entry arg="true" endPc="268436911" name="seconds" stackId="4" startPc="268436861"/>
+        <entry arg="true" endPc="268437032" name="id" stackId="1" startPc="268436932"/>
+        <entry arg="true" endPc="268437032" name="labelResource" stackId="2" startPc="268436932"/>
+        <entry arg="true" endPc="268437032" name="enabled" stackId="3" startPc="268436932"/>
+        <entry endPc="268437031" name="item" stackId="4" startPc="268436936"/>
+        <entry arg="true" endPc="268438020" name="id" stackId="1" startPc="268437922"/>
+        <entry arg="true" endPc="268438020" name="labelResource" stackId="2" startPc="268437922"/>
+        <entry endPc="268438019" name="item" stackId="3" startPc="268437926"/>
+        <entry arg="true" endPc="268438081" name="id" stackId="1" startPc="268438021"/>
+        <entry arg="true" endPc="268438081" name="text" stackId="2" startPc="268438021"/>
+        <entry endPc="268438080" name="item" stackId="3" startPc="268438025"/>
+        <entry arg="true" endPc="268438456" name="dc" stackId="1" startPc="268438103"/>
+        <entry endPc="268438455" name="width" stackId="2" startPc="268438107"/>
+        <entry endPc="268438455" name="height" stackId="3" startPc="268438107"/>
+        <entry endPc="268438455" name="side" stackId="4" startPc="268438107"/>
+        <entry endPc="268438455" name="cx" stackId="5" startPc="268438107"/>
+        <entry endPc="268438455" name="cy" stackId="6" startPc="268438107"/>
+        <entry endPc="268438455" name="centre" stackId="7" startPc="268438107"/>
+        <entry arg="true" endPc="268438676" name="key" stackId="1" startPc="268438563"/>
+        <entry arg="true" endPc="268438676" name="fallback" stackId="2" startPc="268438563"/>
+        <entry endPc="268438676" name="value" stackId="3" startPc="268438575"/>
+        <entry endPc="268438616" name="ex" stackId="4" startPc="268438603"/>
+        <entry endPc="268438670" name="n" stackId="5" startPc="268438645"/>
+        <entry arg="true" endPc="268438852" name="value" stackId="1" startPc="268438812"/>
+        <entry arg="true" endPc="268438852" name="low" stackId="2" startPc="268438812"/>
+        <entry arg="true" endPc="268438852" name="high" stackId="3" startPc="268438812"/>
+        <entry arg="true" endPc="268438907" name="key" stackId="1" startPc="268438853"/>
+        <entry arg="true" endPc="268438907" name="value" stackId="2" startPc="268438853"/>
+        <entry endPc="268438901" name="ex" stackId="3" startPc="268438891"/>
+        <entry arg="true" endPc="268439079" name="key" stackId="1" startPc="268438990"/>
+        <entry arg="true" endPc="268439079" name="fallback" stackId="2" startPc="268438990"/>
+        <entry endPc="268439079" name="value" stackId="3" startPc="268439002"/>
+        <entry endPc="268439043" name="ex" stackId="4" startPc="268439030"/>
+        <entry arg="true" endPc="268439236" name="key" stackId="1" startPc="268439186"/>
+        <entry arg="true" endPc="268439236" name="values" stackId="2" startPc="268439186"/>
+        <entry arg="true" endPc="268439236" name="parent" stackId="3" startPc="268439186"/>
+        <entry arg="true" endPc="268439399" name="item" stackId="1" startPc="268439237"/>
+        <entry endPc="268439398" name="index" stackId="2" startPc="268439241"/>
+        <entry arg="true" endPc="268439599" name="view" stackId="1" startPc="268439569"/>
+        <entry arg="true" endPc="268439867" name="value" stackId="1" startPc="268439800"/>
+        <entry arg="true" endPc="268439989" name="value" stackId="1" startPc="268439868"/>
+        <entry arg="true" endPc="268440267" name="totalSeconds" stackId="1" startPc="268440201"/>
+        <entry endPc="268440267" name="minutesPart" stackId="2" startPc="268440213"/>
+        <entry endPc="268440267" name="secondsPart" stackId="3" startPc="268440213"/>
+        <entry arg="true" endPc="268440295" name="value" stackId="1" startPc="268440268"/>
+        <entry endPc="268440422" name="menu" stackId="1" startPc="268440349"/>
+        <entry endPc="268440500" name="view" stackId="1" startPc="268440427"/>
+        <entry endPc="268440888" name="power" stackId="1" startPc="268440615"/>
+        <entry endPc="268441107" name="now" stackId="1" startPc="268440894"/>
+        <entry endPc="268441107" name="elapsed" stackId="2" startPc="268440894"/>
+        <entry endPc="268441183" name="left" stackId="1" startPc="268441113"/>
+        <entry arg="true" endPc="268442108" name="kind" stackId="1" startPc="268441721"/>
+        <entry endPc="268442107" name="power" stackId="2" startPc="268441725"/>
+        <entry endPc="268442104" name="soft" stackId="3" startPc="268442015"/>
+        <entry arg="true" endPc="268442297" name="dc" stackId="1" startPc="268442109"/>
+        <entry arg="true" endPc="268442297" name="side" stackId="2" startPc="268442109"/>
+        <entry arg="true" endPc="268442297" name="cy" stackId="3" startPc="268442109"/>
+        <entry endPc="268442296" name="barX" stackId="4" startPc="268442113"/>
+        <entry endPc="268442296" name="barW" stackId="5" startPc="268442113"/>
+        <entry endPc="268442296" name="barH" stackId="6" startPc="268442113"/>
+        <entry endPc="268442296" name="barY" stackId="7" startPc="268442113"/>
+        <entry endPc="268442296" name="filled" stackId="8" startPc="268442113"/>
+        <entry endPc="268442440" name="kind" stackId="1" startPc="268442302"/>
+        <entry arg="true" endPc="268442885" name="profile" stackId="1" startPc="268442816"/>
+        <entry arg="true" endPc="268443264" name="dc" stackId="1" startPc="268442886"/>
+        <entry endPc="268443263" name="width" stackId="2" startPc="268442890"/>
+        <entry endPc="268443263" name="height" stackId="3" startPc="268442890"/>
+        <entry endPc="268443263" name="side" stackId="4" startPc="268442890"/>
+        <entry endPc="268443263" name="cx" stackId="5" startPc="268442890"/>
+        <entry endPc="268443263" name="cy" stackId="6" startPc="268442890"/>
+        <entry endPc="268443263" name="tx" stackId="7" startPc="268442890"/>
+        <entry endPc="268443263" name="centre" stackId="8" startPc="268442890"/>
+        <entry endPc="268443263" name="done" stackId="9" startPc="268442890"/>
+        <entry endPc="268443263" name="big" stackId="10" startPc="268442890"/>
+        <entry endPc="268443263" name="footer" stackId="11" startPc="268442890"/>
+        <entry arg="true" endPc="268443419" name="title" stackId="1" startPc="268443265"/>
+        <entry arg="true" endPc="268443419" name="labels" stackId="2" startPc="268443265"/>
+        <entry arg="true" endPc="268443419" name="values" stackId="3" startPc="268443265"/>
+        <entry arg="true" endPc="268443419" name="current" stackId="4" startPc="268443265"/>
+        <entry endPc="268443418" name="i" stackId="5" startPc="268443327"/>
+        <entry endPc="268443405" name="mark" stackId="6" startPc="268443327"/>
+        <entry arg="true" endPc="268443631" name="titleResource" stackId="1" startPc="268443420"/>
+        <entry arg="true" endPc="268443631" name="key" stackId="2" startPc="268443420"/>
+        <entry arg="true" endPc="268443631" name="lowest" stackId="3" startPc="268443420"/>
+        <entry arg="true" endPc="268443631" name="current" stackId="4" startPc="268443420"/>
+        <entry endPc="268443630" name="values" stackId="5" startPc="268443424"/>
+        <entry endPc="268443630" name="labels" stackId="6" startPc="268443424"/>
+        <entry endPc="268443510" name="v" stackId="7" startPc="268443455"/>
+        <entry arg="true" endPc="268443662" name="menu" stackId="1" startPc="268443632"/>
+        <entry arg="true" endPc="268443771" name="titleResource" stackId="1" startPc="268443663"/>
+        <entry arg="true" endPc="268443771" name="key" stackId="2" startPc="268443663"/>
+        <entry arg="true" endPc="268443771" name="values" stackId="3" startPc="268443663"/>
+        <entry arg="true" endPc="268443771" name="labels" stackId="4" startPc="268443663"/>
+        <entry arg="true" endPc="268443771" name="current" stackId="5" startPc="268443663"/>
+        <entry endPc="268443770" name="menu" stackId="6" startPc="268443667"/>
+        <entry arg="true" endPc="268444974" name="item" stackId="1" startPc="268443772"/>
+        <entry endPc="268444973" name="id" stackId="2" startPc="268443776"/>
+        <entry endPc="268443871" name="view" stackId="3" startPc="268443800"/>
+        <entry endPc="268444191" name="modeLabels" stackId="4" startPc="268444000"/>
+        <entry endPc="268444806" name="lenValues" stackId="5" startPc="268444506"/>
+        <entry endPc="268444806" name="lenLabels" stackId="6" startPc="268444506"/>
+        <entry endPc="268444746" name="i" stackId="7" startPc="268444702"/>
+        <entry endPc="268444970" name="powerValues" stackId="8" startPc="268444821"/>
+        <entry endPc="268444970" name="powerLabels" stackId="9" startPc="268444821"/>
+        <entry endPc="268444910" name="p" stackId="10" startPc="268444855"/>
+    </localVars>
+    <deviceInfo deviceVersion="3d0fb192a2cf01699aefd0f384af3f527e5885bd" partNumber="006-B3888-00"/>
+    <annotations>
+        <annotationEntry annotation="initialized" class="Drawables" module="globals/Rez" symbol="LauncherIcon"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="MenuInhale"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="PhaseInhale"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="MenuMode"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="AppName"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="Unlimited"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="HintSetup"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="ModeBox"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="MenuLength"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="StatePaused"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="WarnNoVibe"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="MenuTones"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="MenuVibeHold"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="PhaseHold"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="MenuHoldFull"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="MenuStrength"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="MenuExhale"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="HintStart"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="StateDone"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="PhaseExhale"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="UnitSec"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="UnitMin"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="MenuHoldEmpty"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="ModeEven"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="MenuStart"/>
+    </annotations>
+    <dataEntryOffsetMappings>
+        <dataEntry label="globals" offset="71" parentId="" symbolId="globals" type="module"/>
+        <dataEntry label="globals/BreathSession" offset="214" parentId="globals" symbolId="BreathSession" type="class"/>
+        <dataEntry label="globals/SettingsMenu" offset="469" parentId="globals" symbolId="SettingsMenu" type="class"/>
+        <dataEntry label="globals/HomeView" offset="556" parentId="globals" symbolId="HomeView" type="class"/>
+        <dataEntry label="globals/Config" offset="611" parentId="globals" symbolId="Config" type="module"/>
+        <dataEntry label="globals/ValueDelegate" offset="746" parentId="globals" symbolId="ValueDelegate" type="class"/>
+        <dataEntry label="globals/Rez" offset="825" parentId="globals" symbolId="Rez" type="module"/>
+        <dataEntry label="globals/BreatheApp" offset="872" parentId="globals" symbolId="BreatheApp" type="class"/>
+        <dataEntry label="globals/BreathDelegate" offset="951" parentId="globals" symbolId="BreathDelegate" type="class"/>
+        <dataEntry label="globals/Fmt" offset="1046" parentId="globals" symbolId="Fmt" type="module"/>
+        <dataEntry label="globals/HomeDelegate" offset="1133" parentId="globals" symbolId="HomeDelegate" type="class"/>
+        <dataEntry label="globals/BreathView" offset="1220" parentId="globals" symbolId="BreathView" type="class"/>
+        <dataEntry label="globals/ValueMenu" offset="1475" parentId="globals" symbolId="ValueMenu" type="class"/>
+        <dataEntry label="globals/SettingsDelegate" offset="1522" parentId="globals" symbolId="SettingsDelegate" type="class"/>
+        <dataEntry label="globals/Rez/Drawables" offset="1601" parentId="Rez" symbolId="Drawables" type="module"/>
+        <dataEntry label="globals/Rez/Strings" offset="1640" parentId="Rez" symbolId="Strings" type="module"/>
+    </dataEntryOffsetMappings>
+    <functions>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="BreathSession">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435478" name="&lt;init&gt;" parent="SettingsMenu" startPc="268435460">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435497" name="&lt;init&gt;" parent="HomeView" startPc="268435479">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="Config">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435516" name="&lt;init&gt;" parent="ValueDelegate" startPc="268435498">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435540" name="&lt;init&gt;" parent="Rez" startPc="268435517">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435559" name="&lt;init&gt;" parent="BreatheApp" startPc="268435541">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435578" name="&lt;init&gt;" parent="BreathDelegate" startPc="268435560">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="Fmt">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435597" name="&lt;init&gt;" parent="HomeDelegate" startPc="268435579">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435616" name="&lt;init&gt;" parent="BreathView" startPc="268435598">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435635" name="&lt;init&gt;" parent="ValueMenu" startPc="268435617">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435654" name="&lt;init&gt;" parent="SettingsDelegate" startPc="268435636">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435722" name="remainingSec" parent="BreathSession" startPc="268435655">
+            <documentation><![CDATA[<div class="description"> Whole seconds left in the current phase, counting down to 1.<br/></div>]]></documentation>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435733" name="cycles" parent="BreathSession" startPc="268435723">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435999" name="advance" parent="BreathSession" startPc="268435734">
+            <param id="elapsedMs"/>
+            <documentation><![CDATA[<div class="description"> Feed it the milliseconds since the last call.<br/> Returns true when a new phase has just begun (or the session just ended),<br/> which is the moment the watch should buzz.<br/></div>]]></documentation>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436027" name="setRunning" parent="BreathSession" startPc="268436000">
+            <param id="running"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436038" name="isRunning" parent="BreathSession" startPc="268436028">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436146" name="phaseProgress" parent="BreathSession" startPc="268436039">
+            <documentation><![CDATA[<div class="description"> 0.0 at the start of the phase, 1.0 at its end.<br/></div>]]></documentation>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436221" name="sessionRemainingSec" parent="BreathSession" startPc="268436147">
+            <documentation><![CDATA[<div class="description"> Seconds left in the session, or null when it is open ended.<br/></div>]]></documentation>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436583" name="rebuild" parent="BreathSession" startPc="268436222">
+            <documentation><![CDATA[<div class="description"> Re-read the settings and lay out one cycle. Phases set to 0 s are dropped,<br/> so "4-0-6-0" box breathing simply behaves like 4:6 even breathing.<br/></div>]]></documentation>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436690" name="level" parent="BreathSession" startPc="268436584">
+            <documentation><![CDATA[<div class="description"> How full the lungs are, 0.0 - 1.0. Drives the bar on screen.<br/></div>]]></documentation>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436715" name="start" parent="BreathSession" startPc="268436691">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436726" name="phaseIndex" parent="BreathSession" startPc="268436716">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436737" name="isDone" parent="BreathSession" startPc="268436727">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436750" name="stop" parent="BreathSession" startPc="268436738">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436770" name="phaseKind" parent="BreathSession" startPc="268436751">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="protected" endPc="268436845" name="reset" parent="BreathSession" startPc="268436771">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436860" name="initialize" parent="BreathSession" startPc="268436846">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="protected" endPc="268436911" name="append" parent="BreathSession" startPc="268436861">
+            <param id="kinds"/>
+            <param id="durations"/>
+            <param id="kind"/>
+            <param id="seconds"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436931" name="phaseCount" parent="BreathSession" startPc="268436912">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="protected" endPc="268437032" name="addToggle" parent="SettingsMenu" startPc="268436932">
+            <param id="id"/>
+            <param id="labelResource"/>
+            <param id="enabled"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268437381" name="refresh" parent="SettingsMenu" startPc="268437033">
+            <documentation><![CDATA[<div class="description"> Re-reads every value and updates the sub-labels in place.<br/></div>]]></documentation>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268437921" name="initialize" parent="SettingsMenu" startPc="268437382">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="protected" endPc="268438020" name="addRow" parent="SettingsMenu" startPc="268437922">
+            <param id="id"/>
+            <param id="labelResource"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="protected" endPc="268438081" name="setSub" parent="SettingsMenu" startPc="268438021">
+            <param id="id"/>
+            <param id="text"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438102" name="initialize" parent="HomeView" startPc="268438082">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438456" name="onUpdate" parent="HomeView" startPc="268438103">
+            <param id="dc"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438509" name="exhale" parent="Config" startPc="268438457">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438562" name="strength" parent="Config" startPc="268438510">
+            <documentation><![CDATA[<div class="description"> Vibration duty cycle, 10-100.<br/></div>]]></documentation>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438676" name="readNumber" parent="Config" startPc="268438563">
+            <param id="key"/>
+            <param id="fallback"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438729" name="mode" parent="Config" startPc="268438677">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438782" name="holdFull" parent="Config" startPc="268438730">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438811" name="tones" parent="Config" startPc="268438783">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438852" name="clamp" parent="Config" startPc="268438812">
+            <param id="value"/>
+            <param id="low"/>
+            <param id="high"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438907" name="set" parent="Config" startPc="268438853">
+            <param id="key"/>
+            <param id="value"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438936" name="vibeHold" parent="Config" startPc="268438908">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438989" name="lengthMin" parent="Config" startPc="268438937">
+            <documentation><![CDATA[<div class="description"> 0 means "run until the user stops it".<br/></div>]]></documentation>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268439079" name="readBoolean" parent="Config" startPc="268438990">
+            <param id="key"/>
+            <param id="fallback"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268439132" name="holdEmpty" parent="Config" startPc="268439080">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268439185" name="inhale" parent="Config" startPc="268439133">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268439236" name="initialize" parent="ValueDelegate" startPc="268439186">
+            <param id="key"/>
+            <param id="values"/>
+            <param id="parent"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268439399" name="onSelect" parent="ValueDelegate" startPc="268439237">
+            <param id="item"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="Drawables">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="Strings">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268439402" name="onStart" parent="BreatheApp" startPc="268439400">
+            <param id="state"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268439421" name="onSettingsChanged" parent="BreatheApp" startPc="268439403">
+            <documentation><![CDATA[<div class="description"> Fired when the settings are changed from the phone.<br/></div>]]></documentation>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268439490" name="getInitialView" parent="BreatheApp" startPc="268439422">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268439511" name="initialize" parent="BreatheApp" startPc="268439491">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268439514" name="onStop" parent="BreatheApp" startPc="268439512">
+            <param id="state"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268439558" name="onBack" parent="BreathDelegate" startPc="268439515">
+            <documentation><![CDATA[<div class="description"> BACK button: end the session and return to the start screen.<br/></div>]]></documentation>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268439563" name="onMenu" parent="BreathDelegate" startPc="268439559">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268439568" name="onPreviousPage" parent="BreathDelegate" startPc="268439564">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268439599" name="initialize" parent="BreathDelegate" startPc="268439569">
+            <param id="view"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268439622" name="onSelect" parent="BreathDelegate" startPc="268439600">
+            <documentation><![CDATA[<div class="description"> GPS button: pause / resume, or restart a finished session.<br/></div>]]></documentation>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268439627" name="onNextPage" parent="BreathDelegate" startPc="268439623">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268439682" name="summary" parent="Fmt" startPc="268439628">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268439799" name="modeName" parent="Fmt" startPc="268439683">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268439867" name="seconds" parent="Fmt" startPc="268439800">
+            <param id="value"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268439989" name="minutes" parent="Fmt" startPc="268439868">
+            <param id="value"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268440200" name="pattern" parent="Fmt" startPc="268439990">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268440267" name="clock" parent="Fmt" startPc="268440201">
+            <param id="totalSeconds"/>
+            <documentation><![CDATA[<div class="description"> Seconds as m:ss.<br/></div>]]></documentation>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268440295" name="percent" parent="Fmt" startPc="268440268">
+            <param id="value"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268440309" name="onPreviousPage" parent="HomeDelegate" startPc="268440296">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268440323" name="onMenu" parent="HomeDelegate" startPc="268440310">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268440344" name="initialize" parent="HomeDelegate" startPc="268440324">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="protected" endPc="268440422" name="openSettings" parent="HomeDelegate" startPc="268440345">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268440500" name="onSelect" parent="HomeDelegate" startPc="268440423">
+            <documentation><![CDATA[<div class="description"> GPS button: straight into a session.<br/></div>]]></documentation>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268440514" name="onNextPage" parent="HomeDelegate" startPc="268440501">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="protected" endPc="268440610" name="beep" parent="BreathView" startPc="268440515">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="protected" endPc="268440889" name="cueFinish" parent="BreathView" startPc="268440611">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268441108" name="onTick" parent="BreathView" startPc="268440890">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="protected" endPc="268441183" name="footerText" parent="BreathView" startPc="268441109">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268441216" name="stopSession" parent="BreathView" startPc="268441184">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="protected" endPc="268441309" name="startTimer" parent="BreathView" startPc="268441217">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268441324" name="onHide" parent="BreathView" startPc="268441310">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268441482" name="onShow" parent="BreathView" startPc="268441325">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268441683" name="togglePause" parent="BreathView" startPc="268441483">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="protected" endPc="268441720" name="stopTimer" parent="BreathView" startPc="268441684">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="protected" endPc="268442108" name="cuePhase" parent="BreathView" startPc="268441721">
+            <param id="kind"/>
+            <documentation><![CDATA[<div class="description"> The point of the whole app: a distinct buzz the moment a phase starts.<br/> Inhale is one long pulse, exhale two short ones, a hold a single soft tap.<br/></div>]]></documentation>
+        </functionEntry>
+        <functionEntry accessMode="protected" endPc="268442297" name="drawLevelBar" parent="BreathView" startPc="268442109">
+            <param id="dc"/>
+            <param id="side"/>
+            <param id="cy"/>
+            <documentation><![CDATA[<div class="description"> A column on the left edge that fills as you breathe in and empties as you<br/> breathe out, so the phase is readable from the corner of your eye.<br/></div>]]></documentation>
+        </functionEntry>
+        <functionEntry accessMode="protected" endPc="268442440" name="stateLabel" parent="BreathView" startPc="268442298">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268442815" name="initialize" parent="BreathView" startPc="268442441">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="protected" endPc="268442885" name="buzz" parent="BreathView" startPc="268442816">
+            <param id="profile"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268443264" name="onUpdate" parent="BreathView" startPc="268442886">
+            <param id="dc"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268443419" name="initialize" parent="ValueMenu" startPc="268443265">
+            <param id="title"/>
+            <param id="labels"/>
+            <param id="values"/>
+            <param id="current"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="protected" endPc="268443631" name="pushSeconds" parent="SettingsDelegate" startPc="268443420">
+            <param id="titleResource"/>
+            <param id="key"/>
+            <param id="lowest"/>
+            <param id="current"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268443662" name="initialize" parent="SettingsDelegate" startPc="268443632">
+            <param id="menu"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="protected" endPc="268443771" name="push" parent="SettingsDelegate" startPc="268443663">
+            <param id="titleResource"/>
+            <param id="key"/>
+            <param id="values"/>
+            <param id="labels"/>
+            <param id="current"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268444974" name="onSelect" parent="SettingsDelegate" startPc="268443772">
+            <param id="item"/>
+            <documentation/>
+        </functionEntry>
+    </functions>
+</debugInfo>

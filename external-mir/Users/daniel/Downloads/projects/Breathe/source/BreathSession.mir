@@ -1,0 +1,823 @@
+[ @file = "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc"; @line = 1; @symbol_importdef<0> = [Toybox,1,7,13]; @symbol_importdef<1> = [Lang,1,14,18]; ]
+import Toybox.Lang;
+[ @file = "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc"; @line = 3; ]
+enum {
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc"; @line = 4; @position = 4; @symbol_enumdec = [PHASE_INHALE,4,4,16]; ]
+    PHASE_INHALE,
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc"; @line = 5; @position = 4; @symbol_enumdec = [PHASE_HOLD_FULL,5,4,19]; ]
+    PHASE_HOLD_FULL,
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc"; @line = 6; @position = 4; @symbol_enumdec = [PHASE_EXHALE,6,4,16]; ]
+    PHASE_EXHALE,
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc"; @line = 7; @position = 4; @symbol_enumdec = [PHASE_HOLD_EMPTY,7,4,20]; ]
+    PHASE_HOLD_EMPTY
+}
+//! The breathing clock. It knows nothing about the screen or the vibration
+//! motor: it is fed elapsed milliseconds and reports when a phase boundary is
+//! crossed. Time is accumulated from real clock deltas, so the pattern does not
+//! drift even if a timer tick is late.
+[ @file = "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc"; @line = 14; @symbol_classdef = [BreathSession,14,6,19]; ]
+class BreathSession {
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc"; @line = 14; ]
+    <init> {
+    }
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc"; @line = 14; ]
+    static
+    <init> {
+    }
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc"; @line = 16; @position = 15; @symbol_vardef = [mKinds,16,15,21]; ]
+    protected
+    var mKinds;
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc"; @line = 17; @position = 15; @symbol_vardef = [mDurations,17,15,25]; ]
+    protected
+    var mDurations;
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc"; @line = 18; @position = 15; @symbol_vardef = [mIndex,18,15,21]; ]
+    protected
+    var mIndex;
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc"; @line = 19; @position = 15; @symbol_vardef = [mPhaseMs,19,15,23]; ]
+    protected
+    var mPhaseMs;
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc"; @line = 20; @position = 15; @symbol_vardef = [mTotalMs,20,15,23]; ]
+    protected
+    var mTotalMs;
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc"; @line = 21; @position = 15; @symbol_vardef = [mLimitMs,21,15,23]; ]
+    protected
+    var mLimitMs;
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc"; @line = 22; @position = 15; @symbol_vardef = [mCycles,22,15,22]; ]
+    protected
+    var mCycles;
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc"; @line = 23; @position = 15; @symbol_vardef = [mRunning,23,15,23]; ]
+    protected
+    var mRunning;
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc"; @line = 24; @position = 15; @symbol_vardef = [mDone,24,15,20]; ]
+    protected
+    var mDone;
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc"; @line = 26; @symbol_functiondef = [initialize,26,13,23]; ]
+    function initialize() as Void {
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_26_26_28_4_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" 27 8 ]
+        %tmp.1 = self;
+        symbol [ rebuild %tmp.2 27 8 15 ];
+        %tmp.2 = getv function %tmp.1 :rebuild;
+        invoke %tmp.1 %tmp.2();
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_26_26_28_4_stop:
+    }
+    //! Re-read the settings and lay out one cycle. Phases set to 0 s are dropped,
+    //! so "4-0-6-0" box breathing simply behaves like 4:6 even breathing.
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc"; @line = 32; @symbol_functiondef = [rebuild,32,13,20]; ]
+    function rebuild() {
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_32_23_55_4_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" 33 8 ]
+        [ "_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_32_23_55_4_start" "_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_32_23_55_4_stop" ]
+        %kinds.1 = local;
+        symbol [ kinds %kinds.1 33 12 17 ];
+        %tmp.1 = newa 0;
+        lputv %kinds.1 %tmp.1;
+        symbol [ kinds %kinds.1 33 12 17 ];
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" 34 8 ]
+        [ "_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_32_23_55_4_start" "_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_32_23_55_4_stop" ]
+        %durations.2 = local;
+        symbol [ durations %durations.2 34 12 21 ];
+        %tmp.2 = newa 0;
+        lputv %durations.2 %tmp.2;
+        symbol [ durations %durations.2 34 12 21 ];
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" 35 8 ]
+        [ "_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_32_23_55_4_start" "_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_32_23_55_4_stop" ]
+        %boxed.3 = local;
+        symbol [ boxed %boxed.3 35 12 17 ];
+        symbol [ Config %tmp.4 35 21 27 ];
+        %tmp.4 = getv ? :Config;
+        symbol [ mode %tmp.5 35 28 32 ];
+        %tmp.5 = getv function %tmp.4 :mode;
+        %tmp.6 = invoke %tmp.4 %tmp.5();
+        symbol [ Config %tmp.8 35 38 44 ];
+        %tmp.8 = getv ? :Config;
+        symbol [ MODE_BOX %tmp.9 35 45 53 ];
+        %tmp.9 = getv %tmp.8 :MODE_BOX;
+        %tmp.10 = eq %tmp.6 %tmp.9;
+        lputv %boxed.3 %tmp.10;
+        symbol [ boxed %boxed.3 35 12 17 ];
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" 37 8 ]
+        %tmp.11 = self;
+        symbol [ append %tmp.12 37 8 14 ];
+        %tmp.12 = getv function %tmp.11 :append;
+        %tmp.13 = lgetv %kinds.1;
+        symbol [ kinds %tmp.13 37 15 20 ];
+        %tmp.14 = lgetv %durations.2;
+        symbol [ durations %tmp.14 37 22 31 ];
+        symbol [ PHASE_INHALE %tmp.16 37 33 45 ];
+        %tmp.16 = getv ? :PHASE_INHALE;
+        symbol [ Config %tmp.18 37 47 53 ];
+        %tmp.18 = getv ? :Config;
+        symbol [ inhale %tmp.19 37 54 60 ];
+        %tmp.19 = getv function %tmp.18 :inhale;
+        %tmp.20 = invoke %tmp.18 %tmp.19();
+        invoke %tmp.11 %tmp.12(%tmp.13, %tmp.14, %tmp.16, %tmp.20);
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" 38 8 ]
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_38_8_40_8_if_stmt:
+        %tmp.21 = lgetv %boxed.3;
+        symbol [ boxed %tmp.21 38 12 17 ];
+        bf %tmp.21 @_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_38_8_40_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_38_8_40_8_if_true:
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_38_19_40_8_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" 39 12 ]
+        %tmp.22 = self;
+        symbol [ append %tmp.23 39 12 18 ];
+        %tmp.23 = getv function %tmp.22 :append;
+        %tmp.24 = lgetv %kinds.1;
+        symbol [ kinds %tmp.24 39 19 24 ];
+        %tmp.25 = lgetv %durations.2;
+        symbol [ durations %tmp.25 39 26 35 ];
+        symbol [ PHASE_HOLD_FULL %tmp.27 39 37 52 ];
+        %tmp.27 = getv ? :PHASE_HOLD_FULL;
+        symbol [ Config %tmp.29 39 54 60 ];
+        %tmp.29 = getv ? :Config;
+        symbol [ holdFull %tmp.30 39 61 69 ];
+        %tmp.30 = getv function %tmp.29 :holdFull;
+        %tmp.31 = invoke %tmp.29 %tmp.30();
+        invoke %tmp.22 %tmp.23(%tmp.24, %tmp.25, %tmp.27, %tmp.31);
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_38_19_40_8_stop:
+        goto @_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_38_8_40_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_38_8_40_8_if_end:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" 41 8 ]
+        %tmp.32 = self;
+        symbol [ append %tmp.33 41 8 14 ];
+        %tmp.33 = getv function %tmp.32 :append;
+        %tmp.34 = lgetv %kinds.1;
+        symbol [ kinds %tmp.34 41 15 20 ];
+        %tmp.35 = lgetv %durations.2;
+        symbol [ durations %tmp.35 41 22 31 ];
+        symbol [ PHASE_EXHALE %tmp.37 41 33 45 ];
+        %tmp.37 = getv ? :PHASE_EXHALE;
+        symbol [ Config %tmp.39 41 47 53 ];
+        %tmp.39 = getv ? :Config;
+        symbol [ exhale %tmp.40 41 54 60 ];
+        %tmp.40 = getv function %tmp.39 :exhale;
+        %tmp.41 = invoke %tmp.39 %tmp.40();
+        invoke %tmp.32 %tmp.33(%tmp.34, %tmp.35, %tmp.37, %tmp.41);
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" 42 8 ]
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_42_8_44_8_if_stmt:
+        %tmp.42 = lgetv %boxed.3;
+        symbol [ boxed %tmp.42 42 12 17 ];
+        bf %tmp.42 @_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_42_8_44_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_42_8_44_8_if_true:
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_42_19_44_8_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" 43 12 ]
+        %tmp.43 = self;
+        symbol [ append %tmp.44 43 12 18 ];
+        %tmp.44 = getv function %tmp.43 :append;
+        %tmp.45 = lgetv %kinds.1;
+        symbol [ kinds %tmp.45 43 19 24 ];
+        %tmp.46 = lgetv %durations.2;
+        symbol [ durations %tmp.46 43 26 35 ];
+        symbol [ PHASE_HOLD_EMPTY %tmp.48 43 37 53 ];
+        %tmp.48 = getv ? :PHASE_HOLD_EMPTY;
+        symbol [ Config %tmp.50 43 55 61 ];
+        %tmp.50 = getv ? :Config;
+        symbol [ holdEmpty %tmp.51 43 62 71 ];
+        %tmp.51 = getv function %tmp.50 :holdEmpty;
+        %tmp.52 = invoke %tmp.50 %tmp.51();
+        invoke %tmp.43 %tmp.44(%tmp.45, %tmp.46, %tmp.48, %tmp.52);
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_42_19_44_8_stop:
+        goto @_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_42_8_44_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_42_8_44_8_if_end:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" 46 8 ]
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_46_8_49_8_if_stmt:
+        %tmp.53 = lgetv %kinds.1;
+        symbol [ kinds %tmp.53 46 12 17 ];
+        symbol [ size %tmp.54 46 18 22 ];
+        %tmp.54 = getv function %tmp.53 :size;
+        %tmp.55 = invoke %tmp.53 %tmp.54();
+        %tmp.56 = 2;
+        %tmp.57 = lt %tmp.55 %tmp.56;
+        bf %tmp.57 @_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_46_8_49_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_46_8_49_8_if_true:
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_46_30_49_8_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" 47 12 ]
+        %tmp.58 = newa 2;
+        symbol [ PHASE_INHALE %tmp.60 47 21 33 ];
+        %tmp.60 = getv ? :PHASE_INHALE;
+        %tmp.61 = dup %tmp.58;
+        %tmp.62 = aputv %tmp.61 0 %tmp.60;
+        symbol [ PHASE_EXHALE %tmp.64 47 35 47 ];
+        %tmp.64 = getv ? :PHASE_EXHALE;
+        %tmp.65 = dup %tmp.62;
+        %tmp.66 = aputv %tmp.65 1 %tmp.64;
+        lputv %kinds.1 %tmp.66;
+        symbol [ kinds %kinds.1 47 12 17 ];
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" 48 12 ]
+        %tmp.67 = newa 2;
+        %tmp.68 = 4000;
+        %tmp.69 = dup %tmp.67;
+        %tmp.70 = aputv %tmp.69 0 %tmp.68;
+        %tmp.71 = 4000;
+        %tmp.72 = dup %tmp.70;
+        %tmp.73 = aputv %tmp.72 1 %tmp.71;
+        lputv %durations.2 %tmp.73;
+        symbol [ durations %durations.2 48 12 21 ];
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_46_30_49_8_stop:
+        goto @_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_46_8_49_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_46_8_49_8_if_end:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" 51 8 ]
+        %tmp.74 = lgetv %kinds.1;
+        symbol [ kinds %tmp.74 51 17 22 ];
+        symbol [ mKinds ? 51 8 14 ];
+        putv self :mKinds %tmp.74;
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" 52 8 ]
+        %tmp.75 = lgetv %durations.2;
+        symbol [ durations %tmp.75 52 21 30 ];
+        symbol [ mDurations ? 52 8 18 ];
+        putv self :mDurations %tmp.75;
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" 53 8 ]
+        symbol [ Config %tmp.77 53 19 25 ];
+        %tmp.77 = getv ? :Config;
+        symbol [ lengthMin %tmp.78 53 26 35 ];
+        %tmp.78 = getv function %tmp.77 :lengthMin;
+        %tmp.79 = invoke %tmp.77 %tmp.78();
+        %tmp.80 = 60;
+        %tmp.81 = mul %tmp.79 %tmp.80;
+        %tmp.82 = 1000;
+        %tmp.83 = mul %tmp.81 %tmp.82;
+        symbol [ mLimitMs ? 53 8 16 ];
+        putv self :mLimitMs %tmp.83;
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" 54 8 ]
+        %tmp.84 = self;
+        symbol [ reset %tmp.85 54 8 13 ];
+        %tmp.85 = getv function %tmp.84 :reset;
+        invoke %tmp.84 %tmp.85();
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_32_23_55_4_stop:
+    }
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc"; @line = 57; @symbol_functiondef = [append,57,20,26]; @symbol_param<0> = [kinds,57,27,32]; @symbol_param<1> = [durations,57,34,43]; @symbol_param<2> = [kind,57,45,49]; @symbol_param<3> = [seconds,57,51,58]; ]
+    protected
+    function append(kinds, durations, kind, seconds) {
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_57_60_62_4_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" 58 8 ]
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_58_8_61_8_if_stmt:
+        %tmp.1 = lgetv %seconds;
+        symbol [ seconds %tmp.1 58 12 19 ];
+        %tmp.2 = 0;
+        %tmp.3 = gt %tmp.1 %tmp.2;
+        bf %tmp.3 @_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_58_8_61_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_58_8_61_8_if_true:
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_58_25_61_8_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" 59 12 ]
+        %tmp.4 = lgetv %kinds;
+        symbol [ kinds %tmp.4 59 12 17 ];
+        symbol [ add %tmp.5 59 18 21 ];
+        %tmp.5 = getv function %tmp.4 :add;
+        %tmp.6 = lgetv %kind;
+        symbol [ kind %tmp.6 59 22 26 ];
+        invoke %tmp.4 %tmp.5(%tmp.6);
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" 60 12 ]
+        %tmp.7 = lgetv %durations;
+        symbol [ durations %tmp.7 60 12 21 ];
+        symbol [ add %tmp.8 60 22 25 ];
+        %tmp.8 = getv function %tmp.7 :add;
+        %tmp.9 = lgetv %seconds;
+        symbol [ seconds %tmp.9 60 26 33 ];
+        %tmp.10 = 1000;
+        %tmp.11 = mul %tmp.9 %tmp.10;
+        invoke %tmp.7 %tmp.8(%tmp.11);
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_58_25_61_8_stop:
+        goto @_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_58_8_61_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_58_8_61_8_if_end:
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_57_60_62_4_stop:
+    }
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc"; @line = 64; @symbol_functiondef = [reset,64,20,25]; ]
+    protected
+    function reset() {
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_64_28_71_4_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" 65 8 ]
+        %tmp.1 = 0;
+        symbol [ mIndex ? 65 8 14 ];
+        putv self :mIndex %tmp.1;
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" 66 8 ]
+        %tmp.2 = 0;
+        symbol [ mPhaseMs ? 66 8 16 ];
+        putv self :mPhaseMs %tmp.2;
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" 67 8 ]
+        %tmp.3 = 0;
+        symbol [ mTotalMs ? 67 8 16 ];
+        putv self :mTotalMs %tmp.3;
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" 68 8 ]
+        %tmp.4 = 0;
+        symbol [ mCycles ? 68 8 15 ];
+        putv self :mCycles %tmp.4;
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" 69 8 ]
+        %tmp.5 = false;
+        symbol [ mRunning ? 69 8 16 ];
+        putv self :mRunning %tmp.5;
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" 70 8 ]
+        %tmp.6 = false;
+        symbol [ mDone ? 70 8 13 ];
+        putv self :mDone %tmp.6;
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_64_28_71_4_stop:
+    }
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc"; @line = 73; @symbol_functiondef = [start,73,13,18]; ]
+    function start() {
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_73_21_76_4_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" 74 8 ]
+        %tmp.1 = self;
+        symbol [ reset %tmp.2 74 8 13 ];
+        %tmp.2 = getv function %tmp.1 :reset;
+        invoke %tmp.1 %tmp.2();
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" 75 8 ]
+        %tmp.3 = true;
+        symbol [ mRunning ? 75 8 16 ];
+        putv self :mRunning %tmp.3;
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_73_21_76_4_stop:
+    }
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc"; @line = 78; @symbol_functiondef = [setRunning,78,13,23]; @symbol_param<0> = [running,78,24,31]; ]
+    function setRunning(running) {
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_78_33_82_4_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" 79 8 ]
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_79_8_81_8_if_stmt:
+        symbol [ mDone %tmp.2 79 13 18 ];
+        %tmp.2 = getv ? :mDone;
+        %tmp.3 = not %tmp.2;
+        bf %tmp.3 @_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_79_8_81_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_79_8_81_8_if_true:
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_79_20_81_8_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" 80 12 ]
+        %tmp.4 = lgetv %running;
+        symbol [ running %tmp.4 80 23 30 ];
+        symbol [ mRunning ? 80 12 20 ];
+        putv self :mRunning %tmp.4;
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_79_20_81_8_stop:
+        goto @_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_79_8_81_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_79_8_81_8_if_end:
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_78_33_82_4_stop:
+    }
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc"; @line = 84; @symbol_functiondef = [stop,84,13,17]; ]
+    function stop() {
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_84_20_86_4_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" 85 8 ]
+        %tmp.1 = false;
+        symbol [ mRunning ? 85 8 16 ];
+        putv self :mRunning %tmp.1;
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_84_20_86_4_stop:
+    }
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc"; @line = 88; @symbol_functiondef = [isRunning,88,13,22]; ]
+    function isRunning() {
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_88_25_90_4_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" 89 8 ]
+        symbol [ mRunning %tmp.2 89 15 23 ];
+        %tmp.2 = getv ? :mRunning;
+        ret %tmp.2;
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_88_25_90_4_stop:
+    }
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc"; @line = 92; @symbol_functiondef = [isDone,92,13,19]; ]
+    function isDone() {
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_92_22_94_4_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" 93 8 ]
+        symbol [ mDone %tmp.2 93 15 20 ];
+        %tmp.2 = getv ? :mDone;
+        ret %tmp.2;
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_92_22_94_4_stop:
+    }
+    //! Feed it the milliseconds since the last call.
+    //! Returns true when a new phase has just begun (or the session just ended),
+    //! which is the moment the watch should buzz.
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc"; @line = 99; @symbol_functiondef = [advance,99,13,20]; @symbol_param<0> = [elapsedMs,99,21,30]; ]
+    function advance(elapsedMs) {
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_99_32_124_4_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" 100 8 ]
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_100_8_102_8_if_stmt:
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_100_12_100_25_begin:
+        symbol [ mRunning %tmp.2 100 13 21 ];
+        %tmp.2 = getv ? :mRunning;
+        %tmp.3 = not %tmp.2;
+        bt %tmp.3 @_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_100_8_102_8_if_true;
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_100_25_100_25_false:
+        symbol [ mDone %tmp.5 100 25 30 ];
+        %tmp.5 = getv ? :mDone;
+        push %tmp.5;
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_100_25_100_25_end:
+        %tmp.6 = phi [%tmp.3 @_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_100_12_100_25_begin] [%tmp.5 @_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_100_25_100_25_false] [%tmp.6 @_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_100_25_100_25_end];
+        bf %tmp.6 @_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_100_8_102_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_100_8_102_8_if_true:
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_100_32_102_8_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" 101 12 ]
+        %tmp.7 = false;
+        ret %tmp.7;
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_100_32_102_8_stop:
+        goto @_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_100_8_102_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_100_8_102_8_if_end:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" 104 8 ]
+        symbol [ mPhaseMs %tmp.8 104 8 16 ];
+        %tmp.8 = getv self :mPhaseMs;
+        %tmp.9 = lgetv %elapsedMs;
+        symbol [ elapsedMs %tmp.9 104 20 29 ];
+        %tmp.10 = add %tmp.8 %tmp.9;
+        symbol [ mPhaseMs ? 104 8 16 ];
+        putv self :mPhaseMs dup %tmp.10;
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" 105 8 ]
+        symbol [ mTotalMs %tmp.11 105 8 16 ];
+        %tmp.11 = getv self :mTotalMs;
+        %tmp.12 = lgetv %elapsedMs;
+        symbol [ elapsedMs %tmp.12 105 20 29 ];
+        %tmp.13 = add %tmp.11 %tmp.12;
+        symbol [ mTotalMs ? 105 8 16 ];
+        putv self :mTotalMs dup %tmp.13;
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" 107 8 ]
+        [ "_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_99_32_124_4_start" "_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_99_32_124_4_stop" ]
+        %duration.1 = local;
+        symbol [ duration %duration.1 107 12 20 ];
+        symbol [ mDurations %tmp.15 107 23 33 ];
+        %tmp.15 = getv ? :mDurations;
+        symbol [ mIndex %tmp.17 107 34 40 ];
+        %tmp.17 = getv ? :mIndex;
+        %tmp.18 = agetv %tmp.15 %tmp.17;
+        lputv %duration.1 %tmp.18;
+        symbol [ duration %duration.1 107 12 20 ];
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" 108 8 ]
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_108_8_110_8_if_stmt:
+        symbol [ mPhaseMs %tmp.20 108 12 20 ];
+        %tmp.20 = getv ? :mPhaseMs;
+        %tmp.21 = lgetv %duration.1;
+        symbol [ duration %tmp.21 108 23 31 ];
+        %tmp.22 = lt %tmp.20 %tmp.21;
+        bf %tmp.22 @_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_108_8_110_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_108_8_110_8_if_true:
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_108_33_110_8_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" 109 12 ]
+        %tmp.23 = false;
+        ret %tmp.23;
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_108_33_110_8_stop:
+        goto @_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_108_8_110_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_108_8_110_8_if_end:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" 112 8 ]
+        symbol [ mPhaseMs %tmp.24 112 8 16 ];
+        %tmp.24 = getv self :mPhaseMs;
+        %tmp.25 = lgetv %duration.1;
+        symbol [ duration %tmp.25 112 20 28 ];
+        %tmp.26 = sub %tmp.24 %tmp.25;
+        symbol [ mPhaseMs ? 112 8 16 ];
+        putv self :mPhaseMs dup %tmp.26;
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" 113 8 ]
+        symbol [ mIndex %tmp.29 113 8 14 ];
+        %tmp.29 = getv ? :mIndex;
+        %tmp.30 = add %tmp.29 1;
+        symbol [ mIndex ? 113 8 14 ];
+        putv self :mIndex dup %tmp.30;
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" 114 8 ]
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_114_8_122_8_if_stmt:
+        symbol [ mIndex %tmp.32 114 12 18 ];
+        %tmp.32 = getv ? :mIndex;
+        symbol [ mKinds %tmp.34 114 22 28 ];
+        %tmp.34 = getv ? :mKinds;
+        symbol [ size %tmp.35 114 29 33 ];
+        %tmp.35 = getv function %tmp.34 :size;
+        %tmp.36 = invoke %tmp.34 %tmp.35();
+        %tmp.37 = gte %tmp.32 %tmp.36;
+        bf %tmp.37 @_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_114_8_122_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_114_8_122_8_if_true:
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_114_37_122_8_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" 115 12 ]
+        %tmp.38 = 0;
+        symbol [ mIndex ? 115 12 18 ];
+        putv self :mIndex %tmp.38;
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" 116 12 ]
+        symbol [ mCycles %tmp.41 116 12 19 ];
+        %tmp.41 = getv ? :mCycles;
+        %tmp.42 = add %tmp.41 1;
+        symbol [ mCycles ? 116 12 19 ];
+        putv self :mCycles dup %tmp.42;
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" 118 12 ]
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_118_12_121_12_if_stmt:
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_118_16_118_44_begin:
+        symbol [ mLimitMs %tmp.44 118 16 24 ];
+        %tmp.44 = getv ? :mLimitMs;
+        %tmp.45 = 0;
+        %tmp.46 = gt %tmp.44 %tmp.45;
+        bf %tmp.46 @_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_118_12_121_12_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_118_32_118_44_true:
+        symbol [ mTotalMs %tmp.48 118 32 40 ];
+        %tmp.48 = getv ? :mTotalMs;
+        symbol [ mLimitMs %tmp.50 118 44 52 ];
+        %tmp.50 = getv ? :mLimitMs;
+        %tmp.51 = gte %tmp.48 %tmp.50;
+        push %tmp.51;
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_118_32_118_44_end:
+        %tmp.52 = phi [%tmp.46 @_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_118_16_118_44_begin] [%tmp.51 @_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_118_32_118_44_true] [%tmp.52 @_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_118_32_118_44_end];
+        bf %tmp.52 @_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_118_12_121_12_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_118_12_121_12_if_true:
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_118_54_121_12_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" 119 16 ]
+        %tmp.53 = true;
+        symbol [ mDone ? 119 16 21 ];
+        putv self :mDone %tmp.53;
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" 120 16 ]
+        %tmp.54 = false;
+        symbol [ mRunning ? 120 16 24 ];
+        putv self :mRunning %tmp.54;
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_118_54_121_12_stop:
+        goto @_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_118_12_121_12_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_118_12_121_12_if_end:
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_114_37_122_8_stop:
+        goto @_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_114_8_122_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_114_8_122_8_if_end:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" 123 8 ]
+        %tmp.55 = true;
+        ret %tmp.55;
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_99_32_124_4_stop:
+    }
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc"; @line = 126; @symbol_functiondef = [phaseKind,126,13,22]; ]
+    function phaseKind() {
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_126_25_128_4_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" 127 8 ]
+        symbol [ mKinds %tmp.2 127 15 21 ];
+        %tmp.2 = getv ? :mKinds;
+        symbol [ mIndex %tmp.4 127 22 28 ];
+        %tmp.4 = getv ? :mIndex;
+        %tmp.5 = agetv %tmp.2 %tmp.4;
+        ret %tmp.5;
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_126_25_128_4_stop:
+    }
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc"; @line = 130; @symbol_functiondef = [phaseCount,130,13,23]; ]
+    function phaseCount() {
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_130_26_132_4_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" 131 8 ]
+        symbol [ mKinds %tmp.2 131 15 21 ];
+        %tmp.2 = getv ? :mKinds;
+        symbol [ size %tmp.3 131 22 26 ];
+        %tmp.3 = getv function %tmp.2 :size;
+        %tmp.4 = invoke %tmp.2 %tmp.3();
+        ret %tmp.4;
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_130_26_132_4_stop:
+    }
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc"; @line = 134; @symbol_functiondef = [phaseIndex,134,13,23]; ]
+    function phaseIndex() {
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_134_26_136_4_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" 135 8 ]
+        symbol [ mIndex %tmp.2 135 15 21 ];
+        %tmp.2 = getv ? :mIndex;
+        ret %tmp.2;
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_134_26_136_4_stop:
+    }
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc"; @line = 138; @symbol_functiondef = [cycles,138,13,19]; ]
+    function cycles() {
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_138_22_140_4_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" 139 8 ]
+        symbol [ mCycles %tmp.2 139 15 22 ];
+        %tmp.2 = getv ? :mCycles;
+        ret %tmp.2;
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_138_22_140_4_stop:
+    }
+    //! 0.0 at the start of the phase, 1.0 at its end.
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc"; @line = 143; @symbol_functiondef = [phaseProgress,143,13,26]; ]
+    function phaseProgress() {
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_143_29_156_4_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" 144 8 ]
+        [ "_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_143_29_156_4_start" "_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_143_29_156_4_stop" ]
+        %duration.1 = local;
+        symbol [ duration %duration.1 144 12 20 ];
+        symbol [ mDurations %tmp.2 144 23 33 ];
+        %tmp.2 = getv ? :mDurations;
+        symbol [ mIndex %tmp.4 144 34 40 ];
+        %tmp.4 = getv ? :mIndex;
+        %tmp.5 = agetv %tmp.2 %tmp.4;
+        lputv %duration.1 %tmp.5;
+        symbol [ duration %duration.1 144 12 20 ];
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" 145 8 ]
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_145_8_147_8_if_stmt:
+        %tmp.6 = lgetv %duration.1;
+        symbol [ duration %tmp.6 145 12 20 ];
+        %tmp.7 = 0;
+        %tmp.8 = lte %tmp.6 %tmp.7;
+        bf %tmp.8 @_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_145_8_147_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_145_8_147_8_if_true:
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_145_27_147_8_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" 146 12 ]
+        %tmp.9 = 0.0;
+        ret %tmp.9;
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_145_27_147_8_stop:
+        goto @_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_145_8_147_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_145_8_147_8_if_end:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" 148 8 ]
+        [ "_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_143_29_156_4_start" "_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_143_29_156_4_stop" ]
+        %p.2 = local;
+        symbol [ p %p.2 148 12 13 ];
+        symbol [ mPhaseMs %tmp.11 148 16 24 ];
+        %tmp.11 = getv ? :mPhaseMs;
+        symbol [ toFloat %tmp.12 148 25 32 ];
+        %tmp.12 = getv function %tmp.11 :toFloat;
+        %tmp.13 = invoke %tmp.11 %tmp.12();
+        %tmp.14 = lgetv %duration.1;
+        symbol [ duration %tmp.14 148 37 45 ];
+        %tmp.15 = div %tmp.13 %tmp.14;
+        lputv %p.2 %tmp.15;
+        symbol [ p %p.2 148 12 13 ];
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" 149 8 ]
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_149_8_151_8_if_stmt:
+        %tmp.16 = lgetv %p.2;
+        symbol [ p %tmp.16 149 12 13 ];
+        %tmp.17 = 0.0;
+        %tmp.18 = lt %tmp.16 %tmp.17;
+        bf %tmp.18 @_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_149_8_151_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_149_8_151_8_if_true:
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_149_21_151_8_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" 150 12 ]
+        %tmp.19 = 0.0;
+        ret %tmp.19;
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_149_21_151_8_stop:
+        goto @_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_149_8_151_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_149_8_151_8_if_end:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" 152 8 ]
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_152_8_154_8_if_stmt:
+        %tmp.20 = lgetv %p.2;
+        symbol [ p %tmp.20 152 12 13 ];
+        %tmp.21 = 1.0;
+        %tmp.22 = gt %tmp.20 %tmp.21;
+        bf %tmp.22 @_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_152_8_154_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_152_8_154_8_if_true:
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_152_21_154_8_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" 153 12 ]
+        %tmp.23 = 1.0;
+        ret %tmp.23;
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_152_21_154_8_stop:
+        goto @_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_152_8_154_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_152_8_154_8_if_end:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" 155 8 ]
+        %tmp.24 = lgetv %p.2;
+        symbol [ p %tmp.24 155 15 16 ];
+        ret %tmp.24;
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_143_29_156_4_stop:
+    }
+    //! How full the lungs are, 0.0 - 1.0. Drives the bar on screen.
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc"; @line = 159; @symbol_functiondef = [level,159,13,18]; ]
+    function level() {
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_159_21_171_4_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" 160 8 ]
+        [ "_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_159_21_171_4_start" "_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_159_21_171_4_stop" ]
+        %kind.1 = local;
+        symbol [ kind %kind.1 160 12 16 ];
+        symbol [ mKinds %tmp.2 160 19 25 ];
+        %tmp.2 = getv ? :mKinds;
+        symbol [ mIndex %tmp.4 160 26 32 ];
+        %tmp.4 = getv ? :mIndex;
+        %tmp.5 = agetv %tmp.2 %tmp.4;
+        lputv %kind.1 %tmp.5;
+        symbol [ kind %kind.1 160 12 16 ];
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" 161 8 ]
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_161_8_163_8_if_stmt:
+        %tmp.6 = lgetv %kind.1;
+        symbol [ kind %tmp.6 161 12 16 ];
+        symbol [ PHASE_INHALE %tmp.8 161 20 32 ];
+        %tmp.8 = getv ? :PHASE_INHALE;
+        %tmp.9 = eq %tmp.6 %tmp.8;
+        bf %tmp.9 @_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_161_8_163_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_161_8_163_8_if_true:
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_161_34_163_8_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" 162 12 ]
+        %tmp.10 = self;
+        symbol [ phaseProgress %tmp.11 162 19 32 ];
+        %tmp.11 = getv function %tmp.10 :phaseProgress;
+        %tmp.12 = invoke %tmp.10 %tmp.11();
+        ret %tmp.12;
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_161_34_163_8_stop:
+        goto @_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_161_8_163_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_161_8_163_8_if_end:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" 164 8 ]
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_164_8_166_8_if_stmt:
+        %tmp.13 = lgetv %kind.1;
+        symbol [ kind %tmp.13 164 12 16 ];
+        symbol [ PHASE_HOLD_FULL %tmp.15 164 20 35 ];
+        %tmp.15 = getv ? :PHASE_HOLD_FULL;
+        %tmp.16 = eq %tmp.13 %tmp.15;
+        bf %tmp.16 @_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_164_8_166_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_164_8_166_8_if_true:
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_164_37_166_8_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" 165 12 ]
+        %tmp.17 = 1.0;
+        ret %tmp.17;
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_164_37_166_8_stop:
+        goto @_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_164_8_166_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_164_8_166_8_if_end:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" 167 8 ]
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_167_8_169_8_if_stmt:
+        %tmp.18 = lgetv %kind.1;
+        symbol [ kind %tmp.18 167 12 16 ];
+        symbol [ PHASE_EXHALE %tmp.20 167 20 32 ];
+        %tmp.20 = getv ? :PHASE_EXHALE;
+        %tmp.21 = eq %tmp.18 %tmp.20;
+        bf %tmp.21 @_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_167_8_169_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_167_8_169_8_if_true:
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_167_34_169_8_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" 168 12 ]
+        %tmp.22 = 1.0;
+        %tmp.23 = self;
+        symbol [ phaseProgress %tmp.24 168 25 38 ];
+        %tmp.24 = getv function %tmp.23 :phaseProgress;
+        %tmp.25 = invoke %tmp.23 %tmp.24();
+        %tmp.26 = sub %tmp.22 %tmp.25;
+        ret %tmp.26;
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_167_34_169_8_stop:
+        goto @_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_167_8_169_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_167_8_169_8_if_end:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" 170 8 ]
+        %tmp.27 = 0.0;
+        ret %tmp.27;
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_159_21_171_4_stop:
+    }
+    //! Whole seconds left in the current phase, counting down to 1.
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc"; @line = 174; @symbol_functiondef = [remainingSec,174,13,25]; ]
+    function remainingSec() {
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_174_28_180_4_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" 175 8 ]
+        [ "_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_174_28_180_4_start" "_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_174_28_180_4_stop" ]
+        %left.1 = local;
+        symbol [ left %left.1 175 12 16 ];
+        symbol [ mDurations %tmp.2 175 19 29 ];
+        %tmp.2 = getv ? :mDurations;
+        symbol [ mIndex %tmp.4 175 30 36 ];
+        %tmp.4 = getv ? :mIndex;
+        %tmp.5 = agetv %tmp.2 %tmp.4;
+        symbol [ mPhaseMs %tmp.7 175 40 48 ];
+        %tmp.7 = getv ? :mPhaseMs;
+        %tmp.8 = sub %tmp.5 %tmp.7;
+        lputv %left.1 %tmp.8;
+        symbol [ left %left.1 175 12 16 ];
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" 176 8 ]
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_176_8_178_8_if_stmt:
+        %tmp.9 = lgetv %left.1;
+        symbol [ left %tmp.9 176 12 16 ];
+        %tmp.10 = 0;
+        %tmp.11 = lt %tmp.9 %tmp.10;
+        bf %tmp.11 @_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_176_8_178_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_176_8_178_8_if_true:
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_176_22_178_8_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" 177 12 ]
+        %tmp.12 = 0;
+        lputv %left.1 %tmp.12;
+        symbol [ left %left.1 177 12 16 ];
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_176_22_178_8_stop:
+        goto @_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_176_8_178_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_176_8_178_8_if_end:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" 179 8 ]
+        %tmp.13 = lgetv %left.1;
+        symbol [ left %tmp.13 179 16 20 ];
+        %tmp.14 = 999;
+        %tmp.15 = add %tmp.13 %tmp.14;
+        %tmp.16 = 1000;
+        %tmp.17 = div %tmp.15 %tmp.16;
+        ret %tmp.17;
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_174_28_180_4_stop:
+    }
+    //! Seconds left in the session, or null when it is open ended.
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc"; @line = 183; @symbol_functiondef = [sessionRemainingSec,183,13,32]; ]
+    function sessionRemainingSec() {
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_183_35_192_4_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" 184 8 ]
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_184_8_186_8_if_stmt:
+        symbol [ mLimitMs %tmp.2 184 12 20 ];
+        %tmp.2 = getv ? :mLimitMs;
+        %tmp.3 = 0;
+        %tmp.4 = lte %tmp.2 %tmp.3;
+        bf %tmp.4 @_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_184_8_186_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_184_8_186_8_if_true:
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_184_27_186_8_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" 185 12 ]
+        %tmp.5 = null;
+        ret %tmp.5;
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_184_27_186_8_stop:
+        goto @_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_184_8_186_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_184_8_186_8_if_end:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" 187 8 ]
+        [ "_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_183_35_192_4_start" "_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_183_35_192_4_stop" ]
+        %left.1 = local;
+        symbol [ left %left.1 187 12 16 ];
+        symbol [ mLimitMs %tmp.7 187 19 27 ];
+        %tmp.7 = getv ? :mLimitMs;
+        symbol [ mTotalMs %tmp.9 187 30 38 ];
+        %tmp.9 = getv ? :mTotalMs;
+        %tmp.10 = sub %tmp.7 %tmp.9;
+        lputv %left.1 %tmp.10;
+        symbol [ left %left.1 187 12 16 ];
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" 188 8 ]
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_188_8_190_8_if_stmt:
+        %tmp.11 = lgetv %left.1;
+        symbol [ left %tmp.11 188 12 16 ];
+        %tmp.12 = 0;
+        %tmp.13 = lt %tmp.11 %tmp.12;
+        bf %tmp.13 @_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_188_8_190_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_188_8_190_8_if_true:
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_188_22_190_8_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" 189 12 ]
+        %tmp.14 = 0;
+        lputv %left.1 %tmp.14;
+        symbol [ left %left.1 189 12 16 ];
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_188_22_190_8_stop:
+        goto @_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_188_8_190_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_188_8_190_8_if_end:
+[ "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc" 191 8 ]
+        %tmp.15 = lgetv %left.1;
+        symbol [ left %tmp.15 191 15 19 ];
+        %tmp.16 = 1000;
+        %tmp.17 = div %tmp.15 %tmp.16;
+        ret %tmp.17;
+_Users_daniel_Downloads_projects_Breathe_source_BreathSession_mc_183_35_192_4_stop:
+    }
+}
+[ @file = "/Users/daniel/Downloads/projects/Breathe/source/BreathSession.mc"; @line = 1; ]
+<init> {
+}

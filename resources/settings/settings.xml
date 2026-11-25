@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<settings>
+    <setting propertyKey="@Properties.mode" title="@Strings.MenuMode">
+        <settingConfig type="list">
+            <listEntry value="0">@Strings.ModeBox</listEntry>
+            <listEntry value="1">@Strings.ModeEven</listEntry>
+        </settingConfig>
+    </setting>
+
+    <setting propertyKey="@Properties.inhale" title="@Strings.MenuInhale">
+        <settingConfig type="numeric" min="1" max="30"/>
+    </setting>
+
+    <setting propertyKey="@Properties.holdFull" title="@Strings.MenuHoldFull">
+        <settingConfig type="numeric" min="0" max="30"/>
+    </setting>
+
+    <setting propertyKey="@Properties.exhale" title="@Strings.MenuExhale">
+        <settingConfig type="numeric" min="1" max="30"/>
+    </setting>
+
+    <setting propertyKey="@Properties.holdEmpty" title="@Strings.MenuHoldEmpty">
+        <settingConfig type="numeric" min="0" max="30"/>
+    </setting>
+
+    <setting propertyKey="@Properties.lengthMin" title="@Strings.MenuLength">
+        <settingConfig type="numeric" min="0" max="60"/>
+    </setting>
+
+    <setting propertyKey="@Properties.vibeHold" title="@Strings.MenuVibeHold">
+        <settingConfig type="boolean"/>
+    </setting>
+
+    <setting propertyKey="@Properties.strength" title="@Strings.MenuStrength">
+        <settingConfig type="numeric" min="10" max="100"/>
+    </setting>
+
+    <setting propertyKey="@Properties.tones" title="@Strings.MenuTones">
+        <settingConfig type="boolean"/>
+    </setting>
+</settings>

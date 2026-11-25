@@ -1,0 +1,1520 @@
+[ @file = "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc"; @line = 1; @symbol_importdef<0> = [Toybox,1,7,13]; @symbol_importdef<1> = [Lang,1,14,18]; ]
+import Toybox.Lang;
+[ @file = "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc"; @line = 2; @symbol_importdef<0> = [Toybox,2,7,13]; @symbol_importdef<1> = [WatchUi,2,14,21]; ]
+import Toybox.WatchUi;
+//! The on-watch settings menu. Every row writes straight to the stored
+//! properties, so the phone settings and this menu always agree.
+[ @file = "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc"; @line = 6; @symbol_classdef = [SettingsMenu,6,6,18]; @symbol_extends<0> = [WatchUi,6,27,34]; @symbol_extends<1> = [Menu2,6,35,40]; ]
+class SettingsMenu extends WatchUi.Menu2 {
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc"; @line = 6; ]
+    <init> {
+    }
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc"; @line = 6; ]
+    static
+    <init> {
+    }
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc"; @line = 8; @position = 15; @symbol_vardef = [mRows,8,15,20]; ]
+    protected
+    var mRows;
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc"; @line = 10; @symbol_functiondef = [initialize,10,13,23]; ]
+    function initialize() as Void {
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_10_26_26_4_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 11 8 ]
+        symbol [ Menu2 %tmp.2 11 8 13 ];
+        %tmp.2 = getv ? :Menu2;
+        symbol [ initialize %tmp.3 11 14 24 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        %tmp.4 = newd 1;
+        %tmp.6 = const :title;
+        symbol [ title %tmp.6 11 27 32 const ];
+        symbol [ WatchUi %tmp.7 11 36 43 ];
+        %tmp.7 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.8 11 44 56 ];
+        %tmp.8 = getv function %tmp.7 :loadResource;
+        symbol [ Rez %tmp.10 11 57 60 ];
+        %tmp.10 = getv ? :Rez;
+        symbol [ Strings %tmp.11 11 61 68 ];
+        %tmp.11 = getv %tmp.10 :Strings;
+        symbol [ AppName %tmp.12 11 69 76 ];
+        %tmp.12 = getv %tmp.11 :AppName;
+        %tmp.13 = invoke %tmp.7 %tmp.8(%tmp.12);
+        %tmp.14 = dup %tmp.4;
+        %tmp.15 = aputv %tmp.14 %tmp.6 %tmp.13;
+        invoke %tmp.2 %tmp.3(%tmp.15);
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 12 8 ]
+        %tmp.16 = newd 0;
+        symbol [ mRows ? 12 8 13 ];
+        putv self :mRows %tmp.16;
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 14 8 ]
+        %tmp.17 = self;
+        symbol [ addRow %tmp.18 14 8 14 ];
+        %tmp.18 = getv function %tmp.17 :addRow;
+        %tmp.20 = const :start;
+        symbol [ start %tmp.20 14 16 21 const ];
+        symbol [ Rez %tmp.22 14 23 26 ];
+        %tmp.22 = getv ? :Rez;
+        symbol [ Strings %tmp.23 14 27 34 ];
+        %tmp.23 = getv %tmp.22 :Strings;
+        symbol [ MenuStart %tmp.24 14 35 44 ];
+        %tmp.24 = getv %tmp.23 :MenuStart;
+        invoke %tmp.17 %tmp.18(%tmp.20, %tmp.24);
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 15 8 ]
+        %tmp.25 = self;
+        symbol [ addRow %tmp.26 15 8 14 ];
+        %tmp.26 = getv function %tmp.25 :addRow;
+        %tmp.28 = const :mode;
+        symbol [ mode %tmp.28 15 16 20 const ];
+        symbol [ Rez %tmp.30 15 22 25 ];
+        %tmp.30 = getv ? :Rez;
+        symbol [ Strings %tmp.31 15 26 33 ];
+        %tmp.31 = getv %tmp.30 :Strings;
+        symbol [ MenuMode %tmp.32 15 34 42 ];
+        %tmp.32 = getv %tmp.31 :MenuMode;
+        invoke %tmp.25 %tmp.26(%tmp.28, %tmp.32);
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 16 8 ]
+        %tmp.33 = self;
+        symbol [ addRow %tmp.34 16 8 14 ];
+        %tmp.34 = getv function %tmp.33 :addRow;
+        %tmp.36 = const :inhale;
+        symbol [ inhale %tmp.36 16 16 22 const ];
+        symbol [ Rez %tmp.38 16 24 27 ];
+        %tmp.38 = getv ? :Rez;
+        symbol [ Strings %tmp.39 16 28 35 ];
+        %tmp.39 = getv %tmp.38 :Strings;
+        symbol [ MenuInhale %tmp.40 16 36 46 ];
+        %tmp.40 = getv %tmp.39 :MenuInhale;
+        invoke %tmp.33 %tmp.34(%tmp.36, %tmp.40);
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 17 8 ]
+        %tmp.41 = self;
+        symbol [ addRow %tmp.42 17 8 14 ];
+        %tmp.42 = getv function %tmp.41 :addRow;
+        %tmp.44 = const :holdFull;
+        symbol [ holdFull %tmp.44 17 16 24 const ];
+        symbol [ Rez %tmp.46 17 26 29 ];
+        %tmp.46 = getv ? :Rez;
+        symbol [ Strings %tmp.47 17 30 37 ];
+        %tmp.47 = getv %tmp.46 :Strings;
+        symbol [ MenuHoldFull %tmp.48 17 38 50 ];
+        %tmp.48 = getv %tmp.47 :MenuHoldFull;
+        invoke %tmp.41 %tmp.42(%tmp.44, %tmp.48);
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 18 8 ]
+        %tmp.49 = self;
+        symbol [ addRow %tmp.50 18 8 14 ];
+        %tmp.50 = getv function %tmp.49 :addRow;
+        %tmp.52 = const :exhale;
+        symbol [ exhale %tmp.52 18 16 22 const ];
+        symbol [ Rez %tmp.54 18 24 27 ];
+        %tmp.54 = getv ? :Rez;
+        symbol [ Strings %tmp.55 18 28 35 ];
+        %tmp.55 = getv %tmp.54 :Strings;
+        symbol [ MenuExhale %tmp.56 18 36 46 ];
+        %tmp.56 = getv %tmp.55 :MenuExhale;
+        invoke %tmp.49 %tmp.50(%tmp.52, %tmp.56);
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 19 8 ]
+        %tmp.57 = self;
+        symbol [ addRow %tmp.58 19 8 14 ];
+        %tmp.58 = getv function %tmp.57 :addRow;
+        %tmp.60 = const :holdEmpty;
+        symbol [ holdEmpty %tmp.60 19 16 25 const ];
+        symbol [ Rez %tmp.62 19 27 30 ];
+        %tmp.62 = getv ? :Rez;
+        symbol [ Strings %tmp.63 19 31 38 ];
+        %tmp.63 = getv %tmp.62 :Strings;
+        symbol [ MenuHoldEmpty %tmp.64 19 39 52 ];
+        %tmp.64 = getv %tmp.63 :MenuHoldEmpty;
+        invoke %tmp.57 %tmp.58(%tmp.60, %tmp.64);
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 20 8 ]
+        %tmp.65 = self;
+        symbol [ addRow %tmp.66 20 8 14 ];
+        %tmp.66 = getv function %tmp.65 :addRow;
+        %tmp.68 = const :lengthMin;
+        symbol [ lengthMin %tmp.68 20 16 25 const ];
+        symbol [ Rez %tmp.70 20 27 30 ];
+        %tmp.70 = getv ? :Rez;
+        symbol [ Strings %tmp.71 20 31 38 ];
+        %tmp.71 = getv %tmp.70 :Strings;
+        symbol [ MenuLength %tmp.72 20 39 49 ];
+        %tmp.72 = getv %tmp.71 :MenuLength;
+        invoke %tmp.65 %tmp.66(%tmp.68, %tmp.72);
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 21 8 ]
+        %tmp.73 = self;
+        symbol [ addToggle %tmp.74 21 8 17 ];
+        %tmp.74 = getv function %tmp.73 :addToggle;
+        %tmp.76 = const :vibeHold;
+        symbol [ vibeHold %tmp.76 21 19 27 const ];
+        symbol [ Rez %tmp.78 21 29 32 ];
+        %tmp.78 = getv ? :Rez;
+        symbol [ Strings %tmp.79 21 33 40 ];
+        %tmp.79 = getv %tmp.78 :Strings;
+        symbol [ MenuVibeHold %tmp.80 21 41 53 ];
+        %tmp.80 = getv %tmp.79 :MenuVibeHold;
+        symbol [ Config %tmp.82 21 55 61 ];
+        %tmp.82 = getv ? :Config;
+        symbol [ vibeHold %tmp.83 21 62 70 ];
+        %tmp.83 = getv function %tmp.82 :vibeHold;
+        %tmp.84 = invoke %tmp.82 %tmp.83();
+        invoke %tmp.73 %tmp.74(%tmp.76, %tmp.80, %tmp.84);
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 22 8 ]
+        %tmp.85 = self;
+        symbol [ addRow %tmp.86 22 8 14 ];
+        %tmp.86 = getv function %tmp.85 :addRow;
+        %tmp.88 = const :strength;
+        symbol [ strength %tmp.88 22 16 24 const ];
+        symbol [ Rez %tmp.90 22 26 29 ];
+        %tmp.90 = getv ? :Rez;
+        symbol [ Strings %tmp.91 22 30 37 ];
+        %tmp.91 = getv %tmp.90 :Strings;
+        symbol [ MenuStrength %tmp.92 22 38 50 ];
+        %tmp.92 = getv %tmp.91 :MenuStrength;
+        invoke %tmp.85 %tmp.86(%tmp.88, %tmp.92);
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 23 8 ]
+        %tmp.93 = self;
+        symbol [ addToggle %tmp.94 23 8 17 ];
+        %tmp.94 = getv function %tmp.93 :addToggle;
+        %tmp.96 = const :tones;
+        symbol [ tones %tmp.96 23 19 24 const ];
+        symbol [ Rez %tmp.98 23 26 29 ];
+        %tmp.98 = getv ? :Rez;
+        symbol [ Strings %tmp.99 23 30 37 ];
+        %tmp.99 = getv %tmp.98 :Strings;
+        symbol [ MenuTones %tmp.100 23 38 47 ];
+        %tmp.100 = getv %tmp.99 :MenuTones;
+        symbol [ Config %tmp.102 23 49 55 ];
+        %tmp.102 = getv ? :Config;
+        symbol [ tones %tmp.103 23 56 61 ];
+        %tmp.103 = getv function %tmp.102 :tones;
+        %tmp.104 = invoke %tmp.102 %tmp.103();
+        invoke %tmp.93 %tmp.94(%tmp.96, %tmp.100, %tmp.104);
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 25 8 ]
+        %tmp.105 = self;
+        symbol [ refresh %tmp.106 25 8 15 ];
+        %tmp.106 = getv function %tmp.105 :refresh;
+        invoke %tmp.105 %tmp.106();
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_10_26_26_4_stop:
+    }
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc"; @line = 28; @symbol_functiondef = [addRow,28,20,26]; @symbol_param<0> = [id,28,27,29]; @symbol_param<1> = [labelResource,28,31,44]; ]
+    protected
+    function addRow(id, labelResource) {
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_28_46_32_4_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 29 8 ]
+        [ "_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_28_46_32_4_start" "_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_28_46_32_4_stop" ]
+        %item.1 = local;
+        symbol [ item %item.1 29 12 16 ];
+        symbol [ WatchUi %tmp.3 29 23 30 ];
+        %tmp.3 = getm $.Toybox.WatchUi;
+        symbol [ MenuItem %tmp.4 29 31 39 ];
+        %tmp.4 = getv function ? %tmp.3 :MenuItem;
+        symbol [ WatchUi %tmp.5 29 40 47 ];
+        %tmp.5 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.6 29 48 60 ];
+        %tmp.6 = getv function %tmp.5 :loadResource;
+        %tmp.7 = lgetv %labelResource;
+        symbol [ labelResource %tmp.7 29 61 74 ];
+        %tmp.8 = invoke %tmp.5 %tmp.6(%tmp.7);
+        %tmp.9 = "";
+        %tmp.10 = lgetv %id;
+        symbol [ id %tmp.10 29 81 83 ];
+        %tmp.11 = newd 0;
+        %tmp.1 = newc %tmp.4 (%tmp.8, %tmp.9, %tmp.10, %tmp.11);
+        lputv %item.1 %tmp.1;
+        symbol [ item %item.1 29 12 16 ];
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 30 8 ]
+        symbol [ mRows %tmp.13 30 8 13 ];
+        %tmp.13 = getv ? :mRows;
+        symbol [ put %tmp.14 30 14 17 ];
+        %tmp.14 = getv function %tmp.13 :put;
+        %tmp.15 = lgetv %id;
+        symbol [ id %tmp.15 30 18 20 ];
+        %tmp.16 = lgetv %item.1;
+        symbol [ item %tmp.16 30 22 26 ];
+        invoke %tmp.13 %tmp.14(%tmp.15, %tmp.16);
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 31 8 ]
+        %tmp.17 = self;
+        symbol [ addItem %tmp.18 31 8 15 ];
+        %tmp.18 = getv function %tmp.17 :addItem;
+        %tmp.19 = lgetv %item.1;
+        symbol [ item %tmp.19 31 16 20 ];
+        invoke %tmp.17 %tmp.18(%tmp.19);
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_28_46_32_4_stop:
+    }
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc"; @line = 34; @symbol_functiondef = [addToggle,34,20,29]; @symbol_param<0> = [id,34,30,32]; @symbol_param<1> = [labelResource,34,34,47]; @symbol_param<2> = [enabled,34,49,56]; ]
+    protected
+    function addToggle(id, labelResource, enabled) {
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_34_58_39_4_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 35 8 ]
+        [ "_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_34_58_39_4_start" "_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_34_58_39_4_stop" ]
+        %item.1 = local;
+        symbol [ item %item.1 35 12 16 ];
+        symbol [ WatchUi %tmp.3 35 23 30 ];
+        %tmp.3 = getm $.Toybox.WatchUi;
+        symbol [ ToggleMenuItem %tmp.4 35 31 45 ];
+        %tmp.4 = getv function ? %tmp.3 :ToggleMenuItem;
+        symbol [ WatchUi %tmp.5 36 12 19 ];
+        %tmp.5 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.6 36 20 32 ];
+        %tmp.6 = getv function %tmp.5 :loadResource;
+        %tmp.7 = lgetv %labelResource;
+        symbol [ labelResource %tmp.7 36 33 46 ];
+        %tmp.8 = invoke %tmp.5 %tmp.6(%tmp.7);
+        %tmp.9 = "";
+        %tmp.10 = lgetv %id;
+        symbol [ id %tmp.10 36 53 55 ];
+        %tmp.11 = lgetv %enabled;
+        symbol [ enabled %tmp.11 36 57 64 ];
+        %tmp.12 = newd 0;
+        %tmp.1 = newc %tmp.4 (%tmp.8, %tmp.9, %tmp.10, %tmp.11, %tmp.12);
+        lputv %item.1 %tmp.1;
+        symbol [ item %item.1 35 12 16 ];
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 37 8 ]
+        symbol [ mRows %tmp.14 37 8 13 ];
+        %tmp.14 = getv ? :mRows;
+        symbol [ put %tmp.15 37 14 17 ];
+        %tmp.15 = getv function %tmp.14 :put;
+        %tmp.16 = lgetv %id;
+        symbol [ id %tmp.16 37 18 20 ];
+        %tmp.17 = lgetv %item.1;
+        symbol [ item %tmp.17 37 22 26 ];
+        invoke %tmp.14 %tmp.15(%tmp.16, %tmp.17);
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 38 8 ]
+        %tmp.18 = self;
+        symbol [ addItem %tmp.19 38 8 15 ];
+        %tmp.19 = getv function %tmp.18 :addItem;
+        %tmp.20 = lgetv %item.1;
+        symbol [ item %tmp.20 38 16 20 ];
+        invoke %tmp.18 %tmp.19(%tmp.20);
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_34_58_39_4_stop:
+    }
+    //! Re-reads every value and updates the sub-labels in place.
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc"; @line = 42; @symbol_functiondef = [refresh,42,13,20]; ]
+    function refresh() {
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_42_23_51_4_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 43 8 ]
+        %tmp.1 = self;
+        symbol [ setSub %tmp.2 43 8 14 ];
+        %tmp.2 = getv function %tmp.1 :setSub;
+        %tmp.4 = const :start;
+        symbol [ start %tmp.4 43 16 21 const ];
+        symbol [ Fmt %tmp.6 43 23 26 ];
+        %tmp.6 = getv ? :Fmt;
+        symbol [ pattern %tmp.7 43 27 34 ];
+        %tmp.7 = getv function %tmp.6 :pattern;
+        %tmp.8 = invoke %tmp.6 %tmp.7();
+        invoke %tmp.1 %tmp.2(%tmp.4, %tmp.8);
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 44 8 ]
+        %tmp.9 = self;
+        symbol [ setSub %tmp.10 44 8 14 ];
+        %tmp.10 = getv function %tmp.9 :setSub;
+        %tmp.12 = const :mode;
+        symbol [ mode %tmp.12 44 16 20 const ];
+        symbol [ Fmt %tmp.14 44 22 25 ];
+        %tmp.14 = getv ? :Fmt;
+        symbol [ modeName %tmp.15 44 26 34 ];
+        %tmp.15 = getv function %tmp.14 :modeName;
+        %tmp.16 = invoke %tmp.14 %tmp.15();
+        invoke %tmp.9 %tmp.10(%tmp.12, %tmp.16);
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 45 8 ]
+        %tmp.17 = self;
+        symbol [ setSub %tmp.18 45 8 14 ];
+        %tmp.18 = getv function %tmp.17 :setSub;
+        %tmp.20 = const :inhale;
+        symbol [ inhale %tmp.20 45 16 22 const ];
+        symbol [ Fmt %tmp.22 45 24 27 ];
+        %tmp.22 = getv ? :Fmt;
+        symbol [ seconds %tmp.23 45 28 35 ];
+        %tmp.23 = getv function %tmp.22 :seconds;
+        symbol [ Config %tmp.25 45 36 42 ];
+        %tmp.25 = getv ? :Config;
+        symbol [ inhale %tmp.26 45 43 49 ];
+        %tmp.26 = getv function %tmp.25 :inhale;
+        %tmp.27 = invoke %tmp.25 %tmp.26();
+        %tmp.28 = invoke %tmp.22 %tmp.23(%tmp.27);
+        invoke %tmp.17 %tmp.18(%tmp.20, %tmp.28);
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 46 8 ]
+        %tmp.29 = self;
+        symbol [ setSub %tmp.30 46 8 14 ];
+        %tmp.30 = getv function %tmp.29 :setSub;
+        %tmp.32 = const :holdFull;
+        symbol [ holdFull %tmp.32 46 16 24 const ];
+        symbol [ Fmt %tmp.34 46 26 29 ];
+        %tmp.34 = getv ? :Fmt;
+        symbol [ seconds %tmp.35 46 30 37 ];
+        %tmp.35 = getv function %tmp.34 :seconds;
+        symbol [ Config %tmp.37 46 38 44 ];
+        %tmp.37 = getv ? :Config;
+        symbol [ holdFull %tmp.38 46 45 53 ];
+        %tmp.38 = getv function %tmp.37 :holdFull;
+        %tmp.39 = invoke %tmp.37 %tmp.38();
+        %tmp.40 = invoke %tmp.34 %tmp.35(%tmp.39);
+        invoke %tmp.29 %tmp.30(%tmp.32, %tmp.40);
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 47 8 ]
+        %tmp.41 = self;
+        symbol [ setSub %tmp.42 47 8 14 ];
+        %tmp.42 = getv function %tmp.41 :setSub;
+        %tmp.44 = const :exhale;
+        symbol [ exhale %tmp.44 47 16 22 const ];
+        symbol [ Fmt %tmp.46 47 24 27 ];
+        %tmp.46 = getv ? :Fmt;
+        symbol [ seconds %tmp.47 47 28 35 ];
+        %tmp.47 = getv function %tmp.46 :seconds;
+        symbol [ Config %tmp.49 47 36 42 ];
+        %tmp.49 = getv ? :Config;
+        symbol [ exhale %tmp.50 47 43 49 ];
+        %tmp.50 = getv function %tmp.49 :exhale;
+        %tmp.51 = invoke %tmp.49 %tmp.50();
+        %tmp.52 = invoke %tmp.46 %tmp.47(%tmp.51);
+        invoke %tmp.41 %tmp.42(%tmp.44, %tmp.52);
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 48 8 ]
+        %tmp.53 = self;
+        symbol [ setSub %tmp.54 48 8 14 ];
+        %tmp.54 = getv function %tmp.53 :setSub;
+        %tmp.56 = const :holdEmpty;
+        symbol [ holdEmpty %tmp.56 48 16 25 const ];
+        symbol [ Fmt %tmp.58 48 27 30 ];
+        %tmp.58 = getv ? :Fmt;
+        symbol [ seconds %tmp.59 48 31 38 ];
+        %tmp.59 = getv function %tmp.58 :seconds;
+        symbol [ Config %tmp.61 48 39 45 ];
+        %tmp.61 = getv ? :Config;
+        symbol [ holdEmpty %tmp.62 48 46 55 ];
+        %tmp.62 = getv function %tmp.61 :holdEmpty;
+        %tmp.63 = invoke %tmp.61 %tmp.62();
+        %tmp.64 = invoke %tmp.58 %tmp.59(%tmp.63);
+        invoke %tmp.53 %tmp.54(%tmp.56, %tmp.64);
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 49 8 ]
+        %tmp.65 = self;
+        symbol [ setSub %tmp.66 49 8 14 ];
+        %tmp.66 = getv function %tmp.65 :setSub;
+        %tmp.68 = const :lengthMin;
+        symbol [ lengthMin %tmp.68 49 16 25 const ];
+        symbol [ Fmt %tmp.70 49 27 30 ];
+        %tmp.70 = getv ? :Fmt;
+        symbol [ minutes %tmp.71 49 31 38 ];
+        %tmp.71 = getv function %tmp.70 :minutes;
+        symbol [ Config %tmp.73 49 39 45 ];
+        %tmp.73 = getv ? :Config;
+        symbol [ lengthMin %tmp.74 49 46 55 ];
+        %tmp.74 = getv function %tmp.73 :lengthMin;
+        %tmp.75 = invoke %tmp.73 %tmp.74();
+        %tmp.76 = invoke %tmp.70 %tmp.71(%tmp.75);
+        invoke %tmp.65 %tmp.66(%tmp.68, %tmp.76);
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 50 8 ]
+        %tmp.77 = self;
+        symbol [ setSub %tmp.78 50 8 14 ];
+        %tmp.78 = getv function %tmp.77 :setSub;
+        %tmp.80 = const :strength;
+        symbol [ strength %tmp.80 50 16 24 const ];
+        symbol [ Fmt %tmp.82 50 26 29 ];
+        %tmp.82 = getv ? :Fmt;
+        symbol [ percent %tmp.83 50 30 37 ];
+        %tmp.83 = getv function %tmp.82 :percent;
+        symbol [ Config %tmp.85 50 38 44 ];
+        %tmp.85 = getv ? :Config;
+        symbol [ strength %tmp.86 50 45 53 ];
+        %tmp.86 = getv function %tmp.85 :strength;
+        %tmp.87 = invoke %tmp.85 %tmp.86();
+        %tmp.88 = invoke %tmp.82 %tmp.83(%tmp.87);
+        invoke %tmp.77 %tmp.78(%tmp.80, %tmp.88);
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_42_23_51_4_stop:
+    }
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc"; @line = 53; @symbol_functiondef = [setSub,53,20,26]; @symbol_param<0> = [id,53,27,29]; @symbol_param<1> = [text,53,31,35]; ]
+    protected
+    function setSub(id, text) {
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_53_37_58_4_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 54 8 ]
+        [ "_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_53_37_58_4_start" "_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_53_37_58_4_stop" ]
+        %item.1 = local;
+        symbol [ item %item.1 54 12 16 ];
+        symbol [ mRows %tmp.2 54 19 24 ];
+        %tmp.2 = getv ? :mRows;
+        symbol [ get %tmp.3 54 25 28 ];
+        %tmp.3 = getv function %tmp.2 :get;
+        %tmp.4 = lgetv %id;
+        symbol [ id %tmp.4 54 29 31 ];
+        %tmp.5 = invoke %tmp.2 %tmp.3(%tmp.4);
+        lputv %item.1 %tmp.5;
+        symbol [ item %item.1 54 12 16 ];
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 55 8 ]
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_55_8_57_8_if_stmt:
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_55_12_55_38_begin:
+        %tmp.6 = lgetv %item.1;
+        symbol [ item %tmp.6 55 12 16 ];
+        %tmp.7 = null;
+        %tmp.8 = ne %tmp.6 %tmp.7;
+        bf %tmp.8 @_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_55_8_57_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_55_28_55_38_true:
+        %tmp.9 = lgetv %item.1;
+        symbol [ item %tmp.9 55 28 32 ];
+        %tmp.10 = as %tmp.9 { (!Null) };
+        %tmp.12 = const :setSubLabel;
+        symbol [ setSubLabel %tmp.12 55 38 49 const ];
+        %tmp.13 = canhazplz %tmp.10 %tmp.12;
+        push %tmp.13;
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_55_28_55_38_end:
+        %tmp.14 = phi [%tmp.8 @_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_55_12_55_38_begin] [%tmp.13 @_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_55_28_55_38_true] [%tmp.14 @_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_55_28_55_38_end];
+        bf %tmp.14 @_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_55_8_57_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_55_8_57_8_if_true:
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_55_51_57_8_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 56 12 ]
+        %tmp.15 = lgetv %item.1;
+        symbol [ item %tmp.15 56 12 16 ];
+        %tmp.16 = as %tmp.15 { (interface { var setSubLabel; }) && (!Null) };
+        symbol [ setSubLabel %tmp.17 56 17 28 ];
+        %tmp.17 = getv function %tmp.16 :setSubLabel;
+        %tmp.18 = lgetv %text;
+        symbol [ text %tmp.18 56 29 33 ];
+        invoke %tmp.16 %tmp.17(%tmp.18);
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_55_51_57_8_stop:
+        goto @_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_55_8_57_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_55_8_57_8_if_end:
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_53_37_58_4_stop:
+    }
+}
+[ @file = "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc"; @line = 61; @symbol_classdef = [SettingsDelegate,61,6,22]; @symbol_extends<0> = [WatchUi,61,31,38]; @symbol_extends<1> = [Menu2InputDelegate,61,39,57]; ]
+class SettingsDelegate extends WatchUi.Menu2InputDelegate {
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc"; @line = 61; ]
+    <init> {
+    }
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc"; @line = 61; ]
+    static
+    <init> {
+    }
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc"; @line = 63; @position = 15; @symbol_vardef = [mMenu,63,15,20]; ]
+    protected
+    var mMenu;
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc"; @line = 65; @symbol_functiondef = [initialize,65,13,23]; @symbol_param<0> = [menu,65,24,28]; ]
+    function initialize(menu) as Void {
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_65_30_68_4_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 66 8 ]
+        symbol [ Menu2InputDelegate %tmp.2 66 8 26 ];
+        %tmp.2 = getv ? :Menu2InputDelegate;
+        symbol [ initialize %tmp.3 66 27 37 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 67 8 ]
+        %tmp.4 = lgetv %menu;
+        symbol [ menu %tmp.4 67 16 20 ];
+        symbol [ mMenu ? 67 8 13 ];
+        putv self :mMenu %tmp.4;
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_65_30_68_4_stop:
+    }
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc"; @line = 70; @symbol_functiondef = [onSelect,70,13,21]; @symbol_param<0> = [item,70,22,26]; ]
+    function onSelect(item) {
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_70_28_126_4_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 71 8 ]
+        [ "_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_70_28_126_4_start" "_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_70_28_126_4_stop" ]
+        %id.1 = local;
+        symbol [ id %id.1 71 12 14 ];
+        %tmp.1 = lgetv %item;
+        symbol [ item %tmp.1 71 17 21 ];
+        symbol [ getId %tmp.2 71 22 27 ];
+        %tmp.2 = getv function %tmp.1 :getId;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        lputv %id.1 %tmp.3;
+        symbol [ id %id.1 71 12 14 ];
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 73 8 ]
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_73_8_77_8_if_stmt:
+        %tmp.4 = lgetv %id.1;
+        symbol [ id %tmp.4 73 12 14 ];
+        %tmp.6 = const :start;
+        symbol [ start %tmp.6 73 19 24 const ];
+        %tmp.7 = eq %tmp.4 %tmp.6;
+        bf %tmp.7 @_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_73_8_77_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_73_8_77_8_if_true:
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_73_26_77_8_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 74 12 ]
+        [ "_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_73_26_77_8_start" "_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_73_26_77_8_stop" ]
+        %view.2 = local;
+        symbol [ view %view.2 74 16 20 ];
+        symbol [ BreathView %tmp.11 74 27 37 ];
+        %tmp.11 = getv ? :BreathView;
+        %tmp.8 = newc %tmp.11 ();
+        lputv %view.2 %tmp.8;
+        symbol [ view %view.2 74 16 20 ];
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 75 12 ]
+        symbol [ WatchUi %tmp.12 75 12 19 ];
+        %tmp.12 = getm $.Toybox.WatchUi;
+        symbol [ pushView %tmp.13 75 20 28 ];
+        %tmp.13 = getv function %tmp.12 :pushView;
+        %tmp.14 = lgetv %view.2;
+        symbol [ view %tmp.14 75 29 33 ];
+        symbol [ BreathDelegate %tmp.18 75 39 53 ];
+        %tmp.18 = getv ? :BreathDelegate;
+        %tmp.19 = lgetv %view.2;
+        symbol [ view %tmp.19 75 54 58 ];
+        %tmp.15 = newc %tmp.18 (%tmp.19);
+        symbol [ WatchUi %tmp.20 75 61 68 ];
+        %tmp.20 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_IMMEDIATE %tmp.21 75 69 84 ];
+        %tmp.21 = getv %tmp.20 :SLIDE_IMMEDIATE;
+        invoke %tmp.12 %tmp.13(%tmp.14, %tmp.15, %tmp.21);
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 76 12 ]
+        ret ?;
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_73_26_77_8_stop:
+        goto @_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_73_8_77_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_73_8_77_8_if_end:
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 79 8 ]
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_79_8_87_8_if_stmt:
+        %tmp.22 = lgetv %item;
+        symbol [ item %tmp.22 79 12 16 ];
+        symbol [ WatchUi %tmp.23 79 28 35 ];
+        %tmp.23 = getm $.Toybox.WatchUi;
+        symbol [ ToggleMenuItem %tmp.24 79 36 50 ];
+        %tmp.24 = getv %tmp.23 :ToggleMenuItem;
+        %tmp.25 = isa %tmp.22 %tmp.24;
+        bf %tmp.25 @_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_79_8_87_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_79_8_87_8_if_true:
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_79_52_87_8_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 81 12 ]
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_81_12_85_12_if_stmt:
+        %tmp.26 = lgetv %id.1;
+        symbol [ id %tmp.26 81 16 18 ];
+        %tmp.28 = const :vibeHold;
+        symbol [ vibeHold %tmp.28 81 23 31 const ];
+        %tmp.29 = eq %tmp.26 %tmp.28;
+        bf %tmp.29 @_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_81_12_85_12_if_false;
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_81_12_85_12_if_true:
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_81_33_83_12_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 82 16 ]
+        symbol [ Config %tmp.31 82 16 22 ];
+        %tmp.31 = getv ? :Config;
+        symbol [ set %tmp.32 82 23 26 ];
+        %tmp.32 = getv function %tmp.31 :set;
+        symbol [ Config %tmp.34 82 27 33 ];
+        %tmp.34 = getv ? :Config;
+        symbol [ K_VIBE_HOLD %tmp.35 82 34 45 ];
+        %tmp.35 = getv %tmp.34 :K_VIBE_HOLD;
+        %tmp.36 = lgetv %item;
+        symbol [ item %tmp.36 82 47 51 ];
+        %tmp.37 = as %tmp.36 { (WatchUi.ToggleMenuItem) };
+        symbol [ isEnabled %tmp.38 82 52 61 ];
+        %tmp.38 = getv function %tmp.37 :isEnabled;
+        %tmp.39 = invoke %tmp.37 %tmp.38();
+        invoke %tmp.31 %tmp.32(%tmp.35, %tmp.39);
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_81_33_83_12_stop:
+        goto @_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_81_12_85_12_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_81_12_85_12_if_false:
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 83 19 ]
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_83_19_85_12_if_stmt:
+        %tmp.40 = lgetv %id.1;
+        symbol [ id %tmp.40 83 23 25 ];
+        %tmp.42 = const :tones;
+        symbol [ tones %tmp.42 83 30 35 const ];
+        %tmp.43 = eq %tmp.40 %tmp.42;
+        bf %tmp.43 @_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_83_19_85_12_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_83_19_85_12_if_true:
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_83_37_85_12_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 84 16 ]
+        symbol [ Config %tmp.45 84 16 22 ];
+        %tmp.45 = getv ? :Config;
+        symbol [ set %tmp.46 84 23 26 ];
+        %tmp.46 = getv function %tmp.45 :set;
+        symbol [ Config %tmp.48 84 27 33 ];
+        %tmp.48 = getv ? :Config;
+        symbol [ K_TONES %tmp.49 84 34 41 ];
+        %tmp.49 = getv %tmp.48 :K_TONES;
+        %tmp.50 = lgetv %item;
+        symbol [ item %tmp.50 84 43 47 ];
+        %tmp.51 = as %tmp.50 { (WatchUi.ToggleMenuItem) };
+        symbol [ isEnabled %tmp.52 84 48 57 ];
+        %tmp.52 = getv function %tmp.51 :isEnabled;
+        %tmp.53 = invoke %tmp.51 %tmp.52();
+        invoke %tmp.45 %tmp.46(%tmp.49, %tmp.53);
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_83_37_85_12_stop:
+        goto @_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_83_19_85_12_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_83_19_85_12_if_end:
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_81_12_85_12_if_end:
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 86 12 ]
+        ret ?;
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_79_52_87_8_stop:
+        goto @_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_79_8_87_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_79_8_87_8_if_end:
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 89 8 ]
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_89_8_125_8_if_stmt:
+        %tmp.54 = lgetv %id.1;
+        symbol [ id %tmp.54 89 12 14 ];
+        %tmp.56 = const :mode;
+        symbol [ mode %tmp.56 89 19 23 const ];
+        %tmp.57 = eq %tmp.54 %tmp.56;
+        bf %tmp.57 @_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_89_8_125_8_if_false;
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_89_8_125_8_if_true:
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_89_25_95_8_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 90 12 ]
+        [ "_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_89_25_95_8_start" "_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_89_25_95_8_stop" ]
+        %modeLabels.3 = local;
+        symbol [ modeLabels %modeLabels.3 90 16 26 ];
+        %tmp.58 = newa 2;
+        symbol [ WatchUi %tmp.59 90 30 37 ];
+        %tmp.59 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.60 90 38 50 ];
+        %tmp.60 = getv function %tmp.59 :loadResource;
+        symbol [ Rez %tmp.62 90 51 54 ];
+        %tmp.62 = getv ? :Rez;
+        symbol [ Strings %tmp.63 90 55 62 ];
+        %tmp.63 = getv %tmp.62 :Strings;
+        symbol [ ModeBox %tmp.64 90 63 70 ];
+        %tmp.64 = getv %tmp.63 :ModeBox;
+        %tmp.65 = invoke %tmp.59 %tmp.60(%tmp.64);
+        %tmp.66 = dup %tmp.58;
+        %tmp.67 = aputv %tmp.66 0 %tmp.65;
+        symbol [ WatchUi %tmp.68 91 30 37 ];
+        %tmp.68 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.69 91 38 50 ];
+        %tmp.69 = getv function %tmp.68 :loadResource;
+        symbol [ Rez %tmp.71 91 51 54 ];
+        %tmp.71 = getv ? :Rez;
+        symbol [ Strings %tmp.72 91 55 62 ];
+        %tmp.72 = getv %tmp.71 :Strings;
+        symbol [ ModeEven %tmp.73 91 63 71 ];
+        %tmp.73 = getv %tmp.72 :ModeEven;
+        %tmp.74 = invoke %tmp.68 %tmp.69(%tmp.73);
+        %tmp.75 = dup %tmp.67;
+        %tmp.76 = aputv %tmp.75 1 %tmp.74;
+        lputv %modeLabels.3 %tmp.76;
+        symbol [ modeLabels %modeLabels.3 90 16 26 ];
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 92 12 ]
+        %tmp.77 = self;
+        symbol [ push %tmp.78 92 12 16 ];
+        %tmp.78 = getv function %tmp.77 :push;
+        symbol [ Rez %tmp.80 92 17 20 ];
+        %tmp.80 = getv ? :Rez;
+        symbol [ Strings %tmp.81 92 21 28 ];
+        %tmp.81 = getv %tmp.80 :Strings;
+        symbol [ MenuMode %tmp.82 92 29 37 ];
+        %tmp.82 = getv %tmp.81 :MenuMode;
+        symbol [ Config %tmp.84 92 39 45 ];
+        %tmp.84 = getv ? :Config;
+        symbol [ K_MODE %tmp.85 92 46 52 ];
+        %tmp.85 = getv %tmp.84 :K_MODE;
+        %tmp.86 = newa 2;
+        symbol [ Config %tmp.88 93 18 24 ];
+        %tmp.88 = getv ? :Config;
+        symbol [ MODE_BOX %tmp.89 93 25 33 ];
+        %tmp.89 = getv %tmp.88 :MODE_BOX;
+        %tmp.90 = dup %tmp.86;
+        %tmp.91 = aputv %tmp.90 0 %tmp.89;
+        symbol [ Config %tmp.93 93 35 41 ];
+        %tmp.93 = getv ? :Config;
+        symbol [ MODE_EVEN %tmp.94 93 42 51 ];
+        %tmp.94 = getv %tmp.93 :MODE_EVEN;
+        %tmp.95 = dup %tmp.91;
+        %tmp.96 = aputv %tmp.95 1 %tmp.94;
+        %tmp.97 = lgetv %modeLabels.3;
+        symbol [ modeLabels %tmp.97 93 54 64 ];
+        symbol [ Config %tmp.99 93 66 72 ];
+        %tmp.99 = getv ? :Config;
+        symbol [ mode %tmp.100 93 73 77 ];
+        %tmp.100 = getv function %tmp.99 :mode;
+        %tmp.101 = invoke %tmp.99 %tmp.100();
+        invoke %tmp.77 %tmp.78(%tmp.82, %tmp.85, %tmp.96, %tmp.97, %tmp.101);
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_89_25_95_8_stop:
+        goto @_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_89_8_125_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_89_8_125_8_if_false:
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 95 15 ]
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_95_15_125_8_if_stmt:
+        %tmp.102 = lgetv %id.1;
+        symbol [ id %tmp.102 95 19 21 ];
+        %tmp.104 = const :inhale;
+        symbol [ inhale %tmp.104 95 26 32 const ];
+        %tmp.105 = eq %tmp.102 %tmp.104;
+        bf %tmp.105 @_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_95_15_125_8_if_false;
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_95_15_125_8_if_true:
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_95_34_98_8_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 96 12 ]
+        %tmp.106 = self;
+        symbol [ pushSeconds %tmp.107 96 12 23 ];
+        %tmp.107 = getv function %tmp.106 :pushSeconds;
+        symbol [ Rez %tmp.109 96 24 27 ];
+        %tmp.109 = getv ? :Rez;
+        symbol [ Strings %tmp.110 96 28 35 ];
+        %tmp.110 = getv %tmp.109 :Strings;
+        symbol [ MenuInhale %tmp.111 96 36 46 ];
+        %tmp.111 = getv %tmp.110 :MenuInhale;
+        symbol [ Config %tmp.113 96 48 54 ];
+        %tmp.113 = getv ? :Config;
+        symbol [ K_INHALE %tmp.114 96 55 63 ];
+        %tmp.114 = getv %tmp.113 :K_INHALE;
+        %tmp.115 = 1;
+        symbol [ Config %tmp.117 96 68 74 ];
+        %tmp.117 = getv ? :Config;
+        symbol [ inhale %tmp.118 96 75 81 ];
+        %tmp.118 = getv function %tmp.117 :inhale;
+        %tmp.119 = invoke %tmp.117 %tmp.118();
+        invoke %tmp.106 %tmp.107(%tmp.111, %tmp.114, %tmp.115, %tmp.119);
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_95_34_98_8_stop:
+        goto @_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_95_15_125_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_95_15_125_8_if_false:
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 98 15 ]
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_98_15_125_8_if_stmt:
+        %tmp.120 = lgetv %id.1;
+        symbol [ id %tmp.120 98 19 21 ];
+        %tmp.122 = const :holdFull;
+        symbol [ holdFull %tmp.122 98 26 34 const ];
+        %tmp.123 = eq %tmp.120 %tmp.122;
+        bf %tmp.123 @_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_98_15_125_8_if_false;
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_98_15_125_8_if_true:
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_98_36_101_8_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 99 12 ]
+        %tmp.124 = self;
+        symbol [ pushSeconds %tmp.125 99 12 23 ];
+        %tmp.125 = getv function %tmp.124 :pushSeconds;
+        symbol [ Rez %tmp.127 99 24 27 ];
+        %tmp.127 = getv ? :Rez;
+        symbol [ Strings %tmp.128 99 28 35 ];
+        %tmp.128 = getv %tmp.127 :Strings;
+        symbol [ MenuHoldFull %tmp.129 99 36 48 ];
+        %tmp.129 = getv %tmp.128 :MenuHoldFull;
+        symbol [ Config %tmp.131 99 50 56 ];
+        %tmp.131 = getv ? :Config;
+        symbol [ K_HOLD_FULL %tmp.132 99 57 68 ];
+        %tmp.132 = getv %tmp.131 :K_HOLD_FULL;
+        %tmp.133 = 0;
+        symbol [ Config %tmp.135 99 73 79 ];
+        %tmp.135 = getv ? :Config;
+        symbol [ holdFull %tmp.136 99 80 88 ];
+        %tmp.136 = getv function %tmp.135 :holdFull;
+        %tmp.137 = invoke %tmp.135 %tmp.136();
+        invoke %tmp.124 %tmp.125(%tmp.129, %tmp.132, %tmp.133, %tmp.137);
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_98_36_101_8_stop:
+        goto @_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_98_15_125_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_98_15_125_8_if_false:
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 101 15 ]
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_101_15_125_8_if_stmt:
+        %tmp.138 = lgetv %id.1;
+        symbol [ id %tmp.138 101 19 21 ];
+        %tmp.140 = const :exhale;
+        symbol [ exhale %tmp.140 101 26 32 const ];
+        %tmp.141 = eq %tmp.138 %tmp.140;
+        bf %tmp.141 @_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_101_15_125_8_if_false;
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_101_15_125_8_if_true:
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_101_34_104_8_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 102 12 ]
+        %tmp.142 = self;
+        symbol [ pushSeconds %tmp.143 102 12 23 ];
+        %tmp.143 = getv function %tmp.142 :pushSeconds;
+        symbol [ Rez %tmp.145 102 24 27 ];
+        %tmp.145 = getv ? :Rez;
+        symbol [ Strings %tmp.146 102 28 35 ];
+        %tmp.146 = getv %tmp.145 :Strings;
+        symbol [ MenuExhale %tmp.147 102 36 46 ];
+        %tmp.147 = getv %tmp.146 :MenuExhale;
+        symbol [ Config %tmp.149 102 48 54 ];
+        %tmp.149 = getv ? :Config;
+        symbol [ K_EXHALE %tmp.150 102 55 63 ];
+        %tmp.150 = getv %tmp.149 :K_EXHALE;
+        %tmp.151 = 1;
+        symbol [ Config %tmp.153 102 68 74 ];
+        %tmp.153 = getv ? :Config;
+        symbol [ exhale %tmp.154 102 75 81 ];
+        %tmp.154 = getv function %tmp.153 :exhale;
+        %tmp.155 = invoke %tmp.153 %tmp.154();
+        invoke %tmp.142 %tmp.143(%tmp.147, %tmp.150, %tmp.151, %tmp.155);
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_101_34_104_8_stop:
+        goto @_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_101_15_125_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_101_15_125_8_if_false:
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 104 15 ]
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_104_15_125_8_if_stmt:
+        %tmp.156 = lgetv %id.1;
+        symbol [ id %tmp.156 104 19 21 ];
+        %tmp.158 = const :holdEmpty;
+        symbol [ holdEmpty %tmp.158 104 26 35 const ];
+        %tmp.159 = eq %tmp.156 %tmp.158;
+        bf %tmp.159 @_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_104_15_125_8_if_false;
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_104_15_125_8_if_true:
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_104_37_107_8_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 105 12 ]
+        %tmp.160 = self;
+        symbol [ pushSeconds %tmp.161 105 12 23 ];
+        %tmp.161 = getv function %tmp.160 :pushSeconds;
+        symbol [ Rez %tmp.163 105 24 27 ];
+        %tmp.163 = getv ? :Rez;
+        symbol [ Strings %tmp.164 105 28 35 ];
+        %tmp.164 = getv %tmp.163 :Strings;
+        symbol [ MenuHoldEmpty %tmp.165 105 36 49 ];
+        %tmp.165 = getv %tmp.164 :MenuHoldEmpty;
+        symbol [ Config %tmp.167 105 51 57 ];
+        %tmp.167 = getv ? :Config;
+        symbol [ K_HOLD_EMPTY %tmp.168 105 58 70 ];
+        %tmp.168 = getv %tmp.167 :K_HOLD_EMPTY;
+        %tmp.169 = 0;
+        symbol [ Config %tmp.171 105 75 81 ];
+        %tmp.171 = getv ? :Config;
+        symbol [ holdEmpty %tmp.172 105 82 91 ];
+        %tmp.172 = getv function %tmp.171 :holdEmpty;
+        %tmp.173 = invoke %tmp.171 %tmp.172();
+        invoke %tmp.160 %tmp.161(%tmp.165, %tmp.168, %tmp.169, %tmp.173);
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_104_37_107_8_stop:
+        goto @_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_104_15_125_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_104_15_125_8_if_false:
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 107 15 ]
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_107_15_125_8_if_stmt:
+        %tmp.174 = lgetv %id.1;
+        symbol [ id %tmp.174 107 19 21 ];
+        %tmp.176 = const :lengthMin;
+        symbol [ lengthMin %tmp.176 107 26 35 const ];
+        %tmp.177 = eq %tmp.174 %tmp.176;
+        bf %tmp.177 @_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_107_15_125_8_if_false;
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_107_15_125_8_if_true:
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_107_37_116_8_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 108 12 ]
+        [ "_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_107_37_116_8_start" "_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_107_37_116_8_stop" ]
+        %lenValues.4 = local;
+        symbol [ lenValues %lenValues.4 108 16 25 ];
+        %tmp.178 = newa 12;
+        %tmp.179 = 0;
+        %tmp.180 = dup %tmp.178;
+        %tmp.181 = aputv %tmp.180 0 %tmp.179;
+        %tmp.182 = 1;
+        %tmp.183 = dup %tmp.181;
+        %tmp.184 = aputv %tmp.183 1 %tmp.182;
+        %tmp.185 = 2;
+        %tmp.186 = dup %tmp.184;
+        %tmp.187 = aputv %tmp.186 2 %tmp.185;
+        %tmp.188 = 3;
+        %tmp.189 = dup %tmp.187;
+        %tmp.190 = aputv %tmp.189 3 %tmp.188;
+        %tmp.191 = 5;
+        %tmp.192 = dup %tmp.190;
+        %tmp.193 = aputv %tmp.192 4 %tmp.191;
+        %tmp.194 = 8;
+        %tmp.195 = dup %tmp.193;
+        %tmp.196 = aputv %tmp.195 5 %tmp.194;
+        %tmp.197 = 10;
+        %tmp.198 = dup %tmp.196;
+        %tmp.199 = aputv %tmp.198 6 %tmp.197;
+        %tmp.200 = 15;
+        %tmp.201 = dup %tmp.199;
+        %tmp.202 = aputv %tmp.201 7 %tmp.200;
+        %tmp.203 = 20;
+        %tmp.204 = dup %tmp.202;
+        %tmp.205 = aputv %tmp.204 8 %tmp.203;
+        %tmp.206 = 30;
+        %tmp.207 = dup %tmp.205;
+        %tmp.208 = aputv %tmp.207 9 %tmp.206;
+        %tmp.209 = 45;
+        %tmp.210 = dup %tmp.208;
+        %tmp.211 = aputv %tmp.210 10 %tmp.209;
+        %tmp.212 = 60;
+        %tmp.213 = dup %tmp.211;
+        %tmp.214 = aputv %tmp.213 11 %tmp.212;
+        lputv %lenValues.4 %tmp.214;
+        symbol [ lenValues %lenValues.4 108 16 25 ];
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 109 12 ]
+        [ "_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_107_37_116_8_start" "_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_107_37_116_8_stop" ]
+        %lenLabels.5 = local;
+        symbol [ lenLabels %lenLabels.5 109 16 25 ];
+        %tmp.215 = newa 0;
+        lputv %lenLabels.5 %tmp.215;
+        symbol [ lenLabels %lenLabels.5 109 16 25 ];
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 110 12 ]
+        for @_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_110_12_112_12_for_test @_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_110_12_112_12_for_incr @_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_110_12_112_12_for_end;
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_110_12_112_12_for_init:
+        [ "_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_110_12_112_12_for_begin" "_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_110_12_112_12_for_end" ]
+        %i.6 = local;
+        symbol [ i %i.6 110 21 22 ];
+        %tmp.216 = 0;
+        lputv %i.6 %tmp.216;
+        symbol [ i %i.6 110 21 22 ];
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_110_12_112_12_for_test:
+        %tmp.217 = lgetv %i.6;
+        symbol [ i %tmp.217 110 28 29 ];
+        %tmp.218 = lgetv %lenValues.4;
+        symbol [ lenValues %tmp.218 110 32 41 ];
+        symbol [ size %tmp.219 110 42 46 ];
+        %tmp.219 = getv function %tmp.218 :size;
+        %tmp.220 = invoke %tmp.218 %tmp.219();
+        %tmp.221 = lt %tmp.217 %tmp.220;
+        bf %tmp.221 @_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_110_12_112_12_for_end;
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_110_12_112_12_for_begin:
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_110_55_112_12_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 111 16 ]
+        %tmp.222 = lgetv %lenLabels.5;
+        symbol [ lenLabels %tmp.222 111 16 25 ];
+        symbol [ add %tmp.223 111 26 29 ];
+        %tmp.223 = getv function %tmp.222 :add;
+        symbol [ Fmt %tmp.225 111 30 33 ];
+        %tmp.225 = getv ? :Fmt;
+        symbol [ minutes %tmp.226 111 34 41 ];
+        %tmp.226 = getv function %tmp.225 :minutes;
+        %tmp.227 = lgetv %lenValues.4;
+        symbol [ lenValues %tmp.227 111 42 51 ];
+        %tmp.228 = lgetv %i.6;
+        symbol [ i %tmp.228 111 52 53 ];
+        %tmp.229 = agetv %tmp.227 %tmp.228;
+        %tmp.230 = invoke %tmp.225 %tmp.226(%tmp.229);
+        invoke %tmp.222 %tmp.223(%tmp.230);
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_110_55_112_12_stop:
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_110_12_112_12_for_incr:
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 110 ]
+        %tmp.233 = lgetv %i.6;
+        symbol [ i %tmp.233 110 50 51 ];
+        %tmp.234 = add %tmp.233 1;
+        lputv %i.6 %tmp.234;
+        symbol [ i %i.6 110 50 51 ];
+        goto @_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_110_12_112_12_for_test;
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_110_12_112_12_for_end:
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 113 12 ]
+        %tmp.235 = self;
+        symbol [ push %tmp.236 113 12 16 ];
+        %tmp.236 = getv function %tmp.235 :push;
+        symbol [ Rez %tmp.238 113 17 20 ];
+        %tmp.238 = getv ? :Rez;
+        symbol [ Strings %tmp.239 113 21 28 ];
+        %tmp.239 = getv %tmp.238 :Strings;
+        symbol [ MenuLength %tmp.240 113 29 39 ];
+        %tmp.240 = getv %tmp.239 :MenuLength;
+        symbol [ Config %tmp.242 113 41 47 ];
+        %tmp.242 = getv ? :Config;
+        symbol [ K_LENGTH %tmp.243 113 48 56 ];
+        %tmp.243 = getv %tmp.242 :K_LENGTH;
+        %tmp.244 = lgetv %lenValues.4;
+        symbol [ lenValues %tmp.244 113 58 67 ];
+        %tmp.245 = lgetv %lenLabels.5;
+        symbol [ lenLabels %tmp.245 113 69 78 ];
+        symbol [ Config %tmp.247 114 17 23 ];
+        %tmp.247 = getv ? :Config;
+        symbol [ lengthMin %tmp.248 114 24 33 ];
+        %tmp.248 = getv function %tmp.247 :lengthMin;
+        %tmp.249 = invoke %tmp.247 %tmp.248();
+        invoke %tmp.235 %tmp.236(%tmp.240, %tmp.243, %tmp.244, %tmp.245, %tmp.249);
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_107_37_116_8_stop:
+        goto @_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_107_15_125_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_107_15_125_8_if_false:
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 116 15 ]
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_116_15_125_8_if_stmt:
+        %tmp.250 = lgetv %id.1;
+        symbol [ id %tmp.250 116 19 21 ];
+        %tmp.252 = const :strength;
+        symbol [ strength %tmp.252 116 26 34 const ];
+        %tmp.253 = eq %tmp.250 %tmp.252;
+        bf %tmp.253 @_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_116_15_125_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_116_15_125_8_if_true:
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_116_36_125_8_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 117 12 ]
+        [ "_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_116_36_125_8_start" "_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_116_36_125_8_stop" ]
+        %powerValues.7 = local;
+        symbol [ powerValues %powerValues.7 117 16 27 ];
+        %tmp.254 = newa 0;
+        lputv %powerValues.7 %tmp.254;
+        symbol [ powerValues %powerValues.7 117 16 27 ];
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 118 12 ]
+        [ "_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_116_36_125_8_start" "_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_116_36_125_8_stop" ]
+        %powerLabels.8 = local;
+        symbol [ powerLabels %powerLabels.8 118 16 27 ];
+        %tmp.255 = newa 0;
+        lputv %powerLabels.8 %tmp.255;
+        symbol [ powerLabels %powerLabels.8 118 16 27 ];
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 119 12 ]
+        for @_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_119_12_122_12_for_test @_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_119_12_122_12_for_incr @_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_119_12_122_12_for_end;
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_119_12_122_12_for_init:
+        [ "_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_119_12_122_12_for_begin" "_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_119_12_122_12_for_end" ]
+        %p.9 = local;
+        symbol [ p %p.9 119 21 22 ];
+        %tmp.256 = 10;
+        lputv %p.9 %tmp.256;
+        symbol [ p %p.9 119 21 22 ];
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_119_12_122_12_for_test:
+        %tmp.257 = lgetv %p.9;
+        symbol [ p %tmp.257 119 29 30 ];
+        %tmp.258 = 100;
+        %tmp.259 = lte %tmp.257 %tmp.258;
+        bf %tmp.259 @_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_119_12_122_12_for_end;
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_119_12_122_12_for_begin:
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_119_48_122_12_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 120 16 ]
+        %tmp.260 = lgetv %powerValues.7;
+        symbol [ powerValues %tmp.260 120 16 27 ];
+        symbol [ add %tmp.261 120 28 31 ];
+        %tmp.261 = getv function %tmp.260 :add;
+        %tmp.262 = lgetv %p.9;
+        symbol [ p %tmp.262 120 32 33 ];
+        invoke %tmp.260 %tmp.261(%tmp.262);
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 121 16 ]
+        %tmp.263 = lgetv %powerLabels.8;
+        symbol [ powerLabels %tmp.263 121 16 27 ];
+        symbol [ add %tmp.264 121 28 31 ];
+        %tmp.264 = getv function %tmp.263 :add;
+        symbol [ Fmt %tmp.266 121 32 35 ];
+        %tmp.266 = getv ? :Fmt;
+        symbol [ percent %tmp.267 121 36 43 ];
+        %tmp.267 = getv function %tmp.266 :percent;
+        %tmp.268 = lgetv %p.9;
+        symbol [ p %tmp.268 121 44 45 ];
+        %tmp.269 = invoke %tmp.266 %tmp.267(%tmp.268);
+        invoke %tmp.263 %tmp.264(%tmp.269);
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_119_48_122_12_stop:
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_119_12_122_12_for_incr:
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 119 ]
+        %tmp.270 = lgetv %p.9;
+        symbol [ p %tmp.270 119 39 40 ];
+        %tmp.271 = 10;
+        %tmp.272 = add %tmp.270 %tmp.271;
+        lputv %p.9 %tmp.272;
+        symbol [ p %p.9 119 39 40 ];
+        goto @_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_119_12_122_12_for_test;
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_119_12_122_12_for_end:
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 123 12 ]
+        %tmp.273 = self;
+        symbol [ push %tmp.274 123 12 16 ];
+        %tmp.274 = getv function %tmp.273 :push;
+        symbol [ Rez %tmp.276 123 17 20 ];
+        %tmp.276 = getv ? :Rez;
+        symbol [ Strings %tmp.277 123 21 28 ];
+        %tmp.277 = getv %tmp.276 :Strings;
+        symbol [ MenuStrength %tmp.278 123 29 41 ];
+        %tmp.278 = getv %tmp.277 :MenuStrength;
+        symbol [ Config %tmp.280 123 43 49 ];
+        %tmp.280 = getv ? :Config;
+        symbol [ K_STRENGTH %tmp.281 123 50 60 ];
+        %tmp.281 = getv %tmp.280 :K_STRENGTH;
+        %tmp.282 = lgetv %powerValues.7;
+        symbol [ powerValues %tmp.282 123 62 73 ];
+        %tmp.283 = lgetv %powerLabels.8;
+        symbol [ powerLabels %tmp.283 123 75 86 ];
+        symbol [ Config %tmp.285 124 17 23 ];
+        %tmp.285 = getv ? :Config;
+        symbol [ strength %tmp.286 124 24 32 ];
+        %tmp.286 = getv function %tmp.285 :strength;
+        %tmp.287 = invoke %tmp.285 %tmp.286();
+        invoke %tmp.273 %tmp.274(%tmp.278, %tmp.281, %tmp.282, %tmp.283, %tmp.287);
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_116_36_125_8_stop:
+        goto @_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_116_15_125_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_116_15_125_8_if_end:
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_107_15_125_8_if_end:
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_104_15_125_8_if_end:
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_101_15_125_8_if_end:
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_98_15_125_8_if_end:
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_95_15_125_8_if_end:
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_89_8_125_8_if_end:
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_70_28_126_4_stop:
+    }
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc"; @line = 128; @symbol_functiondef = [pushSeconds,128,20,31]; @symbol_param<0> = [titleResource,128,32,45]; @symbol_param<1> = [key,128,47,50]; @symbol_param<2> = [lowest,128,52,58]; @symbol_param<3> = [current,128,60,67]; ]
+    protected
+    function pushSeconds(titleResource, key, lowest, current) {
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_128_69_140_4_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 129 8 ]
+        [ "_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_128_69_140_4_start" "_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_128_69_140_4_stop" ]
+        %values.1 = local;
+        symbol [ values %values.1 129 12 18 ];
+        %tmp.1 = newa 0;
+        lputv %values.1 %tmp.1;
+        symbol [ values %values.1 129 12 18 ];
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 130 8 ]
+        [ "_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_128_69_140_4_start" "_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_128_69_140_4_stop" ]
+        %labels.2 = local;
+        symbol [ labels %labels.2 130 12 18 ];
+        %tmp.2 = newa 0;
+        lputv %labels.2 %tmp.2;
+        symbol [ labels %labels.2 130 12 18 ];
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 131 8 ]
+        for @_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_131_8_134_8_for_test @_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_131_8_134_8_for_incr @_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_131_8_134_8_for_end;
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_131_8_134_8_for_init:
+        [ "_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_131_8_134_8_for_begin" "_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_131_8_134_8_for_end" ]
+        %v.3 = local;
+        symbol [ v %v.3 131 17 18 ];
+        %tmp.3 = lgetv %lowest;
+        symbol [ lowest %tmp.3 131 21 27 ];
+        lputv %v.3 %tmp.3;
+        symbol [ v %v.3 131 17 18 ];
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_131_8_134_8_for_test:
+        %tmp.4 = lgetv %v.3;
+        symbol [ v %tmp.4 131 29 30 ];
+        %tmp.5 = 20;
+        %tmp.6 = lte %tmp.4 %tmp.5;
+        bf %tmp.6 @_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_131_8_134_8_for_end;
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_131_8_134_8_for_begin:
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_131_43_134_8_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 132 12 ]
+        %tmp.7 = lgetv %values.1;
+        symbol [ values %tmp.7 132 12 18 ];
+        symbol [ add %tmp.8 132 19 22 ];
+        %tmp.8 = getv function %tmp.7 :add;
+        %tmp.9 = lgetv %v.3;
+        symbol [ v %tmp.9 132 23 24 ];
+        invoke %tmp.7 %tmp.8(%tmp.9);
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 133 12 ]
+        %tmp.10 = lgetv %labels.2;
+        symbol [ labels %tmp.10 133 12 18 ];
+        symbol [ add %tmp.11 133 19 22 ];
+        %tmp.11 = getv function %tmp.10 :add;
+        symbol [ Fmt %tmp.13 133 23 26 ];
+        %tmp.13 = getv ? :Fmt;
+        symbol [ seconds %tmp.14 133 27 34 ];
+        %tmp.14 = getv function %tmp.13 :seconds;
+        %tmp.15 = lgetv %v.3;
+        symbol [ v %tmp.15 133 35 36 ];
+        %tmp.16 = invoke %tmp.13 %tmp.14(%tmp.15);
+        invoke %tmp.10 %tmp.11(%tmp.16);
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_131_43_134_8_stop:
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_131_8_134_8_for_incr:
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 131 ]
+        %tmp.19 = lgetv %v.3;
+        symbol [ v %tmp.19 131 38 39 ];
+        %tmp.20 = add %tmp.19 1;
+        lputv %v.3 %tmp.20;
+        symbol [ v %v.3 131 38 39 ];
+        goto @_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_131_8_134_8_for_test;
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_131_8_134_8_for_end:
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 135 8 ]
+        %tmp.21 = lgetv %values.1;
+        symbol [ values %tmp.21 135 8 14 ];
+        symbol [ add %tmp.22 135 15 18 ];
+        %tmp.22 = getv function %tmp.21 :add;
+        %tmp.23 = 25;
+        invoke %tmp.21 %tmp.22(%tmp.23);
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 136 8 ]
+        %tmp.24 = lgetv %labels.2;
+        symbol [ labels %tmp.24 136 8 14 ];
+        symbol [ add %tmp.25 136 15 18 ];
+        %tmp.25 = getv function %tmp.24 :add;
+        symbol [ Fmt %tmp.27 136 19 22 ];
+        %tmp.27 = getv ? :Fmt;
+        symbol [ seconds %tmp.28 136 23 30 ];
+        %tmp.28 = getv function %tmp.27 :seconds;
+        %tmp.29 = 25;
+        %tmp.30 = invoke %tmp.27 %tmp.28(%tmp.29);
+        invoke %tmp.24 %tmp.25(%tmp.30);
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 137 8 ]
+        %tmp.31 = lgetv %values.1;
+        symbol [ values %tmp.31 137 8 14 ];
+        symbol [ add %tmp.32 137 15 18 ];
+        %tmp.32 = getv function %tmp.31 :add;
+        symbol [ Config %tmp.34 137 19 25 ];
+        %tmp.34 = getv ? :Config;
+        symbol [ MAX_PHASE_SEC %tmp.35 137 26 39 ];
+        %tmp.35 = getv %tmp.34 :MAX_PHASE_SEC;
+        invoke %tmp.31 %tmp.32(%tmp.35);
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 138 8 ]
+        %tmp.36 = lgetv %labels.2;
+        symbol [ labels %tmp.36 138 8 14 ];
+        symbol [ add %tmp.37 138 15 18 ];
+        %tmp.37 = getv function %tmp.36 :add;
+        symbol [ Fmt %tmp.39 138 19 22 ];
+        %tmp.39 = getv ? :Fmt;
+        symbol [ seconds %tmp.40 138 23 30 ];
+        %tmp.40 = getv function %tmp.39 :seconds;
+        symbol [ Config %tmp.42 138 31 37 ];
+        %tmp.42 = getv ? :Config;
+        symbol [ MAX_PHASE_SEC %tmp.43 138 38 51 ];
+        %tmp.43 = getv %tmp.42 :MAX_PHASE_SEC;
+        %tmp.44 = invoke %tmp.39 %tmp.40(%tmp.43);
+        invoke %tmp.36 %tmp.37(%tmp.44);
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 139 8 ]
+        %tmp.45 = self;
+        symbol [ push %tmp.46 139 8 12 ];
+        %tmp.46 = getv function %tmp.45 :push;
+        %tmp.47 = lgetv %titleResource;
+        symbol [ titleResource %tmp.47 139 13 26 ];
+        %tmp.48 = lgetv %key;
+        symbol [ key %tmp.48 139 28 31 ];
+        %tmp.49 = lgetv %values.1;
+        symbol [ values %tmp.49 139 33 39 ];
+        %tmp.50 = lgetv %labels.2;
+        symbol [ labels %tmp.50 139 41 47 ];
+        %tmp.51 = lgetv %current;
+        symbol [ current %tmp.51 139 49 56 ];
+        invoke %tmp.45 %tmp.46(%tmp.47, %tmp.48, %tmp.49, %tmp.50, %tmp.51);
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_128_69_140_4_stop:
+    }
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc"; @line = 142; @symbol_functiondef = [push,142,20,24]; @symbol_param<0> = [titleResource,142,25,38]; @symbol_param<1> = [key,142,40,43]; @symbol_param<2> = [values,142,45,51]; @symbol_param<3> = [labels,142,53,59]; @symbol_param<4> = [current,142,61,68]; ]
+    protected
+    function push(titleResource, key, values, labels, current) {
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_142_70_145_4_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 143 8 ]
+        [ "_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_142_70_145_4_start" "_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_142_70_145_4_stop" ]
+        %menu.1 = local;
+        symbol [ menu %menu.1 143 12 16 ];
+        symbol [ ValueMenu %tmp.4 143 23 32 ];
+        %tmp.4 = getv ? :ValueMenu;
+        symbol [ WatchUi %tmp.5 143 33 40 ];
+        %tmp.5 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.6 143 41 53 ];
+        %tmp.6 = getv function %tmp.5 :loadResource;
+        %tmp.7 = lgetv %titleResource;
+        symbol [ titleResource %tmp.7 143 54 67 ];
+        %tmp.8 = invoke %tmp.5 %tmp.6(%tmp.7);
+        %tmp.9 = lgetv %labels;
+        symbol [ labels %tmp.9 143 70 76 ];
+        %tmp.10 = lgetv %values;
+        symbol [ values %tmp.10 143 78 84 ];
+        %tmp.11 = lgetv %current;
+        symbol [ current %tmp.11 143 86 93 ];
+        %tmp.1 = newc %tmp.4 (%tmp.8, %tmp.9, %tmp.10, %tmp.11);
+        lputv %menu.1 %tmp.1;
+        symbol [ menu %menu.1 143 12 16 ];
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 144 8 ]
+        symbol [ WatchUi %tmp.12 144 8 15 ];
+        %tmp.12 = getm $.Toybox.WatchUi;
+        symbol [ pushView %tmp.13 144 16 24 ];
+        %tmp.13 = getv function %tmp.12 :pushView;
+        %tmp.14 = lgetv %menu.1;
+        symbol [ menu %tmp.14 144 25 29 ];
+        symbol [ ValueDelegate %tmp.18 144 35 48 ];
+        %tmp.18 = getv ? :ValueDelegate;
+        %tmp.19 = lgetv %key;
+        symbol [ key %tmp.19 144 49 52 ];
+        %tmp.20 = lgetv %values;
+        symbol [ values %tmp.20 144 54 60 ];
+        symbol [ mMenu %tmp.22 144 62 67 ];
+        %tmp.22 = getv ? :mMenu;
+        %tmp.15 = newc %tmp.18 (%tmp.19, %tmp.20, %tmp.22);
+        symbol [ WatchUi %tmp.23 144 70 77 ];
+        %tmp.23 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_IMMEDIATE %tmp.24 144 78 93 ];
+        %tmp.24 = getv %tmp.23 :SLIDE_IMMEDIATE;
+        invoke %tmp.12 %tmp.13(%tmp.14, %tmp.15, %tmp.24);
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_142_70_145_4_stop:
+    }
+}
+//! A list of choices for one setting. The value in use is marked with a star.
+[ @file = "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc"; @line = 149; @symbol_classdef = [ValueMenu,149,6,15]; @symbol_extends<0> = [WatchUi,149,24,31]; @symbol_extends<1> = [Menu2,149,32,37]; ]
+class ValueMenu extends WatchUi.Menu2 {
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc"; @line = 149; ]
+    <init> {
+    }
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc"; @line = 149; ]
+    static
+    <init> {
+    }
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc"; @line = 151; @symbol_functiondef = [initialize,151,13,23]; @symbol_param<0> = [title,151,24,29]; @symbol_param<1> = [labels,151,31,37]; @symbol_param<2> = [values,151,39,45]; @symbol_param<3> = [current,151,47,54]; ]
+    function initialize(title, labels, values, current) as Void {
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_151_56_157_4_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 152 8 ]
+        symbol [ Menu2 %tmp.2 152 8 13 ];
+        %tmp.2 = getv ? :Menu2;
+        symbol [ initialize %tmp.3 152 14 24 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        %tmp.4 = newd 1;
+        %tmp.6 = const :title;
+        symbol [ title %tmp.6 152 27 32 const ];
+        %tmp.7 = lgetv %title;
+        symbol [ title %tmp.7 152 36 41 ];
+        %tmp.8 = dup %tmp.4;
+        %tmp.9 = aputv %tmp.8 %tmp.6 %tmp.7;
+        invoke %tmp.2 %tmp.3(%tmp.9);
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 153 8 ]
+        for @_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_153_8_156_8_for_test @_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_153_8_156_8_for_incr @_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_153_8_156_8_for_end;
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_153_8_156_8_for_init:
+        [ "_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_153_8_156_8_for_begin" "_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_153_8_156_8_for_end" ]
+        %i.1 = local;
+        symbol [ i %i.1 153 17 18 ];
+        %tmp.10 = 0;
+        lputv %i.1 %tmp.10;
+        symbol [ i %i.1 153 17 18 ];
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_153_8_156_8_for_test:
+        %tmp.11 = lgetv %i.1;
+        symbol [ i %tmp.11 153 24 25 ];
+        %tmp.12 = lgetv %values;
+        symbol [ values %tmp.12 153 28 34 ];
+        symbol [ size %tmp.13 153 35 39 ];
+        %tmp.13 = getv function %tmp.12 :size;
+        %tmp.14 = invoke %tmp.12 %tmp.13();
+        %tmp.15 = lt %tmp.11 %tmp.14;
+        bf %tmp.15 @_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_153_8_156_8_for_end;
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_153_8_156_8_for_begin:
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_153_48_156_8_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 154 12 ]
+        [ "_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_153_48_156_8_start" "_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_153_48_156_8_stop" ]
+        %mark.2 = local;
+        symbol [ mark %mark.2 154 16 20 ];
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_154_23_154_54_begin:
+        %tmp.16 = lgetv %values;
+        symbol [ values %tmp.16 154 24 30 ];
+        %tmp.17 = lgetv %i.1;
+        symbol [ i %tmp.17 154 31 32 ];
+        %tmp.18 = agetv %tmp.16 %tmp.17;
+        %tmp.19 = lgetv %current;
+        symbol [ current %tmp.19 154 37 44 ];
+        %tmp.20 = eq %tmp.18 %tmp.19;
+        bf %tmp.20 @_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_154_23_154_54_else_false;
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_154_23_154_54_true:
+        %tmp.21 = "*";
+        push %tmp.21;
+        goto @_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_154_23_154_54_end;
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_154_23_154_54_else_false:
+        %tmp.22 = "";
+        push %tmp.22;
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_154_23_154_54_end:
+        %tmp.23 = phi [%tmp.20 @_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_154_23_154_54_begin] [%tmp.21 @_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_154_23_154_54_true] [%tmp.22 @_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_154_23_154_54_else_false] [%tmp.23 @_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_154_23_154_54_end];
+        lputv %mark.2 %tmp.23;
+        symbol [ mark %mark.2 154 16 20 ];
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 155 12 ]
+        %tmp.24 = self;
+        symbol [ addItem %tmp.25 155 12 19 ];
+        %tmp.25 = getv function %tmp.24 :addItem;
+        symbol [ WatchUi %tmp.28 155 24 31 ];
+        %tmp.28 = getm $.Toybox.WatchUi;
+        symbol [ MenuItem %tmp.29 155 32 40 ];
+        %tmp.29 = getv function ? %tmp.28 :MenuItem;
+        %tmp.30 = lgetv %labels;
+        symbol [ labels %tmp.30 155 41 47 ];
+        %tmp.31 = lgetv %i.1;
+        symbol [ i %tmp.31 155 48 49 ];
+        %tmp.32 = agetv %tmp.30 %tmp.31;
+        %tmp.33 = lgetv %mark.2;
+        symbol [ mark %tmp.33 155 52 56 ];
+        %tmp.34 = lgetv %i.1;
+        symbol [ i %tmp.34 155 58 59 ];
+        %tmp.35 = newd 0;
+        %tmp.26 = newc %tmp.29 (%tmp.32, %tmp.33, %tmp.34, %tmp.35);
+        invoke %tmp.24 %tmp.25(%tmp.26);
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_153_48_156_8_stop:
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_153_8_156_8_for_incr:
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 153 ]
+        %tmp.38 = lgetv %i.1;
+        symbol [ i %tmp.38 153 43 44 ];
+        %tmp.39 = add %tmp.38 1;
+        lputv %i.1 %tmp.39;
+        symbol [ i %i.1 153 43 44 ];
+        goto @_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_153_8_156_8_for_test;
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_153_8_156_8_for_end:
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_151_56_157_4_stop:
+    }
+}
+[ @file = "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc"; @line = 160; @symbol_classdef = [ValueDelegate,160,6,19]; @symbol_extends<0> = [WatchUi,160,28,35]; @symbol_extends<1> = [Menu2InputDelegate,160,36,54]; ]
+class ValueDelegate extends WatchUi.Menu2InputDelegate {
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc"; @line = 160; ]
+    <init> {
+    }
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc"; @line = 160; ]
+    static
+    <init> {
+    }
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc"; @line = 162; @position = 15; @symbol_vardef = [mKey,162,15,19]; ]
+    protected
+    var mKey;
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc"; @line = 163; @position = 15; @symbol_vardef = [mValues,163,15,22]; ]
+    protected
+    var mValues;
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc"; @line = 164; @position = 15; @symbol_vardef = [mParent,164,15,22]; ]
+    protected
+    var mParent;
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc"; @line = 166; @symbol_functiondef = [initialize,166,13,23]; @symbol_param<0> = [key,166,24,27]; @symbol_param<1> = [values,166,29,35]; @symbol_param<2> = [parent,166,37,43]; ]
+    function initialize(key, values, parent) as Void {
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_166_45_171_4_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 167 8 ]
+        symbol [ Menu2InputDelegate %tmp.2 167 8 26 ];
+        %tmp.2 = getv ? :Menu2InputDelegate;
+        symbol [ initialize %tmp.3 167 27 37 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 168 8 ]
+        %tmp.4 = lgetv %key;
+        symbol [ key %tmp.4 168 15 18 ];
+        symbol [ mKey ? 168 8 12 ];
+        putv self :mKey %tmp.4;
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 169 8 ]
+        %tmp.5 = lgetv %values;
+        symbol [ values %tmp.5 169 18 24 ];
+        symbol [ mValues ? 169 8 15 ];
+        putv self :mValues %tmp.5;
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 170 8 ]
+        %tmp.6 = lgetv %parent;
+        symbol [ parent %tmp.6 170 18 24 ];
+        symbol [ mParent ? 170 8 15 ];
+        putv self :mParent %tmp.6;
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_166_45_171_4_stop:
+    }
+    [ @file = "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc"; @line = 173; @symbol_functiondef = [onSelect,173,13,21]; @symbol_param<0> = [item,173,22,26]; ]
+    function onSelect(item) {
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_173_28_182_4_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 174 8 ]
+        [ "_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_173_28_182_4_start" "_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_173_28_182_4_stop" ]
+        %index.1 = local;
+        symbol [ index %index.1 174 12 17 ];
+        %tmp.1 = lgetv %item;
+        symbol [ item %tmp.1 174 20 24 ];
+        symbol [ getId %tmp.2 174 25 30 ];
+        %tmp.2 = getv function %tmp.1 :getId;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        lputv %index.1 %tmp.3;
+        symbol [ index %index.1 174 12 17 ];
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 175 8 ]
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_175_8_180_8_if_stmt:
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_175_12_175_79_begin:
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_175_12_175_53_begin:
+        %tmp.4 = lgetv %index.1;
+        symbol [ index %tmp.4 175 12 17 ];
+        symbol [ Lang %tmp.5 175 29 33 ];
+        %tmp.5 = getm $.Toybox.Lang;
+        symbol [ Number %tmp.6 175 34 40 ];
+        %tmp.6 = getv %tmp.5 :Number;
+        %tmp.7 = isa %tmp.4 %tmp.6;
+        bf %tmp.7 @_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_175_8_180_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_175_44_175_53_true:
+        %tmp.8 = lgetv %index.1;
+        symbol [ index %tmp.8 175 44 49 ];
+        %tmp.9 = as %tmp.8 { (Lang.Number) };
+        %tmp.10 = 0;
+        %tmp.11 = gte %tmp.9 %tmp.10;
+        push %tmp.11;
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_175_44_175_53_end:
+        %tmp.12 = phi [%tmp.7 @_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_175_12_175_53_begin] [%tmp.11 @_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_175_44_175_53_true] [%tmp.12 @_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_175_44_175_53_end];
+        bf %tmp.12 @_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_175_8_180_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_175_58_175_79_true:
+        %tmp.13 = lgetv %index.1;
+        symbol [ index %tmp.13 175 58 63 ];
+        %tmp.14 = as %tmp.13 { (Lang.Number) };
+        symbol [ mValues %tmp.16 175 66 73 ];
+        %tmp.16 = getv ? :mValues;
+        symbol [ size %tmp.17 175 74 78 ];
+        %tmp.17 = getv function %tmp.16 :size;
+        %tmp.18 = invoke %tmp.16 %tmp.17();
+        %tmp.19 = lt %tmp.14 %tmp.18;
+        push %tmp.19;
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_175_58_175_79_end:
+        %tmp.20 = phi [%tmp.12 @_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_175_12_175_79_begin] [%tmp.19 @_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_175_58_175_79_true] [%tmp.20 @_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_175_58_175_79_end];
+        bf %tmp.20 @_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_175_8_180_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_175_8_180_8_if_true:
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_175_82_180_8_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 176 12 ]
+        symbol [ Config %tmp.22 176 12 18 ];
+        %tmp.22 = getv ? :Config;
+        symbol [ set %tmp.23 176 19 22 ];
+        %tmp.23 = getv function %tmp.22 :set;
+        symbol [ mKey %tmp.25 176 23 27 ];
+        %tmp.25 = getv ? :mKey;
+        symbol [ mValues %tmp.27 176 29 36 ];
+        %tmp.27 = getv ? :mValues;
+        %tmp.28 = lgetv %index.1;
+        symbol [ index %tmp.28 176 37 42 ];
+        %tmp.29 = as %tmp.28 { (Lang.Number) };
+        %tmp.30 = agetv %tmp.27 %tmp.29;
+        invoke %tmp.22 %tmp.23(%tmp.25, %tmp.30);
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 177 12 ]
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_177_12_179_12_if_stmt:
+        symbol [ mParent %tmp.32 177 16 23 ];
+        %tmp.32 = getv ? :mParent;
+        %tmp.33 = null;
+        %tmp.34 = ne %tmp.32 %tmp.33;
+        bf %tmp.34 @_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_177_12_179_12_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_177_12_179_12_if_true:
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_177_33_179_12_start:
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 178 16 ]
+        symbol [ mParent %tmp.36 178 16 23 ];
+        %tmp.36 = getv ? :mParent;
+        %tmp.37 = as %tmp.36 { (!Null) };
+        symbol [ refresh %tmp.38 178 24 31 ];
+        %tmp.38 = getv function %tmp.37 :refresh;
+        invoke %tmp.37 %tmp.38();
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_177_33_179_12_stop:
+        goto @_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_177_12_179_12_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_177_12_179_12_if_end:
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_175_82_180_8_stop:
+        goto @_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_175_8_180_8_if_end;
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_175_8_180_8_if_end:
+[ "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc" 181 8 ]
+        symbol [ WatchUi %tmp.39 181 8 15 ];
+        %tmp.39 = getm $.Toybox.WatchUi;
+        symbol [ popView %tmp.40 181 16 23 ];
+        %tmp.40 = getv function %tmp.39 :popView;
+        symbol [ WatchUi %tmp.41 181 24 31 ];
+        %tmp.41 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_IMMEDIATE %tmp.42 181 32 47 ];
+        %tmp.42 = getv %tmp.41 :SLIDE_IMMEDIATE;
+        invoke %tmp.39 %tmp.40(%tmp.42);
+_Users_daniel_Downloads_projects_Breathe_source_SettingsMenu_mc_173_28_182_4_stop:
+    }
+}
+[ @file = "/Users/daniel/Downloads/projects/Breathe/source/SettingsMenu.mc"; @line = 1; ]
+<init> {
+}
